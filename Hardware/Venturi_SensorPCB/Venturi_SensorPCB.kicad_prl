@@ -1,6 +1,6 @@
 {
   "board": {
-    "active_layer": 2,
+    "active_layer": 0,
     "active_layer_preset": "",
     "auto_track_width": true,
     "hidden_netclasses": [],
@@ -19,7 +19,7 @@
     "selection_filter": {
       "dimensions": true,
       "footprints": true,
-      "graphics": false,
+      "graphics": true,
       "keepouts": true,
       "lockedItems": false,
       "otherItems": true,
@@ -61,11 +61,13 @@
     "ssh_key": ""
   },
   "meta": {
-    "filename": "LineFollower_V2.kicad_prl",
+    "filename": "Venturi_SensorPCB.kicad_prl",
     "version": 5
   },
   "net_inspector_panel": {
     "col_hidden": [
+      false,
+      false,
       false,
       false,
       false,
@@ -87,7 +89,9 @@
       6,
       7,
       8,
-      9
+      9,
+      10,
+      11
     ],
     "col_widths": [
       156,
@@ -99,7 +103,9 @@
       103,
       74,
       103,
-      42
+      103,
+      103,
+      103
     ],
     "custom_group_rules": [],
     "expanded_rows": [],

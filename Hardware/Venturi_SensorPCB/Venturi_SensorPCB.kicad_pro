@@ -60,7 +60,7 @@
           "hatch_smoothing_level": 0,
           "hatch_smoothing_value": 0.1,
           "hatch_thickness": 1.0,
-          "min_clearance": 0.5,
+          "min_clearance": 0.0,
           "min_island_area": 10.0,
           "min_thickness": 0.5,
           "pad_connection": 2,
@@ -517,7 +517,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "LineFollower_V2.kicad_pro",
+    "filename": "Venturi_SensorPCB.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -684,18 +684,18 @@
     "subpart_id_separator": 0,
     "top_level_sheets": [
       {
-        "filename": "LineFollower_V2.kicad_sch",
-        "name": "LineFollower_V2",
-        "uuid": "541edf84-ce03-4785-9c85-09d790cdcb4c"
+        "filename": "Venturi_SensorPCB.kicad_sch",
+        "name": "Venturi_SensorPCB",
+        "uuid": "179da9ab-1703-43d9-a037-538492c203c2"
       }
     ],
-    "used_designators": "",
+    "used_designators": "U1-16,R1-28,J1,H1-4,Q1-2,#PWR1-53,C1-6,D1-2,IC1",
     "variants": []
   },
   "sheets": [
     [
-      "541edf84-ce03-4785-9c85-09d790cdcb4c",
-      "LineFollower_V2"
+      "179da9ab-1703-43d9-a037-538492c203c2",
+      "LineFollower_SensorPCB"
     ]
   ],
   "text_variables": {},
