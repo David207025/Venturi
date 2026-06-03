@@ -1,148 +1,169 @@
 #include "VenturiEngine/VenturiEngine.h"
-#include "VenturiTools/VenturiTools.h" // Your original tools class
+#include "VenturiTools/VenturiTools.h"
 #include <Arduino.h>
+#include <esp_task_wdt.h>
+#include <Network.h>
+
+static TaskHandle_t globalCore0TaskHandle = NULL;
 
 class Venturi : public VenturiEngine {
-private:
-    VenturiTools* tools;
-
-    // Double-buffering array layout to isolate execution threads across cores
-    volatile TelemetryFrame bufferPool[2];
-    volatile uint8_t writeIdx;
-    volatile uint8_t readIdx;
-
-    void printFrameDebug(const TelemetryFrame& frame) {
-        uint8_t* bytePtr = (uint8_t*)&frame;
-        size_t frameSize = sizeof(TelemetryFrame);
-
-        Serial.printf("[TX Debug] Size: %d Bytes | Data: [", frameSize);
-        for (size_t i = 0; i < frameSize; i++) {
-            Serial.printf("%02X", bytePtr[i]);
-            if (i < frameSize - 1) {
-                Serial.print(" ");
-            }
-        }
-        Serial.println("]");
-    }
-
 public:
+    VenturiTools *tools;
+    static void IRAM_ATTR onTimerTick();
+
+    const int8_t weights[16] = {
+        127, 64, 32, 16, 8, 4, 2, 0,
+        0, -2, -4, -8, -16, -32, -64, -127
+    };
+
+    volatile int32_t steering = 0;
+
     Venturi() : VenturiEngine() {
-        tools = new VenturiTools("Venturi_P4", 2);
+        tools = new VenturiTools("Venturi_P4", 2, true);
+        tools->autoConnectWiFi();
 
-        // Clear out the memory pool and initialize dual tracking pointers
-        memset((void*)bufferPool, 0, sizeof(bufferPool));
-        writeIdx = 0;
-        readIdx = 1;
-
-
+        VenturiTools::buffer = new TelemetryFrame();
+        memset((void *) VenturiTools::buffer, 0, sizeof(TelemetryFrame));
     }
 
 protected:
-    // ─── CORE 0: HIGH-SPEED SENSOR INGESTION (PRODUCER) ───
+    // ====================================================================
+    // CORE 0 LOOP: Dedicated strictly to Network, WebServer, and UDP Streaming
+    // ====================================================================
     void core0_loop() override {
+        _core0TaskHandle = xTaskGetCurrentTaskHandle();
+        // Keep the Core 0 Watchdog ACTIVE! The background network loops will feed it.
+        esp_task_wdt_add(_core0TaskHandle);
+
         while (true) {
-            // Point to our isolated front active write-buffer
-            volatile TelemetryFrame* frontBuffer = &bufferPool[writeIdx];
+            esp_task_wdt_reset();
 
-            // 1. Read ADS7961SDBT over 20MHz SPI
-            // readSensorsOverSPI((uint8_t*)frontBuffer->adc_data);
+            if (WiFi.status() == WL_CONNECTED) {
+                TelemetryFrame frameSnapshot;
+                // Safely copy out the telemetry data calculated on Core 1
+                memcpy(&frameSnapshot, (void *) VenturiTools::buffer, sizeof(TelemetryFrame));
+                frameSnapshot.temperature_c = tools->getTemperature();
 
-            // 2. Update data structure snapshot (Dummy line data matching your simulation profile)
-            frontBuffer->timestamp = millis();
-            // (Populate IMU gyro/accel and battery data here too)
-
-            for(int i = 0; i < 8; i++) {
-                frontBuffer->adc_data[i] = 30 * i;
-                frontBuffer->adc_data[15 - i] = 30 * i;
+                // Core 0 handles the heavy network processing load
+                tools->streamUDP(frameSnapshot);
             }
 
-            // Simulates raw FPU processing delay on Core 1
-            volatile float simulatedStress = 1.234f;
-            for (int i = 0; i < 100; i++) {
-                simulatedStress = (simulatedStress * 1.001f) + 0.005f;
-            }
-
-
-            // 3. Atomically flip the buffer pool indices so Core 1 reads our completed dataset
-            uint8_t temp = writeIdx;
-            writeIdx = readIdx;
-            readIdx = temp;
-
-            // 4. BUMP CORE 1: Wake up the motor control thread instantly
-            if (_core1TaskHandle != NULL) {
-                xTaskNotifyGive(_core1TaskHandle);
-            }
-
-            // Yield control briefly to give Core 0's low-priority internal
-            // BLE radio stack a chance to sweep network registers
-            //taskYIELD();
-            vTaskDelay(pdMS_TO_TICKS(1));
+            // Yield cleanly to let IDLE0 and internal Wi-Fi tasks process
+            vTaskDelay(pdMS_TO_TICKS(5));
         }
     }
 
-    // ─── CORE 1: PD ENGINE & MOTOR CONTROL (CONSUMER) ───
+    // ====================================================================
+    // CORE 1 LOOP: Your Ultra-Fast Control & Math Engine
+    // ====================================================================
     void core1_loop() override {
-        while (true) {
-            // SLEEP STATE: Relinquishes 100% of Core 1's processing time.
-            // Awakens in fractions of a microsecond the exact instant Core 0 triggers a notification.
-            ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+        _core1TaskHandle = xTaskGetCurrentTaskHandle();
+        globalCore0TaskHandle = _core1TaskHandle; // Point our ISR notification directly to Core 1!
 
-            // Safely bind to the stable read back-buffer
-            volatile TelemetryFrame* activeFrame = &bufferPool[readIdx];
+        // Disable the watchdog for Core 1 so your high-speed loop can dominate the CPU
+        esp_task_wdt_delete(_core1TaskHandle);
 
-            // ─── Run high-priority PD Engine & Motor Control here ───
-            // float lineError = calculateLinePosition(activeFrame->adc_data);
-            // runMotorControlMath(lineError, activeFrame->gyro, activeFrame->accel);
-
-            // Once finished, this loop naturally cycles back up and blocks on ulTaskNotifyTake,
-            // immediately freeing up Core 1 for background telemetry processing.
+        if (VenturiTools::buffer == nullptr) {
+            VenturiTools::buffer = new TelemetryFrame();
+            memset((void *) VenturiTools::buffer, 0, sizeof(TelemetryFrame));
         }
-    }
 
-    // ─── CORE 1 BACKGROUND PROCESSING: TELEMETRY STREAM ───
-    void telemetry_loop() override {
-        TickType_t xLastWakeTime = xTaskGetTickCount();
+        static uint16_t proc_adc[16] = {0};
+        static uint8_t  proc_imu[12] = {0};
 
-        // Throttled to ~40Hz (Every 25ms). Because this task runs at Priority 1 on Core 1,
-        // it will execute quietly whenever core1_loop is asleep waiting for a sensor bump.
-        const TickType_t xFrequency = pdMS_TO_TICKS(1);
+        // Initialize and lock the SPI hardware channels on Core 1's memory space
+        tools->initFastHardwarePipeline();
+
+        // --- Hardware Timer Initialization (Targeting 30us on Core 1) ---
+        hw_timer_t *timer = timerBegin(1000000);
+        timerAttachInterrupt(timer, &onTimerTick);
+        timerAlarm(timer, 20, true, 0); // Fires exactly every 30 microseconds
+
+        uint32_t delta_math_us = 0;
+        uint32_t delta_execution_us = 0;
+        bool pipeline_primed = false;
 
         while (true) {
-            //vTaskDelayUntil(&xLastWakeTime, xFrequency);
+            // Unblock as soon as the timer interrupt fires
+            ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+            uint64_t loop_start = esp_timer_get_time();
 
-            // Take a local copy snapshot of the current backbuffer frame to prevent any tearing
-            TelemetryFrame frameSnapshot = {};
-            memcpy(&frameSnapshot, (void*)&bufferPool[readIdx], sizeof(TelemetryFrame));
+            gpio_set_level(GPIO_NUM_29, 1);
 
-            // Print the raw bytes to the Serial monitor if debugging
-            // printFrameDebug(frameSnapshot);
+            // 1. Kick off the asynchronous DMA read sequence
+            tools->startSPIReads();
 
-            // Pass the packed struct into your BLE transmission tool
-            tools->writeBLE<TelemetryFrame>(frameSnapshot);
+            // 2. Process math calculations for the data gathered in the last frame
+            uint64_t math_start = esp_timer_get_time();
 
-            vTaskDelay(1);
+            if (pipeline_primed) {
+                memcpy((void *) &VenturiTools::buffer->accel[0], proc_imu, 12);
+                VenturiTools::buffer->accel[0] = __builtin_bswap16(VenturiTools::buffer->accel[0]);
+                VenturiTools::buffer->accel[1] = __builtin_bswap16(VenturiTools::buffer->accel[1]);
+                VenturiTools::buffer->accel[2] = __builtin_bswap16(VenturiTools::buffer->accel[2]);
+                VenturiTools::buffer->gyro[0]  = __builtin_bswap16(VenturiTools::buffer->gyro[0]);
+                VenturiTools::buffer->gyro[1]  = __builtin_bswap16(VenturiTools::buffer->gyro[1]);
+                VenturiTools::buffer->gyro[2]  = __builtin_bswap16(VenturiTools::buffer->gyro[2]);
+
+                int32_t acc = 0;
+                for (int i = 0; i < 16; i++) {
+                    uint8_t compressed_val = (uint8_t) (proc_adc[i] >> 4);
+                    VenturiTools::buffer->adc_data[i] = compressed_val;
+                    acc += (int32_t) compressed_val * weights[i];
+                }
+                steering = acc;
+
+                esp_rom_delay_us(2);
+
+                VenturiTools::buffer->timestamp = (uint32_t) (loop_start / 1000);
+                VenturiTools::buffer->steering = steering;
+            }
+
+            delta_math_us = (uint32_t) (esp_timer_get_time() - math_start);
+
+            // 3. Complete data collection via direct register polling
+            tools->getSPIResults(proc_adc, proc_imu);
+            pipeline_primed = true;
+
+            memset(proc_adc, 0xFF, sizeof(proc_adc));
+            memset(proc_imu, 0xFF, sizeof(proc_imu));
+
+            delta_execution_us = (uint32_t) (esp_timer_get_time() - loop_start);
+            gpio_set_level(GPIO_NUM_29, 0);
+
+            VenturiTools::buffer->update_speed = delta_execution_us;
         }
     }
 };
 
-// Standard Arduino entry hooks to prevent duplicate app_main links
+// ====================================================================
+// TIMER INTERRUPTION FUNCTION (Now targeting Core 1 Context)
+// ====================================================================
+void IRAM_ATTR Venturi::onTimerTick() {
+    if (globalCore0TaskHandle != NULL) {
+        BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+
+        // This wakes up the task handle pinned to globalCore0TaskHandle (which is now Core 1)
+        vTaskNotifyGiveFromISR(globalCore0TaskHandle, &xHigherPriorityTaskWoken);
+
+        if (xHigherPriorityTaskWoken == pdTRUE) {
+            portYIELD_FROM_ISR();
+        }
+    }
+}
+
 void setup() {
-    Serial.begin(460800);
-    delay(500);
+    Serial.begin(115200);
+    delay(1000);
+
+    gpio_reset_pin(GPIO_NUM_29);
+    gpio_set_direction(GPIO_NUM_29, GPIO_MODE_OUTPUT);
+
     Serial.println(">>> Initializing Venturi Engine Multitasking System...");
 
-    // Allocate your customized car controller engine onto the heap
-    Venturi* car = new Venturi();
-
-    // Fire up your FreeRTOS tasks pinned across Core 0 and Core 1
+    Venturi *car = new Venturi();
     car->start();
-
-    // Reclaim memory: Delete the temporary Arduino loop task setup thread
-    Serial.println(">>> Engine active. Terminating initialization thread.");
-    vTaskDelete(NULL);
+    car->tools->enableOtaListening();
 }
 
-void loop() {
-    // This loop is now dead code and will NEVER be reached because
-    // vTaskDelete(NULL) terminated this thread. 0% CPU wasted here.
-}
+void loop() {}

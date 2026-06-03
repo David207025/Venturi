@@ -1,8 +1,20 @@
 #include "VenturiTools.h"
 
+#include <utility>
+
+
 bool VenturiTools::deviceConnected = false;
 volatile bool VenturiTools::s_touchFlags[16] = {false};
 volatile bool VenturiTools::s_fingerOnPad[16] = {false};
+TaskHandle_t VenturiTools::taskToNotify = NULL;
+volatile TelemetryFrame *VenturiTools::buffer = nullptr;
+
+IPAddress VenturiTools::peerIP = "";
+uint16_t VenturiTools::peerPort = 0;
+bool VenturiTools::peerKnown = false;
+uint16_t VenturiTools::localPort = 5005;
+WiFiUDP VenturiTools::udpSender;
+
 
 // 2. The master hardware interrupt handler
 void IRAM_ATTR VenturiTools::globalTouchISR() {
@@ -20,10 +32,25 @@ void IRAM_ATTR VenturiTools::globalTouchISR() {
     }
 }
 
-VenturiTools::VenturiTools(String bleName, int debug_level, String serviceUUID, String characteristicUUID) {
+VenturiTools::VenturiTools(String bleName, int debug_level, bool ble_enabled, String serviceUUID,
+                           String characteristicUUID) {
     this->debugLevel = debug_level;
     Serial.println(this->debugLevel);
-    initBLE(bleName, serviceUUID, characteristicUUID);
+
+    initSPI();
+
+    if (temperature_sensor_install(&tempSensorConfig, &tempHandle) == ESP_OK) {
+        temperature_sensor_enable(tempHandle);
+        temperatureSensorAvailable = true;
+    } else {
+        temperatureSensorAvailable = false;
+        Serial.println("Failed to install temperature sensor!");
+    }
+
+    if (ble_enabled) {
+        initBLE(std::move(bleName), std::move(serviceUUID), std::move(characteristicUUID));
+    }
+
     initSD();
 
     if (debug_level > 1) {
@@ -33,6 +60,11 @@ VenturiTools::VenturiTools(String bleName, int debug_level, String serviceUUID, 
 
 VenturiTools::~VenturiTools() {
 }
+
+void VenturiTools::setTaskNotificationHandle(TaskHandle_t taskHandle) {
+    this->taskToNotify = taskHandle;
+}
+
 
 void VenturiTools::initBLE(String name, String serviceUUID, String characteristicUUID) {
     BLEDevice::init(name);
@@ -49,6 +81,15 @@ void VenturiTools::initBLE(String name, String serviceUUID, String characteristi
         BLECharacteristic::PROPERTY_NOTIFY
     );
 
+    pIPCharacteristic = pService->createCharacteristic(
+        IP_CHARACTERISTIC_UUID,
+        BLECharacteristic::PROPERTY_WRITE
+    );
+
+    pIPCharacteristic->setValue("0.0.0.0");
+
+    pIPCharacteristic->setCallbacks(new PCIPCallbacks());
+
     pService->start();
 
     BLEAdvertising *pAdvertising = BLEDevice::getAdvertising();
@@ -56,8 +97,8 @@ void VenturiTools::initBLE(String name, String serviceUUID, String characteristi
     pAdvertising->setScanResponse(true);
 
     // Tight connection windows for maximum responsiveness
-    pAdvertising->setMinPreferred(0x06);  // 7.5ms
-    pAdvertising->setMaxPreferred(0x0C);  // 15ms
+    pAdvertising->setMinPreferred(0x06); // 7.5ms
+    pAdvertising->setMaxPreferred(0x0C); // 15ms
 
     BLEDevice::startAdvertising();
 
@@ -104,6 +145,102 @@ void VenturiTools::initSD() {
         Serial.printf(">>> Card size: %llu MB\n", cardSize);
     }
 }
+
+void VenturiTools::initSPI() {
+    // 1. Initialize SPI2 (ADC)
+    // Clear the struct explicitly to ensure any unassigned fields default safely to zero
+    spi_bus_config_t adcbuscfg = {};
+    adcbuscfg.mosi_io_num = PIN_ADC_MOSI;
+    adcbuscfg.miso_io_num = PIN_ADC_MISO;
+    adcbuscfg.sclk_io_num = PIN_ADC_CLK;
+    adcbuscfg.quadwp_io_num = GPIO_NUM_NC; // Use official Not Connected macro
+    adcbuscfg.quadhd_io_num = GPIO_NUM_NC; // Use official Not Connected macro
+    adcbuscfg.max_transfer_sz = 0;        // Match your actual transaction length explicitly
+    adcbuscfg.flags = SPICOMMON_BUSFLAG_MASTER;
+
+    // Use SPI_DMA_DISABLED to keep processing localized to the CPU registers
+    ESP_ERROR_CHECK(spi_bus_initialize(SPI2_HOST, &adcbuscfg, SPI_DMA_DISABLED));
+
+    // Lock down the native internal pull-up directly on the physical pin pad
+    gpio_pullup_en((gpio_num_t)PIN_ADC_MISO);
+
+    spi_device_interface_config_t adc_devcfg = {};
+    adc_devcfg.mode = 0;
+    adc_devcfg.clock_speed_hz = 20000000;
+    adc_devcfg.spics_io_num = PIN_ADC_CS;
+    adc_devcfg.queue_size = 3;
+
+    ESP_ERROR_CHECK(spi_bus_add_device(SPI2_HOST, &adc_devcfg, &spi_adc));
+
+    // 2. Initialize SPI3 (IMU)
+    spi_bus_config_t imubuscfg = {};
+    imubuscfg.mosi_io_num = PIN_IMU_MOSI;
+    imubuscfg.miso_io_num = PIN_IMU_MISO;
+    imubuscfg.sclk_io_num = PIN_IMU_CLK;
+    imubuscfg.quadwp_io_num = GPIO_NUM_NC; // Use official Not Connected macro
+    imubuscfg.quadhd_io_num = GPIO_NUM_NC; // Use official Not Connected macro
+    imubuscfg.max_transfer_sz = 0;        // Match your actual transaction length explicitly
+    imubuscfg.flags = SPICOMMON_BUSFLAG_MASTER;
+
+    ESP_ERROR_CHECK(spi_bus_initialize(SPI3_HOST, &imubuscfg, SPI_DMA_DISABLED));
+
+    // Lock down the native internal pull-up here too
+    gpio_pullup_en((gpio_num_t)PIN_IMU_MISO);
+
+    spi_device_interface_config_t imu_devcfg = {};
+    imu_devcfg.mode = 0;
+    imu_devcfg.clock_speed_hz = 20000000;
+    imu_devcfg.spics_io_num = PIN_IMU_CS;
+    imu_devcfg.queue_size = 3;
+
+    ESP_ERROR_CHECK(spi_bus_add_device(SPI3_HOST, &imu_devcfg, &spi_imu));
+}
+
+
+void VenturiTools::initFastHardwarePipeline() {
+    // 1. Safe Allocation of Persistent DMA Targets
+    _hw_imu_buffer = (uint8_t *) heap_caps_malloc(12, MALLOC_CAP_DMA);
+    _hw_adc_buffer = (uint16_t *) heap_caps_malloc(32, MALLOC_CAP_DMA);
+    memset(_hw_imu_buffer, 0, 12);
+    memset(_hw_adc_buffer, 0, 32);
+
+    // 2. Setup Persistent Transaction Descriptors
+    memset(&_imu_trans, 0, sizeof(spi_transaction_t));
+    _imu_trans.length = 96; // 12 Bytes
+    _imu_trans.rx_buffer = _hw_imu_buffer;
+
+    memset(&_adc_trans, 0, sizeof(spi_transaction_t));
+    _adc_trans.length = 256; // 32 Bytes
+    _adc_trans.rx_buffer = (uint8_t *) _hw_adc_buffer;
+
+    // 3. Map Register Space Hardware Blocks
+    _spi_adc_hw = &GPSPI2;
+    _spi_imu_hw = &GPSPI3;
+
+    // 4. Lock Drivers into State Machine Context Outside Main Processing Window
+    ESP_ERROR_CHECK(spi_device_polling_start(this->spi_imu, &_imu_trans, portMAX_DELAY));
+    ESP_ERROR_CHECK(spi_device_polling_start(this->spi_adc, &_adc_trans, portMAX_DELAY));
+}
+
+void IRAM_ATTR VenturiTools::startSPIReads() {
+    // Relaunch both internal hardware master state engines instantaneously
+    _spi_imu_hw->cmd.usr = 1;
+    _spi_adc_hw->cmd.usr = 1;
+}
+
+void IRAM_ATTR VenturiTools::getSPIResults(uint16_t* adc_buf, uint8_t* imu_buf) {
+    // Block on register flags until hardware finishes shifting bits
+    while (_spi_imu_hw->cmd.usr);
+    while (_spi_adc_hw->cmd.usr);
+
+    // Stream raw memory out directly into processing loops
+    memcpy(adc_buf, _hw_adc_buffer, 32);
+    memcpy(imu_buf, _hw_imu_buffer, 12);
+}
+
+
+
+
 
 void VenturiTools::initTouchChannel(uint8_t pin) {
     if (pin < 2 || pin > 14) {
@@ -258,6 +395,45 @@ void VenturiTools::autoConnectWiFi(const char *jsonPath) {
 
         if (WiFi.status() == WL_CONNECTED) {
             connectionSuccessful = true;
+
+            IPAddress gateway = WiFi.gatewayIP();
+            IPAddress subnet = WiFi.subnetMask();
+            IPAddress dns = WiFi.dnsIP();
+            IPAddress local_IP = WiFi.localIP();
+
+            for (int i = 0; i < 4; i++) {
+                if (subnet[i] == 0) {
+                    local_IP[i] = 200;
+                }
+            }
+
+            WiFi.disconnect();
+
+            delay(500);
+
+            WiFi.config(local_IP, gateway, subnet, dns);
+            WiFi.begin(matches[i].ssid.c_str(), matches[i].password.c_str());
+
+            Serial.println("\n>>> Connecting to network with static IP-Adress: ");
+            Serial.printf(" IP: %s \n", local_IP.toString().c_str());
+            Serial.printf(" Netmask: %s \n", subnet.toString().c_str());
+
+            uint8_t staticAttempts = 0;
+            while (WiFi.status() != WL_CONNECTED && staticAttempts < 20) {
+                delay(500);
+                if (debugLevel > 1)
+                    Serial.print(".");
+                staticAttempts++;
+            }
+
+            if (WiFi.status() != WL_CONNECTED) {
+                Serial.println("\n>>> Static IP re-connection failed, reverting to DHCP...");
+                // Fallback: Clear config and connect without static IP
+                WiFi.config(INADDR_NONE, INADDR_NONE, INADDR_NONE);
+                WiFi.begin(matches[i].ssid.c_str(), matches[i].password.c_str());
+            }
+
+
             Serial.println("\n>>> Wi-Fi Connection Established Successfully!");
             Serial.printf("    SSID: %s\n", WiFi.SSID().c_str());
             Serial.printf("    IP Address: %s\n", WiFi.localIP().toString().c_str());
@@ -284,6 +460,8 @@ void VenturiTools::autoConnectWiFi(const char *jsonPath) {
             delay(100);
         }
     }
+
+    delay(500);
 
     if (!connectionSuccessful) {
         Serial.println(">>> ERROR: Failed to connect to any matched profiles. Check passwords or proximity.");
@@ -352,4 +530,59 @@ void VenturiTools::reloadSD() {
     if (debugLevel > 1) {
         Serial.println(">>> SD Card reloaded successfully.");
     }
+}
+
+
+void VenturiTools::enableOtaListening() {
+    // 1. Create the server
+    otaServer = new AsyncWebServer(80);
+
+    // 2. IMPORTANT: Force the server to use the system's internal event loop
+    // This prevents your motor loops from blocking the TCP stack.
+    otaServer->on("/", HTTP_GET, [](AsyncWebServerRequest *request) {
+        request->send(200, "text/plain", "Venturi Engine Online");
+    });
+
+    ElegantOTA.begin(otaServer);
+
+    // 3. Start it
+    otaServer->begin();
+    Serial.println(">>> AsyncWebServer is now LIVE.");
+}
+
+void VenturiTools::beginUDP() {
+    udpSender.begin(localPort);
+    Serial.printf(">>> UDP Listener active on port %d\n", localPort);
+    delay(200);
+}
+
+bool VenturiTools::streamUDP(TelemetryFrame frame) {
+    if (!peerKnown) return false;
+    if (udpSender.beginPacket(peerIP, peerPort) == 0) return false;
+    udpSender.write((uint8_t *) &frame, sizeof(frame));
+
+    // endPacket() returns 1 on success, 0 on failure
+    int result = udpSender.endPacket();
+
+    if (result == 0) {
+        // Log the failure or track it
+        return false;
+    }
+    return true;
+}
+
+void VenturiTools::updateBLEIP(String ip) {
+    if (pIPCharacteristic != nullptr) {
+        pIPCharacteristic->setValue(ip.c_str());
+        if (debugLevel > 1)
+            Serial.println(">>> BLE IP Characteristic updated to: " + ip);
+    }
+}
+
+float VenturiTools::getTemperature() {
+    float temperature = 0;
+    if (temperature_sensor_get_celsius(tempHandle, &temperature) == ESP_OK) {
+        return temperature;
+    }
+    return 0;
 }

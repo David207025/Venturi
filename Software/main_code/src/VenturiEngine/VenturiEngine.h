@@ -2,6 +2,8 @@
 #define VENTURI_ENGINE_H
 
 #include <Arduino.h>
+#include <driver/spi_master.h>
+
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 
@@ -12,6 +14,9 @@ struct __attribute__((packed)) TelemetryFrame {
     int16_t  gyro[3];        // 6 bytes
     int16_t  accel[3];       // 6 bytes
     uint16_t battery_mv;     // 2 bytes
+    int32_t  steering;       // Add this (4 bytes) - Ensure Rust struct matches!
+    float temperature_c;
+    uint16_t update_speed;
 };
 
 class VenturiEngine {
@@ -24,15 +29,21 @@ public:
     void start();
 
 protected:
-    TaskHandle_t _core0TaskHandle = NULL;
-    TaskHandle_t _core1TaskHandle = NULL;
-    TaskHandle_t _telemetryTaskHandle = NULL;
+    static VenturiEngine* _instance;
+
+    static TaskHandle_t _core0TaskHandle;
+    static TaskHandle_t _core1TaskHandle;
+
+
+
+    static void IRAM_ATTR timerCallback(); // The static ISR
+
+    static volatile bool frameReady;
 
     virtual void core0_loop() = 0;
 
     virtual void core1_loop() = 0;
 
-    virtual void telemetry_loop() = 0;
 
 private:
 
@@ -42,7 +53,6 @@ private:
 
     static void vCore1TaskWrapper(void *pvParameters);
 
-    static void vTelemetryTaskWrapper(void *pvParameters);
 };
 
 #endif
