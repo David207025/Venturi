@@ -9,15 +9,15 @@
 
 // THIS IS WHAT RUST EXPECTS:
 struct __attribute__((packed)) TelemetryFrame {
-    uint32_t timestamp;      // 4 bytes
-    uint8_t  adc_data[16];   // 16 bytes
-    int16_t  gyro[3];        // 6 bytes
-    int16_t  accel[3];       // 6 bytes
-    uint16_t battery_mv;     // 2 bytes
-    int32_t  steering;       // Add this (4 bytes) - Ensure Rust struct matches!
-    float temperature_c;
-    uint16_t update_speed;
-};
+    uint32_t timestamp;      // Offset 0  (4-byte aligned)
+    int32_t  steering;       // Offset 4  (4-byte aligned)
+    float    temperature_c;  // Offset 8  (4-byte aligned)
+    int16_t  gyro[3];        // Offset 12 (2-byte aligned) -> 6 bytes
+    int16_t  accel[3];       // Offset 18 (2-byte aligned) -> 6 bytes
+    uint16_t battery_mv;     // Offset 24 (2-byte aligned)
+    uint16_t update_speed;   // Offset 26 (2-byte aligned)
+    uint8_t  adc_data[16];   // Offset 28 (1-byte aligned) -> 16 bytes
+}; // Total: 44 Bytes. Zero hidden padding holes!
 
 class VenturiEngine {
 public:

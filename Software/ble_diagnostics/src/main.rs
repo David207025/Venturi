@@ -1,286 +1,314 @@
-use btleplug::api::{Central, Manager as _, Peripheral, ScanFilter};
+use btleplug::api::{Central, Manager as _, Peripheral, ScanFilter, WriteType};
 use btleplug::platform::Manager;
 use bytemuck::{Pod, Zeroable};
 use crossterm::{
-  event::{self, Event, KeyCode},
-  execute,
-  terminal::{disable_raw_mode, enable_raw_mode, EnterAlternateScreen, LeaveAlternateScreen},
+    event::{self, Event, KeyCode},
+    execute,
+    terminal::{EnterAlternateScreen, LeaveAlternateScreen, disable_raw_mode, enable_raw_mode},
 };
-use futures::stream::StreamExt;
+use ratatui::widgets::{Cell, Row, Table, Wrap};
 use ratatui::{
-  prelude::*,
-  widgets::{Block, Borders, Paragraph},
+    prelude::*,
+    widgets::{Block, Borders, Paragraph},
 };
-use std::io;
-use std::sync::{Arc, Mutex};
-use std::time::Duration;
+use std::sync::Arc;
+use std::time::{Duration, Instant};
+use tokio::net::UdpSocket;
+use tokio::sync::{Mutex, mpsc};
+use uuid::Uuid;
+
+const IP_CHAR_UUID: &str = "822c9530-9548-4375-8422-909247192312";
 
 #[derive(Copy, Clone, Debug, Pod, Zeroable)]
 #[repr(C, packed)]
 struct TelemetryFrame {
-  timestamp: u32,
-  adc_data: [u8; 16],
-  gyro: [i16; 3],
-  accel: [i16; 3],
-  battery_mv: u16,
-}
+  timestamp: u32,          // Offset 0
+  steering: i32,           // Offset 4
+  temperature: f32,        // Offset 8
+  gyro: [i16; 3],          // Offset 12
+  accel: [i16; 3],         // Offset 18
+  battery_mv: u16,         // Offset 24
+  update_speed: u16,       // Offset 26
+  adc_data: [u8; 16],      // Offset 28
+} // Total: 44 Bytes. Perfect 1:1 match!
 
 struct AppState {
-  frame: TelemetryFrame,
-  status_message: String,
-  packet_count: u64,
-  bytes_per_second: f64,
-  frequency_hz: f64,
+    frame: TelemetryFrame,
+    status_message: String,
+    target_ip: String,
+    packet_count: u64,
+    bytes_per_second: f64,
+    frequency_hz: f64,
+    raw_buffer: [u8; 44],
+}
+
+fn ui_layout(f: &mut ratatui::Frame, state: &AppState) {
+  let size = f.size();
+  let data = &state.frame;
+
+  let (timestamp, battery_mv, gyro, accel, adc_data, steering, temperature, update_rate) =
+    (data.timestamp, data.battery_mv, data.gyro, data.accel, data.adc_data, data.steering, data.temperature, data.update_speed);
+
+
+  let min_voltage = 6600.0;
+  let max_voltage = 8400.0;
+  let battery_pct = ((battery_mv as f64 - min_voltage) / (max_voltage - min_voltage) * 100.0).clamp(0.0, 100.0);
+
+  let bat_height = 7;
+  let bat_width = 30;
+
+  // Calculate how many characters wide the fill should be for EVERY row
+  let filled_width = (battery_pct / 100.0 * bat_width as f64).round() as usize;
+
+  let bat_body = (0..bat_height)
+    .map(|i| {
+      // Fill this specific row up to the filled_width
+      let fill = "█".repeat(filled_width);
+      let empty = " ".repeat(bat_width - filled_width);
+
+      // Determine the right-side cap (keep your existing cap logic)
+      let right_cap = if i == bat_height / 2 - 1 {
+        "└┐"
+      } else if i == bat_height / 2 + 1 {
+        "┌┘"
+      } else if (i < bat_height / 2 + 1 && i > bat_height / 2 - 1) {
+        " │"
+      } else {
+        "│ "
+      };
+
+      format!("│{}{}{}", fill, empty, right_cap)
+    })
+    .collect::<Vec<String>>()
+    .join("\n");
+
+  let battery_display = format!(
+    "┌{}┐\n{}\n└{}┘",
+    "─".repeat(bat_width),
+    bat_body,
+    "─".repeat(bat_width)
+  );
+  // --- Layout Definition ---
+  let main_chunks = Layout::default()
+    .direction(Direction::Vertical)
+    .constraints([
+      Constraint::Length(3),  // Status Bar
+      Constraint::Length(12), // Metrics & IMU Row
+      Constraint::Length(11), // Battery & Sensors Row
+      Constraint::Min(3),     // Hex Dump
+    ])
+    .split(size);
+
+  let top_row = Layout::default()
+    .direction(Direction::Horizontal)
+    .constraints([Constraint::Percentage(40), Constraint::Percentage(60)])
+    .split(main_chunks[1]);
+
+  let bottom_row = Layout::default()
+    .direction(Direction::Horizontal)
+    .constraints([Constraint::Percentage(50), Constraint::Percentage(50)])
+    .split(main_chunks[2]);
+
+  // --- Widget Construction ---
+
+  // 1. Status
+  let status_widget = Paragraph::new(format!(
+    " Status: {} | Target ESP: {} | Press 'r' to retry, 'q' to quit",
+    state.status_message, state.target_ip
+  ))
+    .style(Style::default().fg(Color::Yellow))
+    .block(Block::default().title(" Link Infrastructure Monitor ").borders(Borders::ALL).border_style(Style::default().fg(Color::Cyan)));
+
+  // 2. Metrics Table
+  let power_rows = [
+    Row::new(vec![Cell::from("Internal Timer"), Cell::from(format!("{} ms", timestamp))]),
+    Row::new(vec![Cell::from("Battery"), Cell::from(format!("{} mV ({:.0}%)", battery_mv, battery_pct))]),
+    Row::new(vec![Cell::from("Link Freq"), Cell::from(format!("{:.1} Hz", state.frequency_hz))]),
+    Row::new(vec![Cell::from("Data Rate"), Cell::from(format!("{:.2} KB/s", state.bytes_per_second / 1024.0))]),
+    Row::new(vec![Cell::from("Temperature"), Cell::from(format!("{:.2}°C", temperature))]),
+    Row::new(vec![Cell::from("Update Rate"), Cell::from(format!("{}us", update_rate))]),
+
+  ];
+  let power_table = Table::new(power_rows, [Constraint::Percentage(50), Constraint::Percentage(50)])
+    .header(Row::new(vec!["Metric", "Value"]).style(Style::default().fg(Color::Yellow).add_modifier(Modifier::BOLD)))
+    .block(Block::default().title(" Core Power & Speed ").borders(Borders::ALL).border_style(Style::default().fg(Color::Green)));
+
+  // 3. IMU Table
+  let imu_rows = [
+    Row::new(vec![Cell::from("X"), Cell::from(gyro[0].to_string()), Cell::from(accel[0].to_string())]),
+    Row::new(vec![Cell::from("Y"), Cell::from(gyro[1].to_string()), Cell::from(accel[1].to_string())]),
+    Row::new(vec![Cell::from("Z"), Cell::from(gyro[2].to_string()), Cell::from(accel[2].to_string())]),
+    Row::new(vec![Cell::from("STEER").fg(Color::Cyan), Cell::from(steering.to_string()).fg(Color::Cyan), Cell::from("-")]),
+  ];
+  let imu_table = Table::new(imu_rows, [Constraint::Percentage(20), Constraint::Percentage(40), Constraint::Percentage(40)])
+    .header(Row::new(["Axis", "Gyro", "Accel"].map(|h| Cell::from(h).fg(Color::Yellow).add_modifier(Modifier::BOLD))))
+    .block(Block::default().title(" Kinematics (6-DoF IMU) ").borders(Borders::ALL).border_style(Style::default().fg(Color::Magenta)));
+
+  // 4. Sensors
+  let mut spans = vec![Span::raw("  [")];
+  for val in adc_data {
+    let text = match val {
+      0..=63 => "    ", 64..=127 => "▒▒▒▒", 128..=191 => "▓▓▓▓", _ => "████"
+    };
+    spans.push(Span::styled(text, Style::default().fg(Color::Blue)));
+  }
+  spans.push(Span::raw("]"));
+  let sensor_widget = Paragraph::new(Line::from(spans)).alignment(Alignment::Center)
+    .block(Block::default().title(" 16-Channel Reflectance Array ").borders(Borders::ALL));
+
+  let battery_widget = Paragraph::new(battery_display).alignment(Alignment::Center)
+    .block(Block::default().title(" System Power ").borders(Borders::ALL));
+
+  let hex_layout = Layout::default()
+    .direction(Direction::Horizontal)
+    .constraints([
+      Constraint::Fill(1),
+      Constraint::Length(44 * 3), // Each byte is 2 chars + 1 space
+      Constraint::Fill(1),
+    ])
+    .split(main_chunks[3].inner(&Margin::new(1, 1))); // Margin to fit inside the Block
+
+  // 2. Build Table Data
+  let indices: Vec<String> = (0..44).map(|i| format!("{:02X}", i)).collect();
+  let hex_values: Vec<String> = state.raw_buffer.iter().map(|b| format!("{:02X}", b)).collect();
+
+  let hex_table = Table::new(
+    [
+      Row::new(indices),   // Top row: Indices
+      Row::new(hex_values), // Bottom row: Hex Data
+    ],
+    vec![Constraint::Length(2); 44] // 44 columns, each 2 chars wide
+  )
+    .block(
+      Block::default()
+        .title(" Raw Packet Hex Dump ")
+        .borders(Borders::ALL)
+        .border_style(Style::default().fg(Color::Gray))
+    );
+
+  f.render_widget(hex_table, hex_layout[1]);
+  // --- Rendering ---
+  f.render_widget(status_widget, main_chunks[0]);
+  f.render_widget(power_table, top_row[0]);
+  f.render_widget(imu_table, top_row[1]);
+  f.render_widget(sensor_widget, bottom_row[0]);
+  f.render_widget(battery_widget, bottom_row[1]);
+
+}
+
+async fn provision_ip_to_esp() -> Result<String, Box<dyn std::error::Error + Send + Sync>> {
+    let local_ip = local_ip_address::local_ip()?.to_string();
+    let manager = Manager::new().await?;
+    let adapters = manager.adapters().await?;
+    let central = adapters.into_iter().next().ok_or("No Bluetooth adapters")?;
+
+    central.start_scan(ScanFilter::default()).await?;
+    tokio::time::sleep(Duration::from_secs(2)).await;
+
+    for p in central.peripherals().await? {
+        if p.properties()
+            .await?
+            .and_then(|prop| prop.local_name)
+            .unwrap_or_default()
+            == "Venturi_P4"
+        {
+            p.connect().await?;
+            p.discover_services().await?;
+            if let Some(char) = p
+                .characteristics()
+                .into_iter()
+                .find(|c| c.uuid == Uuid::parse_str(IP_CHAR_UUID).unwrap())
+            {
+                // WRITE the local IP to the ESP32
+                p.write(&char, local_ip.as_bytes(), WriteType::WithResponse)
+                    .await?;
+                return Ok(local_ip);
+            }
+        }
+    }
+    Err("ESP32 not found".into())
+}
+
+async fn run_udp_receiver(state_store: Arc<Mutex<AppState>>, mut reset_rx: mpsc::Receiver<()>) {
+    loop {
+        // Provision the IP and get back what we sent
+        let my_ip = match provision_ip_to_esp().await {
+            Ok(ip) => ip,
+            Err(_) => {
+                tokio::time::sleep(Duration::from_secs(2)).await;
+                continue;
+            }
+        };
+
+        {
+            let mut state = state_store.lock().await;
+            state.target_ip = my_ip;
+            state.status_message = "Provisioning complete. Waiting for UDP...".into();
+        }
+
+        let socket = UdpSocket::bind("0.0.0.0:5005").await.unwrap();
+        let mut buf = [0u8; std::mem::size_of::<TelemetryFrame>()];
+        let mut last_update = Instant::now();
+        let mut stats = (0, 0);
+
+        loop {
+            tokio::select! {
+                _ = reset_rx.recv() => break,
+                Ok((len, _addr)) = socket.recv_from(&mut buf) => {
+                    if len == buf.len() {
+                    let frame = *bytemuck::from_bytes::<TelemetryFrame>(&buf);
+                    let mut state = state_store.lock().await;
+                    state.frame = frame;
+                    state.raw_buffer = buf; // Update the raw buffer
+
+                        stats.0 += len; stats.1 += 1;
+                        if last_update.elapsed().as_secs_f64() >= 0.5 {
+                            state.frequency_hz = stats.1 as f64 / last_update.elapsed().as_secs_f64();
+                            state.bytes_per_second = stats.0 as f64 / last_update.elapsed().as_secs_f64();
+                            stats = (0, 0); last_update = Instant::now();
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-  enable_raw_mode()?;
-  let mut stdout = io::stdout();
-  execute!(stdout, EnterAlternateScreen)?;
-  let backend = CrosstermBackend::new(stdout);
-  let mut terminal = Terminal::new(backend)?;
+    enable_raw_mode()?;
+    let mut stdout = std::io::stdout();
+    execute!(stdout, EnterAlternateScreen)?;
+    let mut terminal = Terminal::new(CrosstermBackend::new(stdout))?;
+    let state = Arc::new(Mutex::new(AppState {
+        frame: unsafe { std::mem::zeroed() },
+        status_message: "BLE Discovering...".into(),
+        target_ip: "Unknown".into(),
+        packet_count: 0,
+        bytes_per_second: 0.0,
+        frequency_hz: 0.0,
+        raw_buffer: [0; 44],
+    }));
 
-  let shared_state = Arc::new(Mutex::new(AppState {
-    frame: TelemetryFrame {
-      timestamp: 0,
-      adc_data: [0; 16],
-      gyro: [0; 3],
-      accel: [0; 3],
-      battery_mv: 0,
-    },
-    status_message: String::from("Initializing Bluetooth local adapter..."),
-    packet_count: 0,
-    bytes_per_second: 0.0,
-    frequency_hz: 0.0,
-  }));
+    let (tx, rx) = mpsc::channel(1);
+    tokio::spawn(run_udp_receiver(state.clone(), rx));
 
-  let ble_state_handle = shared_state.clone();
-  tokio::spawn(async move {
-    if let Err(e) = run_ble_receiver(ble_state_handle.clone()).await {
-      let mut lock = ble_state_handle.lock().unwrap();
-      lock.status_message = format!("CRITICAL ERROR: {:?}", e);
-    }
-  });
-
-  loop {
-    terminal.draw(|f| {
-      let state = shared_state.lock().unwrap();
-      // FIX 1: Pass the full state reference here instead of just the inner frame
-      ui_layout(f, &state);
-    })?;
-
-    if event::poll(Duration::from_millis(16))? {
-      if let Event::Key(key) = event::read()? {
-        if key.code == KeyCode::Char('q') {
-          break;
+    loop {
+        let current_state = state.lock().await;
+        terminal.draw(|f| ui_layout(f, &current_state))?;
+        drop(current_state);
+        if event::poll(Duration::from_millis(16))? {
+            if let Event::Key(k) = event::read()? {
+                if k.code == KeyCode::Char('q') {
+                    break;
+                }
+                if k.code == KeyCode::Char('r') {
+                    let _ = tx.try_send(());
+                }
+            }
         }
-      }
     }
-  }
-
-  disable_raw_mode()?;
-  execute!(terminal.backend_mut(), LeaveAlternateScreen)?;
-  Ok(())
-}
-
-async fn run_ble_receiver(state_store: Arc<Mutex<AppState>>) -> Result<(), Box<dyn std::error::Error>> {
-  let manager = Manager::new().await?;
-  let adapters = manager.adapters().await?;
-  let central = adapters.into_iter().next().ok_or("No Bluetooth adapters found")?;
-
-  {
-    let mut lock = state_store.lock().unwrap();
-    lock.status_message = String::from("Scanning for Venturi_P4 broadcast beacons...");
-  }
-
-  central.start_scan(ScanFilter::default()).await?;
-  tokio::time::sleep(Duration::from_secs(2)).await;
-
-  let peripherals = central.peripherals().await?;
-  let mut target_peripheral = None;
-
-  for peripheral in peripherals {
-    if let Ok(Some(properties)) = peripheral.properties().await {
-      if let Some(name) = properties.local_name {
-        if name.contains("Venturi_P4") {
-          target_peripheral = Some(peripheral);
-          break;
-        }
-      }
-    }
-  }
-
-  let target_peripheral = target_peripheral.ok_or("Venturi module not found nearby")?;
-
-  {
-    let mut lock = state_store.lock().unwrap();
-    lock.status_message = String::from("Target identified. Opening BLE handshake Link...");
-  }
-
-  target_peripheral.connect().await?;
-
-  {
-    let mut lock = state_store.lock().unwrap();
-    lock.status_message = String::from("Connected. Querying internal GATT service table...");
-  }
-
-  target_peripheral.discover_services().await?;
-
-  {
-    let mut lock = state_store.lock().unwrap();
-    lock.status_message = String::from("GATT resolved. Mapping notification descriptors...");
-  }
-
-  let characteristics = target_peripheral.characteristics();
-  let telemetry_char = characteristics
-    .iter()
-    .find(|c| c.properties.contains(btleplug::api::CharPropFlags::NOTIFY))
-    .ok_or("No notify-capable telemetry characteristic found on peripheral")?;
-
-  target_peripheral.subscribe(telemetry_char).await?;
-
-  let mut notification_stream = target_peripheral.notifications().await?;
-
-  let mut last_update = std::time::Instant::now();
-  let mut total_bytes_received = 0;
-  let mut local_packet_counter = 0;
-
-  while let Some(notification) = notification_stream.next().await {
-    let incoming_bytes = &notification.value;
-    let rx_len = incoming_bytes.len();
-
-    local_packet_counter += 1;
-    total_bytes_received += rx_len;
-
-    let now = std::time::Instant::now();
-    let elapsed = now.duration_since(last_update).as_secs_f64();
-
-    let mut current_hz = 0.0;
-    let mut current_bps = 0.0;
-
-    if elapsed >= 0.5 {
-      current_hz = local_packet_counter as f64 / elapsed;
-      current_bps = total_bytes_received as f64 / elapsed;
-
-      local_packet_counter = 0;
-      total_bytes_received = 0;
-      last_update = now;
-    }
-
-    let mut aligned_buffer = [0u8; std::mem::size_of::<TelemetryFrame>()];
-    let bytes_to_copy = rx_len.min(aligned_buffer.len());
-    aligned_buffer[..bytes_to_copy].copy_from_slice(&incoming_bytes[..bytes_to_copy]);
-
-    if let Ok(unpacked) = bytemuck::try_from_bytes::<TelemetryFrame>(&aligned_buffer) {
-      let mut lock = state_store.lock().unwrap();
-      lock.frame = *unpacked;
-
-      if elapsed >= 0.5 {
-        lock.frequency_hz = current_hz;
-        lock.bytes_per_second = current_bps;
-      }
-      lock.packet_count += 1;
-
-      lock.status_message = format!(
-        "Streaming Payloads Active! [OK] | Frame Count: #{}",
-        lock.packet_count
-      );
-    }
-  }
-  Ok(())
-}
-
-// FIX 2: Altered function header signature to consume AppState reference directly
-fn ui_layout(f: &mut Frame, state: &AppState) {
-  let size = f.size();
-  let data = &state.frame;
-  let status_msg = &state.status_message;
-
-  let timestamp = data.timestamp;
-  let battery_mv = data.battery_mv;
-  let gyro = data.gyro;
-  let accel = data.accel;
-  let adc_data = data.adc_data;
-
-  // Master Vertical Layout Split
-  let main_chunks = Layout::default()
-    .direction(Direction::Vertical)
-    .constraints([
-      Constraint::Length(3),
-      Constraint::Length(6), // Raised to 6 to safely display all 4 network metrics rows
-      Constraint::Min(6),
-    ])
-    .split(size);
-
-  let metric_chunks = Layout::default()
-    .direction(Direction::Horizontal)
-    .constraints([
-      Constraint::Min(34), // Adjusted to preserve alignment boundary bounds
-      Constraint::Min(50),
-    ])
-    .split(main_chunks[1]);
-
-  // --- WIDGET 1: System Link Monitor Status Bar ---
-  let status_style = if status_msg.contains("CRITICAL") || status_msg.contains("Error") {
-    Style::default().fg(Color::Red).add_modifier(Modifier::BOLD)
-  } else if status_msg.contains("[OK]") {
-    Style::default().fg(Color::Green)
-  } else {
-    Style::default().fg(Color::Yellow)
-  };
-
-  let status_widget = Paragraph::new(format!("  {}", status_msg))
-    .block(Block::default().title(" Link Infrastructure Monitor ").borders(Borders::ALL))
-    .style(status_style);
-  f.render_widget(status_widget, main_chunks[0]);
-
-  // --- WIDGET 2: Power & Internal Engine Timers ---
-  let voltage_color = if battery_mv < 3400 && battery_mv > 0 { Color::Red } else { Color::Magenta };
-
-  // FIX 3: Replaced broken "state" references with valid local scoped fields
-  let power_text = format!(
-    "  Internal Timer : {} ms\n\
-       Bus Voltage    : {} mV\n\
-       Link Frequency : {:.1} Hz\n\
-       Data Data Rate : {:.2} KB/s",
-    timestamp,
-    battery_mv,
-    state.frequency_hz,
-    state.bytes_per_second / 1024.0
-  );
-
-  let power_widget = Paragraph::new(power_text)
-    .block(Block::default().title(" Core Power & Speed ").borders(Borders::ALL).border_style(Style::default().fg(Color::Cyan)))
-    .style(Style::default().fg(voltage_color));
-  f.render_widget(power_widget, metric_chunks[0]);
-
-  // --- WIDGET 3: Kinematics Inertial Measurement Unit (IMU) ---
-  let imu_text = format!(
-    "  Gyroscope Data  => X: {:5} | Y: {:5} | Z: {:5}\n  Accelerometer   => X: {:5} | Y: {:5} | Z: {:5}",
-    gyro[0], gyro[1], gyro[2], accel[0], accel[1], accel[2]
-  );
-  let imu_widget = Paragraph::new(imu_text)
-    .block(Block::default().title(" Kinematics (6-DoF IMU) ").borders(Borders::ALL).border_style(Style::default().fg(Color::Cyan)));
-  f.render_widget(imu_widget, metric_chunks[1]);
-
-  // --- WIDGET 4: High-Density 16-Channel Continuous Bar (2 Rows Thick) ---
-  let get_block_char = |val: u8| match val {
-    0..=63    => "    ",
-    64..=127  => "░░░░",
-    128..=191 => "▒▒▒▒",
-    _         => "████",
-  };
-
-  let mut single_line = String::from("  [");
-  for i in 0..16 {
-    single_line.push_str(get_block_char(adc_data[i]));
-  }
-  single_line.push(']');
-
-  let dual_row_display = format!("\n{}\n{}", single_line, single_line);
-
-  let sensor_widget = Paragraph::new(dual_row_display)
-    .block(Block::default().title(" 16-Channel Reflectance Array Alignment Map ").borders(Borders::ALL).border_style(Style::default().fg(Color::Yellow)));
-  f.render_widget(sensor_widget, main_chunks[2]);
+    disable_raw_mode()?;
+    execute!(terminal.backend_mut(), LeaveAlternateScreen)?;
+    Ok(())
 }

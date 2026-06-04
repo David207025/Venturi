@@ -32,7 +32,6 @@ protected:
     // ====================================================================
     void core0_loop() override {
         _core0TaskHandle = xTaskGetCurrentTaskHandle();
-        // Keep the Core 0 Watchdog ACTIVE! The background network loops will feed it.
         esp_task_wdt_add(_core0TaskHandle);
 
         while (true) {
@@ -40,20 +39,23 @@ protected:
 
             if (WiFi.status() == WL_CONNECTED) {
                 TelemetryFrame frameSnapshot;
-                // Safely copy out the telemetry data calculated on Core 1
+
+                // Disable interrupts briefly to capture a clean memory snapshot
+                portMUX_TYPE myMutex = portMUX_INITIALIZER_UNLOCKED;
+                portENTER_CRITICAL(&myMutex);
                 memcpy(&frameSnapshot, (void *) VenturiTools::buffer, sizeof(TelemetryFrame));
+                portEXIT_CRITICAL(&myMutex);
+
+                // Fetch temperature directly into the frame copy
                 frameSnapshot.temperature_c = tools->getTemperature();
 
-                // Core 0 handles the heavy network processing load
                 tools->streamUDP(frameSnapshot);
             }
-
-            // Yield cleanly to let IDLE0 and internal Wi-Fi tasks process
             vTaskDelay(pdMS_TO_TICKS(5));
         }
     }
 
-    // ====================================================================
+// ====================================================================
     // CORE 1 LOOP: Your Ultra-Fast Control & Math Engine
     // ====================================================================
     void core1_loop() override {
@@ -74,14 +76,17 @@ protected:
         // Initialize and lock the SPI hardware channels on Core 1's memory space
         tools->initFastHardwarePipeline();
 
-        // --- Hardware Timer Initialization (Targeting 30us on Core 1) ---
+        // --- Hardware Timer Initialization (Targeting 20us on Core 1) ---
         hw_timer_t *timer = timerBegin(1000000);
         timerAttachInterrupt(timer, &onTimerTick);
-        timerAlarm(timer, 20, true, 0); // Fires exactly every 30 microseconds
+        timerAlarm(timer, 20, true, 0); // Fires exactly every 20 microseconds
 
         uint32_t delta_math_us = 0;
         uint32_t delta_execution_us = 0;
         bool pipeline_primed = false;
+
+        // Variables used for the 1-second rate-limited Serial print
+        uint64_t last_print_time = esp_timer_get_time();
 
         while (true) {
             // Unblock as soon as the timer interrupt fires
@@ -97,13 +102,9 @@ protected:
             uint64_t math_start = esp_timer_get_time();
 
             if (pipeline_primed) {
-                memcpy((void *) &VenturiTools::buffer->accel[0], proc_imu, 12);
-                VenturiTools::buffer->accel[0] = __builtin_bswap16(VenturiTools::buffer->accel[0]);
-                VenturiTools::buffer->accel[1] = __builtin_bswap16(VenturiTools::buffer->accel[1]);
-                VenturiTools::buffer->accel[2] = __builtin_bswap16(VenturiTools::buffer->accel[2]);
-                VenturiTools::buffer->gyro[0]  = __builtin_bswap16(VenturiTools::buffer->gyro[0]);
-                VenturiTools::buffer->gyro[1]  = __builtin_bswap16(VenturiTools::buffer->gyro[1]);
-                VenturiTools::buffer->gyro[2]  = __builtin_bswap16(VenturiTools::buffer->gyro[2]);
+                // Explicitly copy into separate positions to prevent overflowing memory blocks
+                memcpy((void *) &VenturiTools::buffer->gyro[0], proc_imu, 6);
+                memcpy((void *) &VenturiTools::buffer->accel[0], proc_imu + 6, 6);
 
                 int32_t acc = 0;
                 for (int i = 0; i < 16; i++) {
@@ -111,12 +112,13 @@ protected:
                     VenturiTools::buffer->adc_data[i] = compressed_val;
                     acc += (int32_t) compressed_val * weights[i];
                 }
-                steering = acc;
+
+                // Fixed: Explicitly write local calculation 'acc' to the telemetry frame buffer
+                VenturiTools::buffer->steering = acc;
 
                 esp_rom_delay_us(2);
 
                 VenturiTools::buffer->timestamp = (uint32_t) (loop_start / 1000);
-                VenturiTools::buffer->steering = steering;
             }
 
             delta_math_us = (uint32_t) (esp_timer_get_time() - math_start);
@@ -125,13 +127,12 @@ protected:
             tools->getSPIResults(proc_adc, proc_imu);
             pipeline_primed = true;
 
-            memset(proc_adc, 0xFF, sizeof(proc_adc));
-            memset(proc_imu, 0xFF, sizeof(proc_imu));
-
             delta_execution_us = (uint32_t) (esp_timer_get_time() - loop_start);
             gpio_set_level(GPIO_NUM_29, 0);
 
-            VenturiTools::buffer->update_speed = delta_execution_us;
+            // Ship out the exact microsecond value to the buffer array
+            VenturiTools::buffer->update_speed = (uint16_t) delta_execution_us;
+
         }
     }
 };

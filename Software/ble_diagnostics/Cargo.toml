@@ -3,10 +3,22 @@ name = "ble_diagnostics"
 version = "0.1.0"
 edition = "2024"
 
+[[bin]]
+name = "venturi" # This is the command you will type in your terminal
+path = "src/main.rs"
+
 [dependencies]
-btleplug = "0.11"
-tokio = { version = "1", features = ["full"] }
+uuid = "1.0"
+bytemuck = { version = "1.14", features = ["derive"] }
+tokio = { version = "1.0", features = ["full"] }
+reqwest = { version = "0.11", features = ["multipart"] }
+anyhow = "1.0"
+futures = "0.3" # Used for processing the incoming notification stream cleanl
 ratatui = "0.26"
 crossterm = "0.27"
-bytemuck = { version = "1.14", features = ["derive"] }
-futures = "0.3"
+btleplug = "0.12.0"
+mdns-sd = "0.12"
+local-ip-address = "0.6.13"
+ipnet = "2.9"
+socket2 = "0.5"
+pnet = "0.35"

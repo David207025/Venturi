@@ -689,13 +689,13 @@
         "uuid": "179da9ab-1703-43d9-a037-538492c203c2"
       }
     ],
-    "used_designators": "U1-16,R1-28,J1,H1-4,Q1-2,#PWR1-53,C1-6,D1-2,IC1",
+    "used_designators": "",
     "variants": []
   },
   "sheets": [
     [
       "179da9ab-1703-43d9-a037-538492c203c2",
-      "LineFollower_SensorPCB"
+      "Venturi_SensorPCB"
     ]
   ],
   "text_variables": {},

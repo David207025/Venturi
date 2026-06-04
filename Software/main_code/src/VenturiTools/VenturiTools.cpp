@@ -147,100 +147,146 @@ void VenturiTools::initSD() {
 }
 
 void VenturiTools::initSPI() {
-    // 1. Initialize SPI2 (ADC)
-    // Clear the struct explicitly to ensure any unassigned fields default safely to zero
     spi_bus_config_t adcbuscfg = {};
     adcbuscfg.mosi_io_num = PIN_ADC_MOSI;
     adcbuscfg.miso_io_num = PIN_ADC_MISO;
     adcbuscfg.sclk_io_num = PIN_ADC_CLK;
-    adcbuscfg.quadwp_io_num = GPIO_NUM_NC; // Use official Not Connected macro
-    adcbuscfg.quadhd_io_num = GPIO_NUM_NC; // Use official Not Connected macro
-    adcbuscfg.max_transfer_sz = 0;        // Match your actual transaction length explicitly
+    adcbuscfg.quadwp_io_num = GPIO_NUM_NC;
+    adcbuscfg.quadhd_io_num = GPIO_NUM_NC;
+    adcbuscfg.max_transfer_sz = 4096; // Allow a buffer size matching your transactions
     adcbuscfg.flags = SPICOMMON_BUSFLAG_MASTER;
 
-    // Use SPI_DMA_DISABLED to keep processing localized to the CPU registers
-    ESP_ERROR_CHECK(spi_bus_initialize(SPI2_HOST, &adcbuscfg, SPI_DMA_DISABLED));
+    // Change from SPI_DMA_DISABLED to AUTO to allow hardware background transfers
+    ESP_ERROR_CHECK(spi_bus_initialize(SPI2_HOST, &adcbuscfg, SPI_DMA_CH_AUTO));
 
-    // Lock down the native internal pull-up directly on the physical pin pad
-    gpio_pullup_en((gpio_num_t)PIN_ADC_MISO);
+    gpio_pulldown_en((gpio_num_t)PIN_ADC_MISO);
 
     spi_device_interface_config_t adc_devcfg = {};
     adc_devcfg.mode = 0;
     adc_devcfg.clock_speed_hz = 20000000;
     adc_devcfg.spics_io_num = PIN_ADC_CS;
-    adc_devcfg.queue_size = 3;
+    adc_devcfg.queue_size = 5; // Increase queue depth for pipelining
 
     ESP_ERROR_CHECK(spi_bus_add_device(SPI2_HOST, &adc_devcfg, &spi_adc));
 
-    // 2. Initialize SPI3 (IMU)
+    // --- Do the exact same change for SPI3 (IMU) below ---
     spi_bus_config_t imubuscfg = {};
     imubuscfg.mosi_io_num = PIN_IMU_MOSI;
     imubuscfg.miso_io_num = PIN_IMU_MISO;
     imubuscfg.sclk_io_num = PIN_IMU_CLK;
-    imubuscfg.quadwp_io_num = GPIO_NUM_NC; // Use official Not Connected macro
-    imubuscfg.quadhd_io_num = GPIO_NUM_NC; // Use official Not Connected macro
-    imubuscfg.max_transfer_sz = 0;        // Match your actual transaction length explicitly
+    imubuscfg.quadwp_io_num = GPIO_NUM_NC;
+    imubuscfg.quadhd_io_num = GPIO_NUM_NC;
+    imubuscfg.max_transfer_sz = 4096;
     imubuscfg.flags = SPICOMMON_BUSFLAG_MASTER;
 
-    ESP_ERROR_CHECK(spi_bus_initialize(SPI3_HOST, &imubuscfg, SPI_DMA_DISABLED));
+    ESP_ERROR_CHECK(spi_bus_initialize(SPI3_HOST, &imubuscfg, SPI_DMA_CH_AUTO));
 
-    // Lock down the native internal pull-up here too
-    gpio_pullup_en((gpio_num_t)PIN_IMU_MISO);
+    gpio_pulldown_en((gpio_num_t)PIN_IMU_MISO);
 
     spi_device_interface_config_t imu_devcfg = {};
     imu_devcfg.mode = 0;
     imu_devcfg.clock_speed_hz = 20000000;
     imu_devcfg.spics_io_num = PIN_IMU_CS;
-    imu_devcfg.queue_size = 3;
+    imu_devcfg.queue_size = 5;
 
     ESP_ERROR_CHECK(spi_bus_add_device(SPI3_HOST, &imu_devcfg, &spi_imu));
 }
 
 
 void VenturiTools::initFastHardwarePipeline() {
-    // 1. Safe Allocation of Persistent DMA Targets
-    _hw_imu_buffer = (uint8_t *) heap_caps_malloc(12, MALLOC_CAP_DMA);
-    _hw_adc_buffer = (uint16_t *) heap_caps_malloc(32, MALLOC_CAP_DMA);
-    memset(_hw_imu_buffer, 0, 12);
-    memset(_hw_adc_buffer, 0, 32);
-
-    // 2. Setup Persistent Transaction Descriptors
-    memset(&_imu_trans, 0, sizeof(spi_transaction_t));
-    _imu_trans.length = 96; // 12 Bytes
-    _imu_trans.rx_buffer = _hw_imu_buffer;
-
-    memset(&_adc_trans, 0, sizeof(spi_transaction_t));
-    _adc_trans.length = 256; // 32 Bytes
-    _adc_trans.rx_buffer = (uint8_t *) _hw_adc_buffer;
-
-    // 3. Map Register Space Hardware Blocks
     _spi_adc_hw = &GPSPI2;
     _spi_imu_hw = &GPSPI3;
 
-    // 4. Lock Drivers into State Machine Context Outside Main Processing Window
-    ESP_ERROR_CHECK(spi_device_polling_start(this->spi_imu, &_imu_trans, portMAX_DELAY));
-    ESP_ERROR_CHECK(spi_device_polling_start(this->spi_adc, &_adc_trans, portMAX_DELAY));
+    // 1. Core full-duplex configuration
+    _spi_imu_hw->user.usr_miso = 1;
+    _spi_imu_hw->user.usr_mosi = 1;
+    _spi_adc_hw->user.usr_miso = 1;
+    _spi_adc_hw->user.usr_mosi = 1;
+
+    // 2. Clear out driver lingering timing configurations
+    _spi_imu_hw->ctrl.val = 0;
+    _spi_adc_hw->ctrl.val = 0;
+
+    // ====================================================================
+    // SINGLE-FRAME INITIALIZATION FOR ADS7961 (AUTO-2 MODE)
+    // ====================================================================
+
+    // Temporarily set ADC transaction bit length to 16 bits (0-indexed)
+    _spi_adc_hw->ms_dlen.ms_data_bitlen = 16 - 1;
+
+    // Send Auto-2 Command (0x93C0) to set max channel index to 15
+    _spi_adc_hw->data_buf[0].val = ((uint32_t)0x93C0 << 16);
+    _spi_adc_hw->cmd.update = 1;
+    _spi_adc_hw->cmd.usr = 1;
+    while (_spi_adc_hw->cmd.usr); // Wait for the configuration byte to clear
+
+    // ====================================================================
+    // SWITCH TO HIGH-SPEED RUNTIME PROFILES
+    // ====================================================================
+
+    // Reconfigure the hardware blocks to handle continuous loop reads
+    _spi_imu_hw->ms_dlen.ms_data_bitlen = 104 - 1; // 13 Bytes for unified IMU burst
+    _spi_adc_hw->ms_dlen.ms_data_bitlen = 256 - 1; // 32 Bytes for 16 sequential ADC reads
+
+    // Commit changes to hardware parameters
+    _spi_imu_hw->cmd.update = 1;
+    _spi_adc_hw->cmd.update = 1;
 }
 
 void IRAM_ATTR VenturiTools::startSPIReads() {
-    // Relaunch both internal hardware master state engines instantaneously
+    // 1. Manually toggle the update configuration bit.
+    // This forces the hardware to apply your bit-length parameters.
+    _spi_imu_hw->cmd.update = 1;
+    _spi_adc_hw->cmd.update = 1;
+
+    // 2. Flash the user execution bit. The physical clock pins start pulsing immediately.
     _spi_imu_hw->cmd.usr = 1;
     _spi_adc_hw->cmd.usr = 1;
 }
 
 void IRAM_ATTR VenturiTools::getSPIResults(uint16_t* adc_buf, uint8_t* imu_buf) {
-    // Block on register flags until hardware finishes shifting bits
     while (_spi_imu_hw->cmd.usr);
     while (_spi_adc_hw->cmd.usr);
 
-    // Stream raw memory out directly into processing loops
-    memcpy(adc_buf, _hw_adc_buffer, 32);
-    memcpy(imu_buf, _hw_imu_buffer, 12);
+    // 1. Parse IMU into raw bytes directly
+    uint32_t imu0 = _spi_imu_hw->data_buf[0].val;
+    uint32_t imu1 = _spi_imu_hw->data_buf[1].val;
+    uint32_t imu2 = _spi_imu_hw->data_buf[2].val;
+    uint32_t imu3 = _spi_imu_hw->data_buf[3].val;
+
+    // --- Unpack Gyro (Bytes 1-6 of real data) ---
+    // imu0 bits [31:24] is Byte 1 (Garbage echo). Skip it!
+    imu_buf[0] = (imu0 >> 16) & 0xFF; // Byte 2  -> Gyro X High
+    imu_buf[1] = (imu0 >> 8)  & 0xFF; // Byte 3  -> Gyro X Low
+    imu_buf[2] = imu0 & 0xFF;         // Byte 4  -> Gyro Y High
+
+    imu_buf[3] = (imu1 >> 24) & 0xFF; // Byte 5  -> Gyro Y Low
+    imu_buf[4] = (imu1 >> 16) & 0xFF; // Byte 6  -> Gyro Z High
+    imu_buf[5] = (imu1 >> 8)  & 0xFF; // Byte 7  -> Gyro Z Low
+
+    // --- Unpack Accel (Bytes 7-12 of real data) ---
+    imu_buf[6] = imu1 & 0xFF;         // Byte 8  -> Accel X High
+
+    imu_buf[7] = (imu2 >> 24) & 0xFF; // Byte 9  -> Accel X Low
+    imu_buf[8] = (imu2 >> 16) & 0xFF; // Byte 10 -> Accel Y High
+    imu_buf[9] = (imu2 >> 8)  & 0xFF; // Byte 11 -> Accel Y Low
+    imu_buf[10] = imu2 & 0xFF;        // Byte 12 -> Accel Z High
+
+    imu_buf[11] = (imu3 >> 24) & 0xFF; // Byte 13 -> Accel Z Low
+
+    // 2. Parse ADC and fix Endianness/Alignment on the fly
+    // Instead of a blind cast, unpack each 32-bit register into two 16-bit channels
+    for (int i = 0; i < 8; i++) {
+        uint32_t raw_reg = _spi_adc_hw->data_buf[i].val;
+
+        // Extract high 16 bits and low 16 bits, swapping bytes to fix Little-Endian CPU conversion
+        uint16_t word_high = (uint16_t)(raw_reg >> 16);
+        uint16_t word_low  = (uint16_t)(raw_reg & 0xFFFF);
+
+        adc_buf[i * 2]     = __builtin_bswap16(word_high);
+        adc_buf[(i * 2) + 1] = __builtin_bswap16(word_low);
+    }
 }
-
-
-
-
 
 void VenturiTools::initTouchChannel(uint8_t pin) {
     if (pin < 2 || pin > 14) {
@@ -580,9 +626,9 @@ void VenturiTools::updateBLEIP(String ip) {
 }
 
 float VenturiTools::getTemperature() {
-    float temperature = 0;
+    float temperature = -1.0f; // Force distinct float assignment
     if (temperature_sensor_get_celsius(tempHandle, &temperature) == ESP_OK) {
         return temperature;
     }
-    return 0;
+    return -1.0f; // Return an obvious error state if the driver trips
 }

@@ -3942,6 +3942,16 @@
 	)
 	(wire
 		(pts
+			(xy 184.785 48.26) (xy 190.5 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1b470a87-a05c-4267-a942-52656e40a180")
+	)
+	(wire
+		(pts
 			(xy 39.37 173.99) (xy 44.45 173.99)
 		)
 		(stroke
@@ -4892,7 +4902,7 @@
 	)
 	(wire
 		(pts
-			(xy 162.56 48.26) (xy 166.37 48.26)
+			(xy 162.56 48.26) (xy 177.165 48.26)
 		)
 		(stroke
 			(width 0)
@@ -6946,7 +6956,7 @@
 	)
 	(global_label "MISO"
 		(shape input)
-		(at 166.37 48.26 0)
+		(at 190.5 48.26 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6956,7 +6966,7 @@
 		)
 		(uuid "67ec97da-eaaf-4ac5-95de-0e7a8fc56518")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 173.9514 48.26 0)
+			(at 198.0814 48.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8088,7 +8098,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "12406868-ada8-4fa1-b4be-80f1de61b7e5")
-		(property "Reference" "R19"
+		(property "Reference" "R20"
 			(at 226.06 157.48 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8152,7 +8162,7 @@
 		(instances
 			(project "Venturi_SensorPCB"
 				(path "/179da9ab-1703-43d9-a037-538492c203c2"
-					(reference "R19")
+					(reference "R20")
 					(unit 1)
 				)
 			)
@@ -8170,7 +8180,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "13cc7fe0-633f-49c5-9ed2-6c1bb1b6f223")
-		(property "Reference" "R26"
+		(property "Reference" "R27"
 			(at 288.29 157.4799 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8234,7 +8244,7 @@
 		(instances
 			(project "Venturi_SensorPCB"
 				(path "/179da9ab-1703-43d9-a037-538492c203c2"
-					(reference "R26")
+					(reference "R27")
 					(unit 1)
 				)
 			)
@@ -8415,7 +8425,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "185dc5c1-5e38-4a9d-993a-30484bd814f1")
-		(property "Reference" "R20"
+		(property "Reference" "R21"
 			(at 226.06 182.88 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8479,7 +8489,7 @@
 		(instances
 			(project "Venturi_SensorPCB"
 				(path "/179da9ab-1703-43d9-a037-538492c203c2"
-					(reference "R20")
+					(reference "R21")
 					(unit 1)
 				)
 			)
@@ -8738,7 +8748,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "2e0a4bf1-9bf5-4be3-bdce-32fe87cbe846")
-		(property "Reference" "R27"
+		(property "Reference" "R28"
 			(at 302.26 157.48 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8802,7 +8812,7 @@
 		(instances
 			(project "Venturi_SensorPCB"
 				(path "/179da9ab-1703-43d9-a037-538492c203c2"
-					(reference "R27")
+					(reference "R28")
 					(unit 1)
 				)
 			)
@@ -10095,7 +10105,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "4b37ae95-ce75-4889-8cad-40f0c6fa4464")
-		(property "Reference" "R24"
+		(property "Reference" "R25"
 			(at 264.16 157.48 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10159,7 +10169,7 @@
 		(instances
 			(project "Venturi_SensorPCB"
 				(path "/179da9ab-1703-43d9-a037-538492c203c2"
-					(reference "R24")
+					(reference "R25")
 					(unit 1)
 				)
 			)
@@ -10412,7 +10422,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "50e825fa-0d06-4105-bc03-3088da8ff015")
-		(property "Reference" "R21"
+		(property "Reference" "R22"
 			(at 241.935 62.23 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10476,7 +10486,7 @@
 		(instances
 			(project "Venturi_SensorPCB"
 				(path "/179da9ab-1703-43d9-a037-538492c203c2"
-					(reference "R21")
+					(reference "R22")
 					(unit 1)
 				)
 			)
@@ -11291,7 +11301,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "6586c031-86b9-4d0a-a8ce-e6a55d44671e")
-		(property "Reference" "R14"
+		(property "Reference" "R15"
 			(at 187.96 157.48 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11355,7 +11365,7 @@
 		(instances
 			(project "Venturi_SensorPCB"
 				(path "/179da9ab-1703-43d9-a037-538492c203c2"
-					(reference "R14")
+					(reference "R15")
 					(unit 1)
 				)
 			)
@@ -11373,7 +11383,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "66f87425-dc9d-4e9b-88c3-07ff66801c51")
-		(property "Reference" "R23"
+		(property "Reference" "R24"
 			(at 262.89 43.1799 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11437,7 +11447,7 @@
 		(instances
 			(project "Venturi_SensorPCB"
 				(path "/179da9ab-1703-43d9-a037-538492c203c2"
-					(reference "R23")
+					(reference "R24")
 					(unit 1)
 				)
 			)
@@ -11455,7 +11465,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6df8ecf0-d835-4bd6-af1d-8c7a4bb0f518")
-		(property "Reference" "R16"
+		(property "Reference" "R17"
 			(at 212.09 157.4799 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11519,7 +11529,7 @@
 		(instances
 			(project "Venturi_SensorPCB"
 				(path "/179da9ab-1703-43d9-a037-538492c203c2"
-					(reference "R16")
+					(reference "R17")
 					(unit 1)
 				)
 			)
@@ -12114,7 +12124,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "8943adf3-af20-46a4-b925-caa63fc90f2b")
-		(property "Reference" "R15"
+		(property "Reference" "R16"
 			(at 187.96 182.88 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12178,7 +12188,7 @@
 		(instances
 			(project "Venturi_SensorPCB"
 				(path "/179da9ab-1703-43d9-a037-538492c203c2"
-					(reference "R15")
+					(reference "R16")
 					(unit 1)
 				)
 			)
@@ -12195,7 +12205,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "8c80cd7d-5cef-4d91-8dcd-9e60965d3f92")
-		(property "Reference" "R17"
+		(property "Reference" "R18"
 			(at 210.185 62.23 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12259,7 +12269,7 @@
 		(instances
 			(project "Venturi_SensorPCB"
 				(path "/179da9ab-1703-43d9-a037-538492c203c2"
-					(reference "R17")
+					(reference "R18")
 					(unit 1)
 				)
 			)
@@ -12364,7 +12374,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "8e26ea01-c408-45c2-b4ad-7bf9479cd942")
-		(property "Reference" "R28"
+		(property "Reference" "R29"
 			(at 302.26 182.88 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12428,7 +12438,7 @@
 		(instances
 			(project "Venturi_SensorPCB"
 				(path "/179da9ab-1703-43d9-a037-538492c203c2"
-					(reference "R28")
+					(reference "R29")
 					(unit 1)
 				)
 			)
@@ -13418,7 +13428,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "ad09417a-33cc-4b09-b12a-9f240ed8e6e8")
-		(property "Reference" "R25"
+		(property "Reference" "R26"
 			(at 264.16 182.88 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13482,7 +13492,89 @@
 		(instances
 			(project "Venturi_SensorPCB"
 				(path "/179da9ab-1703-43d9-a037-538492c203c2"
-					(reference "R25")
+					(reference "R26")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 180.975 48.26 90)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "adc44882-f16c-492e-a5f1-5e73dd9eb50b")
+		(property "Reference" "R14"
+			(at 184.15 46.99 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "22R"
+			(at 184.15 49.53 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 180.975 46.482 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 180.975 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 180.975 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "dcaa3ae2-1b07-4bf8-9c2a-467261f8f6f6")
+		)
+		(pin "1"
+			(uuid "2af790be-0377-4a82-b1d3-bacb8586798c")
+		)
+		(instances
+			(project "Venturi_SensorPCB"
+				(path "/179da9ab-1703-43d9-a037-538492c203c2"
+					(reference "R14")
 					(unit 1)
 				)
 			)
@@ -14754,7 +14846,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d023d014-a716-4648-af5a-ee1365f718f0")
-		(property "Reference" "R18"
+		(property "Reference" "R19"
 			(at 231.14 43.1799 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14818,7 +14910,7 @@
 		(instances
 			(project "Venturi_SensorPCB"
 				(path "/179da9ab-1703-43d9-a037-538492c203c2"
-					(reference "R18")
+					(reference "R19")
 					(unit 1)
 				)
 			)
@@ -16521,7 +16613,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f75147e1-d852-4476-8cd4-98047aeafc55")
-		(property "Reference" "R22"
+		(property "Reference" "R23"
 			(at 250.19 157.4799 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16585,7 +16677,7 @@
 		(instances
 			(project "Venturi_SensorPCB"
 				(path "/179da9ab-1703-43d9-a037-538492c203c2"
-					(reference "R22")
+					(reference "R23")
 					(unit 1)
 				)
 			)
