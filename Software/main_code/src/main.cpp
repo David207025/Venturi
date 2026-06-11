@@ -4,7 +4,6 @@
 #include <esp_task_wdt.h>
 #include <Network.h>
 
-static TaskHandle_t globalCore0TaskHandle = NULL;
 
 class Venturi : public VenturiEngine {
 public:
@@ -18,9 +17,13 @@ public:
 
     volatile int32_t steering = 0;
 
+    static volatile bool timer_tick;
+
     Venturi() : VenturiEngine() {
         tools = new VenturiTools("Venturi_P4", 2, true);
         tools->autoConnectWiFi();
+
+        timer_tick = false;
 
         VenturiTools::buffer = new TelemetryFrame();
         memset((void *) VenturiTools::buffer, 0, sizeof(TelemetryFrame));
@@ -60,8 +63,6 @@ protected:
     // ====================================================================
     void core1_loop() override {
         _core1TaskHandle = xTaskGetCurrentTaskHandle();
-        globalCore0TaskHandle = _core1TaskHandle; // Point our ISR notification directly to Core 1!
-
         // Disable the watchdog for Core 1 so your high-speed loop can dominate the CPU
         esp_task_wdt_delete(_core1TaskHandle);
 
@@ -76,10 +77,11 @@ protected:
         // Initialize and lock the SPI hardware channels on Core 1's memory space
         tools->initFastHardwarePipeline();
 
+
         // --- Hardware Timer Initialization (Targeting 20us on Core 1) ---
         hw_timer_t *timer = timerBegin(1000000);
         timerAttachInterrupt(timer, &onTimerTick);
-        timerAlarm(timer, 20, true, 0); // Fires exactly every 20 microseconds
+        timerAlarm(timer, 45, true, 0); // Fires exactly every 20 microseconds
 
         uint32_t delta_math_us = 0;
         uint32_t delta_execution_us = 0;
@@ -90,7 +92,9 @@ protected:
 
         while (true) {
             // Unblock as soon as the timer interrupt fires
-            ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+            while (!timer_tick);
+            timer_tick = false;
+
             uint64_t loop_start = esp_timer_get_time();
 
             gpio_set_level(GPIO_NUM_29, 1);
@@ -137,20 +141,13 @@ protected:
     }
 };
 
+volatile bool Venturi::timer_tick = false;
+
 // ====================================================================
 // TIMER INTERRUPTION FUNCTION (Now targeting Core 1 Context)
 // ====================================================================
 void IRAM_ATTR Venturi::onTimerTick() {
-    if (globalCore0TaskHandle != NULL) {
-        BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-
-        // This wakes up the task handle pinned to globalCore0TaskHandle (which is now Core 1)
-        vTaskNotifyGiveFromISR(globalCore0TaskHandle, &xHigherPriorityTaskWoken);
-
-        if (xHigherPriorityTaskWoken == pdTRUE) {
-            portYIELD_FROM_ISR();
-        }
-    }
+    timer_tick = true;
 }
 
 void setup() {

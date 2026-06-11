@@ -6053,7 +6053,7 @@
 		(uuid "4a40b2e0-3d91-4492-86fb-abaf76f353bb")
 	)
 	(junction
-		(at 39.37 218.44)
+		(at 53.34 218.44)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4d48e5e6-157c-420d-94cb-552afbff54d6")
@@ -6269,7 +6269,7 @@
 		(uuid "b8f9c7ae-a8cb-4c50-96a1-bbb0aad9e719")
 	)
 	(junction
-		(at 114.3 207.01)
+		(at 128.27 207.01)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "bf6d7c7b-ffdd-45b6-99ad-cdf72213260d")
@@ -6450,7 +6450,7 @@
 	)
 	(wire
 		(pts
-			(xy 95.25 226.06) (xy 110.49 226.06)
+			(xy 109.22 226.06) (xy 124.46 226.06)
 		)
 		(stroke
 			(width 0)
@@ -6680,7 +6680,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 231.14) (xy 69.85 231.14)
+			(xy 77.47 231.14) (xy 83.82 231.14)
 		)
 		(stroke
 			(width 0)
@@ -6740,7 +6740,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 203.2) (xy 114.3 207.01)
+			(xy 128.27 203.2) (xy 128.27 207.01)
 		)
 		(stroke
 			(width 0)
@@ -6800,7 +6800,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 255.27) (xy 69.85 255.27)
+			(xy 77.47 255.27) (xy 83.82 255.27)
 		)
 		(stroke
 			(width 0)
@@ -6910,7 +6910,7 @@
 	)
 	(wire
 		(pts
-			(xy 69.85 226.06) (xy 53.34 226.06)
+			(xy 83.82 226.06) (xy 67.31 226.06)
 		)
 		(stroke
 			(width 0)
@@ -6940,7 +6940,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 238.76) (xy 69.85 238.76)
+			(xy 77.47 238.76) (xy 83.82 238.76)
 		)
 		(stroke
 			(width 0)
@@ -7000,7 +7000,7 @@
 	)
 	(wire
 		(pts
-			(xy 19.05 238.76) (xy 19.05 243.84)
+			(xy 33.02 238.76) (xy 33.02 243.84)
 		)
 		(stroke
 			(width 0)
@@ -7150,7 +7150,7 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 213.36) (xy 101.6 203.2)
+			(xy 115.57 213.36) (xy 115.57 203.2)
 		)
 		(stroke
 			(width 0)
@@ -7250,7 +7250,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 257.81) (xy 69.85 257.81)
+			(xy 77.47 257.81) (xy 83.82 257.81)
 		)
 		(stroke
 			(width 0)
@@ -7260,7 +7260,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 233.68) (xy 69.85 233.68)
+			(xy 77.47 233.68) (xy 83.82 233.68)
 		)
 		(stroke
 			(width 0)
@@ -7540,7 +7540,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 236.22) (xy 69.85 236.22)
+			(xy 77.47 236.22) (xy 83.82 236.22)
 		)
 		(stroke
 			(width 0)
@@ -7560,7 +7560,7 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 218.44) (xy 39.37 218.44)
+			(xy 52.07 218.44) (xy 53.34 218.44)
 		)
 		(stroke
 			(width 0)
@@ -7570,7 +7570,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 215.9) (xy 69.85 215.9)
+			(xy 77.47 215.9) (xy 83.82 215.9)
 		)
 		(stroke
 			(width 0)
@@ -7590,7 +7590,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 207.01) (xy 114.3 220.98)
+			(xy 128.27 207.01) (xy 128.27 220.98)
 		)
 		(stroke
 			(width 0)
@@ -7630,7 +7630,7 @@
 	)
 	(wire
 		(pts
-			(xy 95.25 220.98) (xy 114.3 220.98)
+			(xy 109.22 220.98) (xy 128.27 220.98)
 		)
 		(stroke
 			(width 0)
@@ -7680,7 +7680,7 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 226.06) (xy 121.92 226.06)
+			(xy 132.08 226.06) (xy 135.89 226.06)
 		)
 		(stroke
 			(width 0)
@@ -7870,7 +7870,7 @@
 	)
 	(wire
 		(pts
-			(xy 39.37 208.915) (xy 39.37 207.01)
+			(xy 53.34 208.915) (xy 53.34 207.01)
 		)
 		(stroke
 			(width 0)
@@ -7910,7 +7910,7 @@
 	)
 	(wire
 		(pts
-			(xy 39.37 218.44) (xy 69.85 218.44)
+			(xy 53.34 218.44) (xy 83.82 218.44)
 		)
 		(stroke
 			(width 0)
@@ -8070,7 +8070,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 242.57) (xy 69.85 242.57)
+			(xy 77.47 242.57) (xy 83.82 242.57)
 		)
 		(stroke
 			(width 0)
@@ -8130,7 +8130,7 @@
 	)
 	(wire
 		(pts
-			(xy 95.25 231.14) (xy 110.49 231.14)
+			(xy 109.22 231.14) (xy 124.46 231.14)
 		)
 		(stroke
 			(width 0)
@@ -8160,7 +8160,7 @@
 	)
 	(wire
 		(pts
-			(xy 95.25 213.36) (xy 101.6 213.36)
+			(xy 109.22 213.36) (xy 115.57 213.36)
 		)
 		(stroke
 			(width 0)
@@ -8220,7 +8220,7 @@
 	)
 	(wire
 		(pts
-			(xy 39.37 216.535) (xy 39.37 218.44)
+			(xy 53.34 216.535) (xy 53.34 218.44)
 		)
 		(stroke
 			(width 0)
@@ -8270,7 +8270,7 @@
 	)
 	(wire
 		(pts
-			(xy 39.37 207.01) (xy 114.3 207.01)
+			(xy 53.34 207.01) (xy 128.27 207.01)
 		)
 		(stroke
 			(width 0)
@@ -8290,7 +8290,7 @@
 	)
 	(wire
 		(pts
-			(xy 95.25 233.68) (xy 99.06 233.68)
+			(xy 109.22 233.68) (xy 113.03 233.68)
 		)
 		(stroke
 			(width 0)
@@ -8390,7 +8390,7 @@
 	)
 	(wire
 		(pts
-			(xy 19.05 228.6) (xy 69.85 228.6)
+			(xy 33.02 228.6) (xy 83.82 228.6)
 		)
 		(stroke
 			(width 0)
@@ -8420,7 +8420,7 @@
 	)
 	(wire
 		(pts
-			(xy 82.55 266.7) (xy 82.55 273.05)
+			(xy 96.52 266.7) (xy 96.52 273.05)
 		)
 		(stroke
 			(width 0)
@@ -8590,7 +8590,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 213.36) (xy 69.85 213.36)
+			(xy 77.47 213.36) (xy 83.82 213.36)
 		)
 		(stroke
 			(width 0)
@@ -8750,7 +8750,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 223.52) (xy 69.85 223.52)
+			(xy 77.47 223.52) (xy 83.82 223.52)
 		)
 		(stroke
 			(width 0)
@@ -8760,7 +8760,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 220.98) (xy 69.85 220.98)
+			(xy 77.47 220.98) (xy 83.82 220.98)
 		)
 		(stroke
 			(width 0)
@@ -8790,7 +8790,7 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 231.14) (xy 121.92 231.14)
+			(xy 132.08 231.14) (xy 135.89 231.14)
 		)
 		(stroke
 			(width 0)
@@ -8870,7 +8870,7 @@
 	)
 	(wire
 		(pts
-			(xy 19.05 231.14) (xy 19.05 228.6)
+			(xy 33.02 231.14) (xy 33.02 228.6)
 		)
 		(stroke
 			(width 0)
@@ -8970,7 +8970,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 247.65) (xy 69.85 247.65)
+			(xy 77.47 247.65) (xy 83.82 247.65)
 		)
 		(stroke
 			(width 0)
@@ -8980,7 +8980,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 250.19) (xy 69.85 250.19)
+			(xy 77.47 250.19) (xy 83.82 250.19)
 		)
 		(stroke
 			(width 0)
@@ -9020,7 +9020,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 210.82) (xy 69.85 210.82)
+			(xy 77.47 210.82) (xy 83.82 210.82)
 		)
 		(stroke
 			(width 0)
@@ -9030,7 +9030,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 252.73) (xy 69.85 252.73)
+			(xy 77.47 252.73) (xy 83.82 252.73)
 		)
 		(stroke
 			(width 0)
@@ -9040,7 +9040,7 @@
 	)
 	(wire
 		(pts
-			(xy 19.05 251.46) (xy 19.05 260.35)
+			(xy 33.02 251.46) (xy 33.02 260.35)
 		)
 		(stroke
 			(width 0)
@@ -9050,7 +9050,7 @@
 	)
 	(wire
 		(pts
-			(xy 95.25 228.6) (xy 110.49 228.6)
+			(xy 109.22 228.6) (xy 124.46 228.6)
 		)
 		(stroke
 			(width 0)
@@ -9140,7 +9140,7 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 228.6) (xy 121.92 228.6)
+			(xy 132.08 228.6) (xy 135.89 228.6)
 		)
 		(stroke
 			(width 0)
@@ -9160,7 +9160,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 245.11) (xy 69.85 245.11)
+			(xy 77.47 245.11) (xy 83.82 245.11)
 		)
 		(stroke
 			(width 0)
@@ -9210,7 +9210,7 @@
 	)
 	(global_label "MOSI"
 		(shape input)
-		(at 121.92 231.14 0)
+		(at 135.89 231.14 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9220,7 +9220,7 @@
 		)
 		(uuid "024ffbd4-69a7-4aff-aa0d-136167c20b15")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 129.5014 231.14 0)
+			(at 143.4714 231.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9234,7 +9234,7 @@
 	)
 	(global_label "SK6812"
 		(shape input)
-		(at 63.5 223.52 180)
+		(at 77.47 223.52 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9244,7 +9244,7 @@
 		)
 		(uuid "1a4644dd-4480-4627-9661-a2b58e752208")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 53.1973 223.52 0)
+			(at 67.1673 223.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9282,7 +9282,7 @@
 	)
 	(global_label "POWER_EN"
 		(shape input)
-		(at 63.5 257.81 180)
+		(at 77.47 257.81 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9292,7 +9292,7 @@
 		)
 		(uuid "29ed2a2c-aa43-4a31-a122-9201e82ce3ea")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 50.5968 257.81 0)
+			(at 64.5668 257.81 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9306,7 +9306,7 @@
 	)
 	(global_label "MB_OUT_2"
 		(shape input)
-		(at 63.5 238.76 180)
+		(at 77.47 238.76 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9316,7 +9316,7 @@
 		)
 		(uuid "2d58010a-754f-4a54-8184-3d938da07a9d")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 51.0201 238.76 0)
+			(at 64.9901 238.76 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9330,7 +9330,7 @@
 	)
 	(global_label "MA_ENC_B"
 		(shape input)
-		(at 63.5 245.11 180)
+		(at 77.47 245.11 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9340,7 +9340,7 @@
 		)
 		(uuid "368c82b1-2654-407e-9d3f-faf22a51b8d1")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 51.0201 245.11 0)
+			(at 64.9901 245.11 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9354,7 +9354,7 @@
 	)
 	(global_label "MISO"
 		(shape input)
-		(at 99.06 233.68 0)
+		(at 113.03 233.68 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9364,7 +9364,7 @@
 		)
 		(uuid "3ea1252b-9f07-427d-9634-72706ecdc178")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 106.6414 233.68 0)
+			(at 120.6114 233.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9378,7 +9378,7 @@
 	)
 	(global_label "MA_ENC_A"
 		(shape input)
-		(at 63.5 242.57 180)
+		(at 77.47 242.57 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9388,7 +9388,7 @@
 		)
 		(uuid "44513660-5199-465a-b531-57bdca9056d1")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 51.2015 242.57 0)
+			(at 65.1715 242.57 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9426,7 +9426,7 @@
 	)
 	(global_label "IR_SENSOR"
 		(shape input)
-		(at 63.5 220.98 180)
+		(at 77.47 220.98 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9436,7 +9436,7 @@
 		)
 		(uuid "4f21807e-998a-48b7-80aa-c9ef191e5028")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 50.1734 220.98 0)
+			(at 64.1434 220.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9594,7 +9594,7 @@
 	)
 	(global_label "MB_ENC_A"
 		(shape input)
-		(at 63.5 247.65 180)
+		(at 77.47 247.65 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9604,7 +9604,7 @@
 		)
 		(uuid "628d8464-84d6-4d74-bc9e-51f2c0adb293")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 51.0201 247.65 0)
+			(at 64.9901 247.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9618,7 +9618,7 @@
 	)
 	(global_label "MA_OUT_2"
 		(shape input)
-		(at 63.5 233.68 180)
+		(at 77.47 233.68 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9628,7 +9628,7 @@
 		)
 		(uuid "62a43c83-7df5-492d-8c65-27d72ab52ce3")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 51.2015 233.68 0)
+			(at 65.1715 233.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9666,7 +9666,7 @@
 	)
 	(global_label "MA_OUT_1"
 		(shape input)
-		(at 63.5 231.14 180)
+		(at 77.47 231.14 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9676,7 +9676,7 @@
 		)
 		(uuid "6eae705a-d336-467e-80b3-1dd2d39e46e2")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 51.2015 231.14 0)
+			(at 65.1715 231.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9690,7 +9690,7 @@
 	)
 	(global_label "IMU_MOSI"
 		(shape input)
-		(at 63.5 213.36 180)
+		(at 77.47 213.36 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9700,7 +9700,7 @@
 		)
 		(uuid "8183306c-b60b-4599-b90b-63d39aa7d761")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 51.5643 213.36 0)
+			(at 65.5343 213.36 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9738,7 +9738,7 @@
 	)
 	(global_label "IMU_INT"
 		(shape input)
-		(at 63.5 255.27 180)
+		(at 77.47 255.27 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9748,7 +9748,7 @@
 		)
 		(uuid "92d8d389-384a-48bc-86e1-2a04c07dc3c6")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 53.2576 255.27 0)
+			(at 67.2276 255.27 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9762,7 +9762,7 @@
 	)
 	(global_label "IMU_MISO"
 		(shape input)
-		(at 63.5 210.82 180)
+		(at 77.47 210.82 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9772,7 +9772,7 @@
 		)
 		(uuid "9478221f-ff12-4e12-9c5b-865af117c764")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 51.5643 210.82 0)
+			(at 65.5343 210.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9786,7 +9786,7 @@
 	)
 	(global_label "CS"
 		(shape input)
-		(at 121.92 226.06 0)
+		(at 135.89 226.06 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9796,7 +9796,7 @@
 		)
 		(uuid "9b04557a-e21b-4781-809e-cd7ab2f40f89")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 127.3847 226.06 0)
+			(at 141.3547 226.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9858,7 +9858,7 @@
 	)
 	(global_label "IMU_CS"
 		(shape input)
-		(at 38.1 218.44 180)
+		(at 52.07 218.44 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9868,7 +9868,7 @@
 		)
 		(uuid "a6a5689d-1713-470a-b0b5-60ae10c82df8")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 28.281 218.44 0)
+			(at 42.251 218.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9906,7 +9906,7 @@
 	)
 	(global_label "VBAT"
 		(shape input)
-		(at 63.5 252.73 180)
+		(at 77.47 252.73 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9916,7 +9916,7 @@
 		)
 		(uuid "b11ac9c8-d800-458e-9f06-e8a9655c12c0")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 56.1 252.73 0)
+			(at 70.07 252.73 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10026,7 +10026,7 @@
 	)
 	(global_label "IMU_CLK"
 		(shape input)
-		(at 63.5 215.9 180)
+		(at 77.47 215.9 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10036,7 +10036,7 @@
 		)
 		(uuid "cc0bcf59-ce13-477e-973d-09cf070a7d90")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 52.5924 215.9 0)
+			(at 66.5624 215.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10050,7 +10050,7 @@
 	)
 	(global_label "CLK"
 		(shape input)
-		(at 121.92 228.6 0)
+		(at 135.89 228.6 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10060,7 +10060,7 @@
 		)
 		(uuid "cf569573-afea-49e2-86db-6ebd3847ea06")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 128.4733 228.6 0)
+			(at 142.4433 228.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10146,7 +10146,7 @@
 	)
 	(global_label "MB_ENC_B"
 		(shape input)
-		(at 63.5 250.19 180)
+		(at 77.47 250.19 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10156,7 +10156,7 @@
 		)
 		(uuid "eaebb277-a1f7-4641-8832-4691545d2ddd")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 50.8387 250.19 0)
+			(at 64.8087 250.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10194,7 +10194,7 @@
 	)
 	(global_label "MB_OUT_1"
 		(shape input)
-		(at 63.5 236.22 180)
+		(at 77.47 236.22 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10204,7 +10204,7 @@
 		)
 		(uuid "f78ba360-a49f-4e3d-81eb-19a87e93473c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 51.0201 236.22 0)
+			(at 64.9901 236.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10374,7 +10374,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 31.75 177.8 0)
+		(at 45.72 177.8 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10385,7 +10385,7 @@
 		(fields_autoplaced yes)
 		(uuid "02e7c25f-0922-4d04-afce-73b74b63fab4")
 		(property "Reference" "H4"
-			(at 34.29 176.5299 0)
+			(at 48.26 176.5299 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10396,7 +10396,7 @@
 			)
 		)
 		(property "Value" ""
-			(at 34.29 179.0699 0)
+			(at 48.26 179.0699 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10407,7 +10407,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_DIN965"
-			(at 31.75 177.8 0)
+			(at 45.72 177.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10418,7 +10418,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 31.75 177.8 0)
+			(at 45.72 177.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10429,7 +10429,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 31.75 177.8 0)
+			(at 45.72 177.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10450,7 +10450,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 44.45 203.2 0)
+		(at 58.42 203.2 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10461,7 +10461,7 @@
 		(fields_autoplaced yes)
 		(uuid "0390f0cc-ee10-4639-9bcf-2b74b181f995")
 		(property "Reference" "H10"
-			(at 46.99 201.9299 0)
+			(at 60.96 201.9299 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10472,7 +10472,7 @@
 			)
 		)
 		(property "Value" ""
-			(at 46.99 204.4699 0)
+			(at 60.96 204.4699 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10483,7 +10483,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_DIN965"
-			(at 44.45 203.2 0)
+			(at 58.42 203.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10494,7 +10494,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 44.45 203.2 0)
+			(at 58.42 203.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10505,7 +10505,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 44.45 203.2 0)
+			(at 58.42 203.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10526,7 +10526,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 31.75 184.15 0)
+		(at 45.72 184.15 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10537,7 +10537,7 @@
 		(fields_autoplaced yes)
 		(uuid "03da2603-1877-48cf-bc2d-2f4af1a3c8d4")
 		(property "Reference" "H5"
-			(at 34.29 182.8799 0)
+			(at 48.26 182.8799 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10548,7 +10548,7 @@
 			)
 		)
 		(property "Value" ""
-			(at 34.29 185.4199 0)
+			(at 48.26 185.4199 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10559,7 +10559,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_DIN965"
-			(at 31.75 184.15 0)
+			(at 45.72 184.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10570,7 +10570,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 31.75 184.15 0)
+			(at 45.72 184.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10581,7 +10581,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 31.75 184.15 0)
+			(at 45.72 184.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11487,7 +11487,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 57.15 196.85 0)
+		(at 71.12 196.85 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -11498,7 +11498,7 @@
 		(fields_autoplaced yes)
 		(uuid "1aff3187-e370-4e0d-b170-023c94721ca1")
 		(property "Reference" "H11"
-			(at 59.69 195.5799 0)
+			(at 73.66 195.5799 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11509,7 +11509,7 @@
 			)
 		)
 		(property "Value" ""
-			(at 59.69 198.1199 0)
+			(at 73.66 198.1199 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11520,7 +11520,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_DIN965"
-			(at 57.15 196.85 0)
+			(at 71.12 196.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11531,7 +11531,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 57.15 196.85 0)
+			(at 71.12 196.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11542,7 +11542,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 57.15 196.85 0)
+			(at 71.12 196.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11760,7 +11760,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 19.05 234.95 0)
+		(at 33.02 234.95 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -11770,7 +11770,7 @@
 		(dnp no)
 		(uuid "1c819f02-86ea-4c55-983c-6c3ca60ec4f1")
 		(property "Reference" "R1"
-			(at 20.32 233.68 0)
+			(at 34.29 233.68 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11781,7 +11781,7 @@
 			)
 		)
 		(property "Value" "330R"
-			(at 20.32 236.22 0)
+			(at 34.29 236.22 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11792,7 +11792,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
-			(at 17.272 234.95 90)
+			(at 31.242 234.95 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11803,7 +11803,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 19.05 234.95 0)
+			(at 33.02 234.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11814,7 +11814,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 19.05 234.95 0)
+			(at 33.02 234.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12337,7 +12337,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 82.55 273.05 0)
+		(at 96.52 273.05 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -12348,7 +12348,7 @@
 		(fields_autoplaced yes)
 		(uuid "3a419670-fd7b-4849-a3c5-772f24687f86")
 		(property "Reference" "#PWR04"
-			(at 82.55 279.4 0)
+			(at 96.52 279.4 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12359,7 +12359,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 82.55 278.13 0)
+			(at 96.52 278.13 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12369,7 +12369,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 82.55 273.05 0)
+			(at 96.52 273.05 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12380,7 +12380,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 82.55 273.05 0)
+			(at 96.52 273.05 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12391,7 +12391,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 82.55 273.05 0)
+			(at 96.52 273.05 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12749,7 +12749,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 31.75 158.75 0)
+		(at 45.72 158.75 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -12760,7 +12760,7 @@
 		(fields_autoplaced yes)
 		(uuid "440ce0cd-116e-4f26-aed0-22a40e21b4c4")
 		(property "Reference" "H1"
-			(at 34.29 157.4799 0)
+			(at 48.26 157.4799 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12771,7 +12771,7 @@
 			)
 		)
 		(property "Value" ""
-			(at 34.29 160.0199 0)
+			(at 48.26 160.0199 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12782,7 +12782,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_DIN965"
-			(at 31.75 158.75 0)
+			(at 45.72 158.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12793,7 +12793,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 31.75 158.75 0)
+			(at 45.72 158.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12804,7 +12804,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 31.75 158.75 0)
+			(at 45.72 158.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12825,7 +12825,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 114.3 228.6 90)
+		(at 128.27 228.6 90)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -12836,7 +12836,7 @@
 		(dnp no)
 		(uuid "4525c274-81f8-4439-9b42-26b491b20f37")
 		(property "Reference" "R11"
-			(at 107.95 227.33 90)
+			(at 121.92 227.33 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12847,7 +12847,7 @@
 			)
 		)
 		(property "Value" "22R"
-			(at 107.95 229.87 90)
+			(at 121.92 229.87 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12858,7 +12858,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
-			(at 114.3 226.822 90)
+			(at 128.27 226.822 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12869,7 +12869,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 114.3 228.6 0)
+			(at 128.27 228.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12880,7 +12880,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 114.3 228.6 0)
+			(at 128.27 228.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13157,7 +13157,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 57.15 203.2 0)
+		(at 71.12 203.2 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -13168,7 +13168,7 @@
 		(fields_autoplaced yes)
 		(uuid "4ad2f473-ff4f-46e8-8b1e-0f70d7b69188")
 		(property "Reference" "H12"
-			(at 59.69 201.9299 0)
+			(at 73.66 201.9299 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13179,7 +13179,7 @@
 			)
 		)
 		(property "Value" ""
-			(at 59.69 204.4699 0)
+			(at 73.66 204.4699 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13190,7 +13190,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_DIN965"
-			(at 57.15 203.2 0)
+			(at 71.12 203.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13201,7 +13201,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 57.15 203.2 0)
+			(at 71.12 203.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13212,7 +13212,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 57.15 203.2 0)
+			(at 71.12 203.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13633,7 +13633,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED")
-		(at 19.05 247.65 90)
+		(at 33.02 247.65 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -13644,7 +13644,7 @@
 		(fields_autoplaced yes)
 		(uuid "57ebcd70-2417-474f-96b5-702aea4075aa")
 		(property "Reference" "D1"
-			(at 22.86 247.9674 90)
+			(at 36.83 247.9674 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13655,7 +13655,7 @@
 			)
 		)
 		(property "Value" "LED"
-			(at 22.86 250.5074 90)
+			(at 36.83 250.5074 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13666,7 +13666,7 @@
 			)
 		)
 		(property "Footprint" "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder"
-			(at 19.05 247.65 0)
+			(at 33.02 247.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13677,7 +13677,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 19.05 247.65 0)
+			(at 33.02 247.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13688,7 +13688,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 19.05 247.65 0)
+			(at 33.02 247.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13699,7 +13699,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 19.05 247.65 0)
+			(at 33.02 247.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13726,7 +13726,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 31.75 171.45 0)
+		(at 45.72 171.45 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -13737,7 +13737,7 @@
 		(fields_autoplaced yes)
 		(uuid "594cab93-0dc1-45ff-b80f-f4208795d04d")
 		(property "Reference" "H3"
-			(at 34.29 170.1799 0)
+			(at 48.26 170.1799 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13748,7 +13748,7 @@
 			)
 		)
 		(property "Value" ""
-			(at 34.29 172.7199 0)
+			(at 48.26 172.7199 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13759,7 +13759,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_DIN965"
-			(at 31.75 171.45 0)
+			(at 45.72 171.45 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13770,7 +13770,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 31.75 171.45 0)
+			(at 45.72 171.45 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13781,7 +13781,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 31.75 171.45 0)
+			(at 45.72 171.45 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14246,7 +14246,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 31.75 203.2 0)
+		(at 45.72 203.2 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -14257,7 +14257,7 @@
 		(fields_autoplaced yes)
 		(uuid "6bd65f51-cdae-46b4-8a4c-e48ed98291fe")
 		(property "Reference" "H8"
-			(at 34.29 201.9299 0)
+			(at 48.26 201.9299 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14268,7 +14268,7 @@
 			)
 		)
 		(property "Value" ""
-			(at 34.29 204.4699 0)
+			(at 48.26 204.4699 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14279,7 +14279,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_DIN965"
-			(at 31.75 203.2 0)
+			(at 45.72 203.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14290,7 +14290,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 31.75 203.2 0)
+			(at 45.72 203.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14301,7 +14301,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 31.75 203.2 0)
+			(at 45.72 203.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14402,7 +14402,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 39.37 212.725 0)
+		(at 53.34 212.725 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -14413,7 +14413,7 @@
 		(dnp no)
 		(uuid "71c064a8-02a5-4429-aa11-20646c488fad")
 		(property "Reference" "R2"
-			(at 38.1 211.455 0)
+			(at 52.07 211.455 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14424,7 +14424,7 @@
 			)
 		)
 		(property "Value" "3k3"
-			(at 38.1 213.995 0)
+			(at 52.07 213.995 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14435,7 +14435,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
-			(at 41.148 212.725 90)
+			(at 55.118 212.725 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14446,7 +14446,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 39.37 212.725 0)
+			(at 53.34 212.725 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14457,7 +14457,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 39.37 212.725 0)
+			(at 53.34 212.725 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14484,7 +14484,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x01_Pin")
-		(at 48.26 226.06 0)
+		(at 62.23 226.06 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -14494,7 +14494,7 @@
 		(dnp no)
 		(uuid "73aaa9c1-6466-43ce-8923-6d1571a58a4d")
 		(property "Reference" "J2"
-			(at 43.815 224.79 0)
+			(at 57.785 224.79 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14504,7 +14504,7 @@
 			)
 		)
 		(property "Value" "ESC_PWM"
-			(at 43.815 226.695 0)
+			(at 57.785 226.695 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14514,7 +14514,7 @@
 			)
 		)
 		(property "Footprint" "Connector_Wire:SolderWire-0.25sqmm_1x01_D0.65mm_OD1.7mm"
-			(at 48.26 226.06 0)
+			(at 62.23 226.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14525,7 +14525,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 48.26 226.06 0)
+			(at 62.23 226.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14536,7 +14536,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x01, script generated"
-			(at 48.26 226.06 0)
+			(at 62.23 226.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15220,7 +15220,7 @@
 	)
 	(symbol
 		(lib_id "power:+BATT")
-		(at 101.6 203.2 0)
+		(at 115.57 203.2 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -15231,7 +15231,7 @@
 		(fields_autoplaced yes)
 		(uuid "7cddc1f2-3208-436b-827b-8962adc829e8")
 		(property "Reference" "#PWR07"
-			(at 101.6 207.01 0)
+			(at 115.57 207.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15242,7 +15242,7 @@
 			)
 		)
 		(property "Value" "+BATT"
-			(at 101.6 198.12 0)
+			(at 115.57 198.12 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15252,7 +15252,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 101.6 203.2 0)
+			(at 115.57 203.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15263,7 +15263,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 101.6 203.2 0)
+			(at 115.57 203.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15274,7 +15274,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+BATT\""
-			(at 101.6 203.2 0)
+			(at 115.57 203.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15380,7 +15380,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 19.05 260.35 0)
+		(at 33.02 260.35 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -15391,7 +15391,7 @@
 		(fields_autoplaced yes)
 		(uuid "8073fa53-cb34-4493-89ff-d0d5e75f09f7")
 		(property "Reference" "#PWR01"
-			(at 19.05 266.7 0)
+			(at 33.02 266.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15402,7 +15402,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 19.05 265.43 0)
+			(at 33.02 265.43 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15412,7 +15412,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 19.05 260.35 0)
+			(at 33.02 260.35 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15423,7 +15423,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 19.05 260.35 0)
+			(at 33.02 260.35 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15434,7 +15434,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 19.05 260.35 0)
+			(at 33.02 260.35 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15614,7 +15614,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 31.75 190.5 0)
+		(at 45.72 190.5 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -15625,7 +15625,7 @@
 		(fields_autoplaced yes)
 		(uuid "82bf6e66-757b-4d68-8a35-ab4edc29689d")
 		(property "Reference" "H6"
-			(at 34.29 189.2299 0)
+			(at 48.26 189.2299 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15636,7 +15636,7 @@
 			)
 		)
 		(property "Value" ""
-			(at 34.29 191.7699 0)
+			(at 48.26 191.7699 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15647,7 +15647,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_DIN965"
-			(at 31.75 190.5 0)
+			(at 45.72 190.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15658,7 +15658,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 31.75 190.5 0)
+			(at 45.72 190.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15669,7 +15669,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 31.75 190.5 0)
+			(at 45.72 190.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15690,7 +15690,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 31.75 196.85 0)
+		(at 45.72 196.85 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -15701,7 +15701,7 @@
 		(fields_autoplaced yes)
 		(uuid "844bac89-acd8-41f4-82ab-fe8777f825a5")
 		(property "Reference" "H7"
-			(at 34.29 195.5799 0)
+			(at 48.26 195.5799 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15712,7 +15712,7 @@
 			)
 		)
 		(property "Value" ""
-			(at 34.29 198.1199 0)
+			(at 48.26 198.1199 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15723,7 +15723,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_DIN965"
-			(at 31.75 196.85 0)
+			(at 45.72 196.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15734,7 +15734,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 31.75 196.85 0)
+			(at 45.72 196.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15745,7 +15745,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 31.75 196.85 0)
+			(at 45.72 196.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16803,7 +16803,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 114.3 226.06 90)
+		(at 128.27 226.06 90)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -16814,7 +16814,7 @@
 		(dnp no)
 		(uuid "aefe1789-d701-4380-a1bb-367823769915")
 		(property "Reference" "R10"
-			(at 107.95 222.25 90)
+			(at 121.92 222.25 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -16825,7 +16825,7 @@
 			)
 		)
 		(property "Value" "22R"
-			(at 107.95 224.79 90)
+			(at 121.92 224.79 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -16836,7 +16836,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
-			(at 114.3 224.282 90)
+			(at 128.27 224.282 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16847,7 +16847,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 114.3 226.06 0)
+			(at 128.27 226.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16858,7 +16858,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 114.3 226.06 0)
+			(at 128.27 226.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16885,7 +16885,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 114.3 231.14 90)
+		(at 128.27 231.14 90)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -16896,7 +16896,7 @@
 		(dnp no)
 		(uuid "af0dbe56-7d1c-44bd-98a2-01848a7595f3")
 		(property "Reference" "R12"
-			(at 117.475 229.87 90)
+			(at 131.445 229.87 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -16907,7 +16907,7 @@
 			)
 		)
 		(property "Value" "22R"
-			(at 117.475 232.41 90)
+			(at 131.445 232.41 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -16918,7 +16918,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
-			(at 114.3 229.362 90)
+			(at 128.27 229.362 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16929,7 +16929,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 114.3 231.14 0)
+			(at 128.27 231.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16940,7 +16940,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 114.3 231.14 0)
+			(at 128.27 231.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17150,7 +17150,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 31.75 165.1 0)
+		(at 45.72 165.1 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -17161,7 +17161,7 @@
 		(fields_autoplaced yes)
 		(uuid "bb272372-9e4d-4018-84e4-c7a2dd5b28c8")
 		(property "Reference" "H2"
-			(at 34.29 163.8299 0)
+			(at 48.26 163.8299 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -17172,7 +17172,7 @@
 			)
 		)
 		(property "Value" ""
-			(at 34.29 166.3699 0)
+			(at 48.26 166.3699 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -17183,7 +17183,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_DIN965"
-			(at 31.75 165.1 0)
+			(at 45.72 165.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17194,7 +17194,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 31.75 165.1 0)
+			(at 45.72 165.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17205,7 +17205,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 31.75 165.1 0)
+			(at 45.72 165.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17588,7 +17588,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 114.3 203.2 0)
+		(at 128.27 203.2 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -17600,7 +17600,7 @@
 		(fields_autoplaced yes)
 		(uuid "cee95564-ebdf-4925-98d1-bc4c914bc2c1")
 		(property "Reference" "#PWR08"
-			(at 114.3 207.01 0)
+			(at 128.27 207.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17611,7 +17611,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 114.3 198.12 0)
+			(at 128.27 198.12 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -17621,7 +17621,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 114.3 203.2 0)
+			(at 128.27 203.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17632,7 +17632,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 114.3 203.2 0)
+			(at 128.27 203.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17643,7 +17643,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 114.3 203.2 0)
+			(at 128.27 203.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18566,7 +18566,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 44.45 196.85 0)
+		(at 58.42 196.85 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -18577,7 +18577,7 @@
 		(fields_autoplaced yes)
 		(uuid "eb2d77a7-d7a8-40b3-939c-d56155bdbe08")
 		(property "Reference" "H9"
-			(at 46.99 195.5799 0)
+			(at 60.96 195.5799 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -18588,7 +18588,7 @@
 			)
 		)
 		(property "Value" ""
-			(at 46.99 198.1199 0)
+			(at 60.96 198.1199 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -18599,7 +18599,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_DIN965"
-			(at 44.45 196.85 0)
+			(at 58.42 196.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18610,7 +18610,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 44.45 196.85 0)
+			(at 58.42 196.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18621,7 +18621,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 44.45 196.85 0)
+			(at 58.42 196.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18959,7 +18959,7 @@
 	)
 	(symbol
 		(lib_id "RF_Module:ESP32-P4-WIFI6")
-		(at 82.55 228.6 0)
+		(at 96.52 228.6 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -18970,7 +18970,7 @@
 		(fields_autoplaced yes)
 		(uuid "f5d66b9c-e5f1-4d03-85a5-5f3697e8c8b0")
 		(property "Reference" "U2"
-			(at 82.55 203.2 0)
+			(at 96.52 203.2 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -18980,7 +18980,7 @@
 			)
 		)
 		(property "Value" "ESP32-P4-WIFI6"
-			(at 82.55 205.74 0)
+			(at 96.52 205.74 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -18990,7 +18990,7 @@
 			)
 		)
 		(property "Footprint" "RF_Module:ESP32-P4-WIFI6"
-			(at 82.55 228.6 0)
+			(at 96.52 228.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19001,7 +19001,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 82.55 228.6 0)
+			(at 96.52 228.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19012,7 +19012,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 82.55 228.6 0)
+			(at 96.52 228.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19536,4 +19536,129 @@
 		)
 	)
 	(embedded_fonts no)
+	(embedded_files
+		(file
+			(name "HTL-Rahmen.kicad_wks")
+			(type worksheet)
+			(data |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|
+			)
+			(checksum "78D8123AD698040526339AFA19560E19")
+		)
+	)
 )

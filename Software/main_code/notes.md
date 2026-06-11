@@ -68,14 +68,14 @@ Core 1:
 
 SPI pins:
 
-| ESP32-P4 | ESP32-S3 | Function |
-|----------|----------|----------|
-| GPIO2    | GPIO13   | ADC SPI CS |
-| GPIO3    | GPIO14   | ADC SPI CLK |
-| GPIO4    | GPIO7    | ADC SPI MOSI |
-| GPIO5    | GPIO11   | ADC SPI MISO |
-| GPIO23   | GPIO2    | IMU SPI CS |
-| GPIO22   | GPIO4    | IMU SPI CLK |
-| GPIO21   | GPIO1    | IMU SPI MOSI |
-| GPIO20   | GPIO3    | IMU SPI MISO |
-| GPIO51 | GPIO6 | IMU INT |
+| ESP32-P4 | Function     |
+|----------|--------------|
+| GPIO2    | ADC SPI CS   |
+| GPIO3    | ADC SPI CLK  |
+| GPIO4    | ADC SPI MOSI |
+| GPIO5    | ADC SPI MISO |
+| GPIO23   | IMU SPI CS   |
+| GPIO22   | IMU SPI CLK  |
+| GPIO21   | IMU SPI MOSI |
+| GPIO20   | IMU SPI MISO |
+| GPIO51   | IMU INT      |

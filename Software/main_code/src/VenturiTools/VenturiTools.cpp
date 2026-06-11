@@ -1,6 +1,9 @@
 #include "VenturiTools.h"
 
 #include <utility>
+#include "driver/gpio.h"
+#include "rom/ets_sys.h"
+#include "soc/gpio_struct.h"
 
 
 bool VenturiTools::deviceConnected = false;
@@ -147,29 +150,33 @@ void VenturiTools::initSD() {
 }
 
 void VenturiTools::initSPI() {
+    // ====================================================================
+    // CONFIGURING HARDWARE PERIPHERALS FOR SYSTEM BUSES
+    // ====================================================================
     spi_bus_config_t adcbuscfg = {};
     adcbuscfg.mosi_io_num = PIN_ADC_MOSI;
     adcbuscfg.miso_io_num = PIN_ADC_MISO;
     adcbuscfg.sclk_io_num = PIN_ADC_CLK;
     adcbuscfg.quadwp_io_num = GPIO_NUM_NC;
     adcbuscfg.quadhd_io_num = GPIO_NUM_NC;
-    adcbuscfg.max_transfer_sz = 4096; // Allow a buffer size matching your transactions
+    adcbuscfg.max_transfer_sz = 4096;
     adcbuscfg.flags = SPICOMMON_BUSFLAG_MASTER;
 
-    // Change from SPI_DMA_DISABLED to AUTO to allow hardware background transfers
     ESP_ERROR_CHECK(spi_bus_initialize(SPI2_HOST, &adcbuscfg, SPI_DMA_CH_AUTO));
-
     gpio_pulldown_en((gpio_num_t)PIN_ADC_MISO);
 
     spi_device_interface_config_t adc_devcfg = {};
     adc_devcfg.mode = 0;
-    adc_devcfg.clock_speed_hz = 20000000;
-    adc_devcfg.spics_io_num = PIN_ADC_CS;
-    adc_devcfg.queue_size = 5; // Increase queue depth for pipelining
+    adc_devcfg.clock_speed_hz = 20000000; // Stabilized clock rate
+    // CRITICAL: Unlink CS from driver management to bypass automated software glitches
+    adc_devcfg.spics_io_num = GPIO_NUM_NC;
+    adc_devcfg.queue_size = 5;
 
     ESP_ERROR_CHECK(spi_bus_add_device(SPI2_HOST, &adc_devcfg, &spi_adc));
 
-    // --- Do the exact same change for SPI3 (IMU) below ---
+    // ====================================================================
+    // CONFIGURING UNIFIED BACKGROUND IMU TRANSCIEVER BUS
+    // ====================================================================
     spi_bus_config_t imubuscfg = {};
     imubuscfg.mosi_io_num = PIN_IMU_MOSI;
     imubuscfg.miso_io_num = PIN_IMU_MISO;
@@ -180,16 +187,28 @@ void VenturiTools::initSPI() {
     imubuscfg.flags = SPICOMMON_BUSFLAG_MASTER;
 
     ESP_ERROR_CHECK(spi_bus_initialize(SPI3_HOST, &imubuscfg, SPI_DMA_CH_AUTO));
-
     gpio_pulldown_en((gpio_num_t)PIN_IMU_MISO);
 
     spi_device_interface_config_t imu_devcfg = {};
     imu_devcfg.mode = 0;
     imu_devcfg.clock_speed_hz = 20000000;
-    imu_devcfg.spics_io_num = PIN_IMU_CS;
+    imu_devcfg.spics_io_num = PIN_IMU_CS; // Retain native CS tracking configuration for IMU
     imu_devcfg.queue_size = 5;
 
     ESP_ERROR_CHECK(spi_bus_add_device(SPI3_HOST, &imu_devcfg, &spi_imu));
+
+    // ====================================================================
+    // PREPARING BARE-METAL FAST DIGITAL OUTPUT PIN MATRIX
+    // ====================================================================
+    gpio_config_t io_conf = {};
+    io_conf.intr_type = GPIO_INTR_DISABLE;
+    io_conf.mode = GPIO_MODE_OUTPUT;
+    io_conf.pin_bit_mask = (1ULL << PIN_ADC_CS);
+    io_conf.pull_down_en = GPIO_PULLDOWN_DISABLE;
+    io_conf.pull_up_en = GPIO_PULLUP_ENABLE; // Protect default inactive high states
+    gpio_config(&io_conf);
+
+    gpio_set_level((gpio_num_t)PIN_ADC_CS, 1);
 }
 
 
@@ -197,95 +216,218 @@ void VenturiTools::initFastHardwarePipeline() {
     _spi_adc_hw = &GPSPI2;
     _spi_imu_hw = &GPSPI3;
 
-    // 1. Core full-duplex configuration
+    // 1. Force absolute full-duplex baseline operational parameters
     _spi_imu_hw->user.usr_miso = 1;
     _spi_imu_hw->user.usr_mosi = 1;
     _spi_adc_hw->user.usr_miso = 1;
     _spi_adc_hw->user.usr_mosi = 1;
 
-    // 2. Clear out driver lingering timing configurations
-    _spi_imu_hw->ctrl.val = 0;
-    _spi_adc_hw->ctrl.val = 0;
+    // 2. Flash framework clock configurations once into physical register layouts
+    spi_transaction_t dummy_init_trans = {};
+    dummy_init_trans.length = 8;
+    dummy_init_trans.flags = SPI_TRANS_USE_RXDATA | SPI_TRANS_USE_TXDATA;
+    spi_device_transmit(spi_adc, &dummy_init_trans);
+    spi_device_transmit(spi_imu, &dummy_init_trans);
 
     // ====================================================================
-    // SINGLE-FRAME INITIALIZATION FOR ADS7961 (AUTO-2 MODE)
+    // INITIALIZATION PIPELINE STEPS FOR ADS7961 AUTO-2 MODES
     // ====================================================================
-
-    // Temporarily set ADC transaction bit length to 16 bits (0-indexed)
     _spi_adc_hw->ms_dlen.ms_data_bitlen = 16 - 1;
 
-    // Send Auto-2 Command (0x93C0) to set max channel index to 15
-    _spi_adc_hw->data_buf[0].val = ((uint32_t)0x93C0 << 16);
-    _spi_adc_hw->cmd.update = 1;
-    _spi_adc_hw->cmd.usr = 1;
-    while (_spi_adc_hw->cmd.usr); // Wait for the configuration byte to clear
+    uint32_t ads_auto2_sequence[4] = {
+        (uint32_t)0x1000 << 16,  // Frame 1: Establish Baseline Manual Mode configurations
+        (uint32_t)0x1000 << 16,  // Frame 2: Ensure internal multiplexer alignments stabilize
+        (uint32_t)0x93C0 << 16,  // Frame 3: Allocate Auto-2 boundaries (Cycle End Point = Ch 15)
+        (uint32_t)0x3000 << 16   // Frame 4: Deploy and execute Auto-2 Tracking Loops
+    };
+
+    for (int i = 0; i < 4; i++) {
+        // Toggle the fast register configurations explicitly 4 times
+        GPIO.out_w1tc.val = (1ULL << PIN_ADC_CS);
+        _spi_adc_hw->data_buf[0].val = ads_auto2_sequence[i];
+        _spi_adc_hw->cmd.update = 1;
+        _spi_adc_hw->cmd.usr = 1;
+        while (_spi_adc_hw->cmd.usr);
+        GPIO.out_w1ts.val = (1ULL << PIN_ADC_CS);
+        esp_rom_delay_us(2); // Provide time matching conversion delays
+    }
 
     // ====================================================================
-    // SWITCH TO HIGH-SPEED RUNTIME PROFILES
+    // CONFIGURING HARDWARE INTERRUPT STATE CONSTANTS
     // ====================================================================
+    _spi_imu_hw->ms_dlen.ms_data_bitlen = 104 - 1; // 13 unified IMU bytes
+    _spi_adc_hw->ms_dlen.ms_data_bitlen = 16 - 1;  // Strict 16-bit blocks for loop execution
 
-    // Reconfigure the hardware blocks to handle continuous loop reads
-    _spi_imu_hw->ms_dlen.ms_data_bitlen = 104 - 1; // 13 Bytes for unified IMU burst
-    _spi_adc_hw->ms_dlen.ms_data_bitlen = 256 - 1; // 32 Bytes for 16 sequential ADC reads
+    // Wipe trailing buffer registers to enforce 0x0000 MOSI command tracking
+    #pragma unroll
+    for(int i = 0; i < 16; i++) {
+        _spi_adc_hw->data_buf[i].val = 0x00000000;
+    }
 
-    // Commit changes to hardware parameters
     _spi_imu_hw->cmd.update = 1;
     _spi_adc_hw->cmd.update = 1;
 }
 
+
+
 void IRAM_ATTR VenturiTools::startSPIReads() {
-    // 1. Manually toggle the update configuration bit.
-    // This forces the hardware to apply your bit-length parameters.
-    _spi_imu_hw->cmd.update = 1;
+    _spi_adc_hw->ms_dlen.ms_data_bitlen = 16 - 1;
     _spi_adc_hw->cmd.update = 1;
 
-    // 2. Flash the user execution bit. The physical clock pins start pulsing immediately.
-    _spi_imu_hw->cmd.usr = 1;
+    // Drop CS natively to begin concurrent background transfers
+    GPIO.out_w1tc.val = (1ULL << PIN_ADC_CS);
+    _spi_adc_hw->data_buf[0].val = 0x00000000;
     _spi_adc_hw->cmd.usr = 1;
+
+    _spi_imu_hw->cmd.update = 1;
+    _spi_imu_hw->cmd.usr = 1;
 }
 
 void IRAM_ATTR VenturiTools::getSPIResults(uint16_t* adc_buf, uint8_t* imu_buf) {
-    while (_spi_imu_hw->cmd.usr);
-    while (_spi_adc_hw->cmd.usr);
+    // ====================================================================
+    // UNROLLED DIRECT HARDWARE SAMPLING MATRIX (ZERO DRIVER INTERACTION)
+    // ====================================================================
 
-    // 1. Parse IMU into raw bytes directly
+    // Frame 1 (Harvesting background execution pass started in startSPIReads)
+    while (_spi_adc_hw->cmd.usr);
+    GPIO.out_w1ts.val = (1ULL << PIN_ADC_CS); // Drive CS High instantly!
+    uint32_t r0 = (_spi_adc_hw->data_buf[0].val & 0xFFFF0000);
+    //esp_rom_delay_us(1); // Enforce T_CSH metrics for the ADS7961 internal tracking registers
+
+    // Frame 2
+    GPIO.out_w1tc.val = (1ULL << PIN_ADC_CS); _spi_adc_hw->cmd.usr = 1;
+    while (_spi_adc_hw->cmd.usr); GPIO.out_w1ts.val = (1ULL << PIN_ADC_CS);
+    r0 |= ((_spi_adc_hw->data_buf[0].val >> 16) & 0xFFFF);
+    //esp_rom_delay_us(1);
+
+    // Frame 3
+    GPIO.out_w1tc.val = (1ULL << PIN_ADC_CS); _spi_adc_hw->cmd.usr = 1;
+    while (_spi_adc_hw->cmd.usr); GPIO.out_w1ts.val = (1ULL << PIN_ADC_CS);
+    uint32_t r1 = (_spi_adc_hw->data_buf[0].val & 0xFFFF0000);
+    //esp_rom_delay_us(1);
+
+    // Frame 4
+    GPIO.out_w1tc.val = (1ULL << PIN_ADC_CS); _spi_adc_hw->cmd.usr = 1;
+    while (_spi_adc_hw->cmd.usr); GPIO.out_w1ts.val = (1ULL << PIN_ADC_CS);
+    r1 |= ((_spi_adc_hw->data_buf[0].val >> 16) & 0xFFFF);
+    //esp_rom_delay_us(1);
+
+    // Frame 5
+    GPIO.out_w1tc.val = (1ULL << PIN_ADC_CS); _spi_adc_hw->cmd.usr = 1;
+    while (_spi_adc_hw->cmd.usr); GPIO.out_w1ts.val = (1ULL << PIN_ADC_CS);
+    uint32_t r2 = (_spi_adc_hw->data_buf[0].val & 0xFFFF0000);
+    //esp_rom_delay_us(1);
+
+
+    // Frame 6
+    GPIO.out_w1tc.val = (1ULL << PIN_ADC_CS); _spi_adc_hw->cmd.usr = 1;
+    while (_spi_adc_hw->cmd.usr); GPIO.out_w1ts.val = (1ULL << PIN_ADC_CS);
+    r2 |= ((_spi_adc_hw->data_buf[0].val >> 16) & 0xFFFF);
+    //esp_rom_delay_us(1);
+
+    // Frame 7
+    GPIO.out_w1tc.val = (1ULL << PIN_ADC_CS); _spi_adc_hw->cmd.usr = 1;
+    while (_spi_adc_hw->cmd.usr); GPIO.out_w1ts.val = (1ULL << PIN_ADC_CS);
+    uint32_t r3 = (_spi_adc_hw->data_buf[0].val & 0xFFFF0000);
+    //esp_rom_delay_us(1);
+
+    // Frame 8
+    GPIO.out_w1tc.val = (1ULL << PIN_ADC_CS); _spi_adc_hw->cmd.usr = 1;
+    while (_spi_adc_hw->cmd.usr); GPIO.out_w1ts.val = (1ULL << PIN_ADC_CS);
+    r3 |= ((_spi_adc_hw->data_buf[0].val >> 16) & 0xFFFF);
+    //esp_rom_delay_us(1);
+
+    // Frame 9
+    GPIO.out_w1tc.val = (1ULL << PIN_ADC_CS); _spi_adc_hw->cmd.usr = 1;
+    while (_spi_adc_hw->cmd.usr); GPIO.out_w1ts.val = (1ULL << PIN_ADC_CS);
+    uint32_t r4 = (_spi_adc_hw->data_buf[0].val & 0xFFFF0000);
+    //esp_rom_delay_us(1);
+
+    // Frame 10
+    GPIO.out_w1tc.val = (1ULL << PIN_ADC_CS); _spi_adc_hw->cmd.usr = 1;
+    while (_spi_adc_hw->cmd.usr); GPIO.out_w1ts.val = (1ULL << PIN_ADC_CS);
+    r4 |= ((_spi_adc_hw->data_buf[0].val >> 16) & 0xFFFF);
+    //esp_rom_delay_us(1);
+
+    // Frame 11
+    GPIO.out_w1tc.val = (1ULL << PIN_ADC_CS); _spi_adc_hw->cmd.usr = 1;
+    while (_spi_adc_hw->cmd.usr); GPIO.out_w1ts.val = (1ULL << PIN_ADC_CS);
+    uint32_t r5 = (_spi_adc_hw->data_buf[0].val & 0xFFFF0000);
+    //esp_rom_delay_us(1);
+
+    // Frame 12
+    GPIO.out_w1tc.val = (1ULL << PIN_ADC_CS); _spi_adc_hw->cmd.usr = 1;
+    while (_spi_adc_hw->cmd.usr); GPIO.out_w1ts.val = (1ULL << PIN_ADC_CS);
+    r5 |= ((_spi_adc_hw->data_buf[0].val >> 16) & 0xFFFF);
+    //esp_rom_delay_us(1);
+
+    // Frame 13
+    GPIO.out_w1tc.val = (1ULL << PIN_ADC_CS); _spi_adc_hw->cmd.usr = 1;
+    while (_spi_adc_hw->cmd.usr); GPIO.out_w1ts.val = (1ULL << PIN_ADC_CS);
+    uint32_t r6 = (_spi_adc_hw->data_buf[0].val & 0xFFFF0000);
+    //esp_rom_delay_us(1);
+
+    // Frame 14
+    GPIO.out_w1tc.val = (1ULL << PIN_ADC_CS); _spi_adc_hw->cmd.usr = 1;
+    while (_spi_adc_hw->cmd.usr); GPIO.out_w1ts.val = (1ULL << PIN_ADC_CS);
+    r6 |= ((_spi_adc_hw->data_buf[0].val >> 16) & 0xFFFF);
+    //esp_rom_delay_us(1);
+
+    // Frame 15
+    GPIO.out_w1tc.val = (1ULL << PIN_ADC_CS); _spi_adc_hw->cmd.usr = 1;
+    while (_spi_adc_hw->cmd.usr); GPIO.out_w1ts.val = (1ULL << PIN_ADC_CS);
+    uint32_t r7 = (_spi_adc_hw->data_buf[0].val & 0xFFFF0000);
+    //esp_rom_delay_us(1);
+
+    // Frame 16
+    GPIO.out_w1tc.val = (1ULL << PIN_ADC_CS); _spi_adc_hw->cmd.usr = 1;
+    while (_spi_adc_hw->cmd.usr); GPIO.out_w1ts.val = (1ULL << PIN_ADC_CS);
+    r7 |= ((_spi_adc_hw->data_buf[0].val >> 16) & 0xFFFF);
+
+    // Ensure the IMU hardware block has also finalized its background execution pass
+    while (_spi_imu_hw->cmd.usr);
+
+    // ====================================================================
+    // 2. PARSE THE HARVESTED REGISTER STACKS INTO THE DESTINATION ARRAYS
+    // ====================================================================
+    // Process Endianness swapping natively using the hardware registers
+    adc_buf[0]  = __builtin_bswap16((uint16_t)(r0 >> 16));
+    adc_buf[1]  = __builtin_bswap16((uint16_t)(r0 & 0xFFFF));
+    adc_buf[2]  = __builtin_bswap16((uint16_t)(r1 >> 16));
+    adc_buf[3]  = __builtin_bswap16((uint16_t)(r1 & 0xFFFF));
+    adc_buf[4]  = __builtin_bswap16((uint16_t)(r2 >> 16));
+    adc_buf[5]  = __builtin_bswap16((uint16_t)(r2 & 0xFFFF));
+    adc_buf[6]  = __builtin_bswap16((uint16_t)(r3 >> 16));
+    adc_buf[7]  = __builtin_bswap16((uint16_t)(r3 & 0xFFFF));
+    adc_buf[8]  = __builtin_bswap16((uint16_t)(r4 >> 16));
+    adc_buf[9]  = __builtin_bswap16((uint16_t)(r4 & 0xFFFF));
+    adc_buf[10] = __builtin_bswap16((uint16_t)(r5 >> 16));
+    adc_buf[11] = __builtin_bswap16((uint16_t)(r5 & 0xFFFF));
+    adc_buf[12] = __builtin_bswap16((uint16_t)(r6 >> 16));
+    adc_buf[13] = __builtin_bswap16((uint16_t)(r6 & 0xFFFF));
+    adc_buf[14] = __builtin_bswap16((uint16_t)(r7 >> 16));
+    adc_buf[15] = __builtin_bswap16((uint16_t)(r7 & 0xFFFF));
+
+    // ====================================================================
+    // 3. OPTIMIZED IMU PARSING
+    // ====================================================================
     uint32_t imu0 = _spi_imu_hw->data_buf[0].val;
     uint32_t imu1 = _spi_imu_hw->data_buf[1].val;
     uint32_t imu2 = _spi_imu_hw->data_buf[2].val;
     uint32_t imu3 = _spi_imu_hw->data_buf[3].val;
 
-    // --- Unpack Gyro (Bytes 1-6 of real data) ---
-    // imu0 bits [31:24] is Byte 1 (Garbage echo). Skip it!
-    imu_buf[0] = (imu0 >> 16) & 0xFF; // Byte 2  -> Gyro X High
-    imu_buf[1] = (imu0 >> 8)  & 0xFF; // Byte 3  -> Gyro X Low
-    imu_buf[2] = imu0 & 0xFF;         // Byte 4  -> Gyro Y High
-
-    imu_buf[3] = (imu1 >> 24) & 0xFF; // Byte 5  -> Gyro Y Low
-    imu_buf[4] = (imu1 >> 16) & 0xFF; // Byte 6  -> Gyro Z High
-    imu_buf[5] = (imu1 >> 8)  & 0xFF; // Byte 7  -> Gyro Z Low
-
-    // --- Unpack Accel (Bytes 7-12 of real data) ---
-    imu_buf[6] = imu1 & 0xFF;         // Byte 8  -> Accel X High
-
-    imu_buf[7] = (imu2 >> 24) & 0xFF; // Byte 9  -> Accel X Low
-    imu_buf[8] = (imu2 >> 16) & 0xFF; // Byte 10 -> Accel Y High
-    imu_buf[9] = (imu2 >> 8)  & 0xFF; // Byte 11 -> Accel Y Low
-    imu_buf[10] = imu2 & 0xFF;        // Byte 12 -> Accel Z High
-
-    imu_buf[11] = (imu3 >> 24) & 0xFF; // Byte 13 -> Accel Z Low
-
-    // 2. Parse ADC and fix Endianness/Alignment on the fly
-    // Instead of a blind cast, unpack each 32-bit register into two 16-bit channels
-    for (int i = 0; i < 8; i++) {
-        uint32_t raw_reg = _spi_adc_hw->data_buf[i].val;
-
-        // Extract high 16 bits and low 16 bits, swapping bytes to fix Little-Endian CPU conversion
-        uint16_t word_high = (uint16_t)(raw_reg >> 16);
-        uint16_t word_low  = (uint16_t)(raw_reg & 0xFFFF);
-
-        adc_buf[i * 2]     = __builtin_bswap16(word_high);
-        adc_buf[(i * 2) + 1] = __builtin_bswap16(word_low);
-    }
+    imu_buf[0]  = (imu0 >> 16) & 0xFF;
+    imu_buf[1]  = (imu0 >> 8)  & 0xFF;
+    imu_buf[2]  = imu0 & 0xFF;
+    imu_buf[3]  = (imu1 >> 24) & 0xFF;
+    imu_buf[4]  = (imu1 >> 16) & 0xFF;
+    imu_buf[5]  = (imu1 >> 8)  & 0xFF;
+    imu_buf[6]  = imu1 & 0xFF;
+    imu_buf[7]  = (imu2 >> 24) & 0xFF;
+    imu_buf[8]  = (imu2 >> 16) & 0xFF;
+    imu_buf[9]  = (imu2 >> 8)  & 0xFF;
+    imu_buf[10] = imu2 & 0xFF;
+    imu_buf[11] = (imu3 >> 24) & 0xFF;
 }
 
 void VenturiTools::initTouchChannel(uint8_t pin) {
