@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/../.." vcs="Git" />
+    <mapping directory="$IDF_PATH$" vcs="Git" />
+    <mapping directory="$IDF_PATH$/components/bootloader/subproject/components/micro-ecc/micro-ecc" vcs="Git" />
+    <mapping directory="$IDF_PATH$/components/bt/controller/lib_esp32" vcs="Git" />
+    <mapping directory="$IDF_PATH$/components/bt/controller/lib_esp32c2/esp32c2-bt-lib" vcs="Git" />
+    <mapping directory="$IDF_PATH$/components/bt/controller/lib_esp32c3_family" vcs="Git" />
+    <mapping directory="$IDF_PATH$/components/bt/controller/lib_esp32c5/esp32c5-bt-lib" vcs="Git" />
+    <mapping directory="$IDF_PATH$/components/bt/controller/lib_esp32c6/esp32c6-bt-lib" vcs="Git" />
+    <mapping directory="$IDF_PATH$/components/bt/controller/lib_esp32h2/esp32h2-bt-lib" vcs="Git" />
+    <mapping directory="$IDF_PATH$/components/bt/controller/lib_esp32h4/esp32h4-bt-lib" vcs="Git" />
+    <mapping directory="$IDF_PATH$/components/bt/controller/lib_esp32s31/esp32s31-bt-lib" vcs="Git" />
+    <mapping directory="$IDF_PATH$/components/bt/esp_ble_audio/lib/lib" vcs="Git" />
+    <mapping directory="$IDF_PATH$/components/bt/esp_ble_mesh/lib/lib" vcs="Git" />
+    <mapping directory="$IDF_PATH$/components/bt/host/nimble/nimble" vcs="Git" />
+    <mapping directory="$IDF_PATH$/components/cmock/CMock" vcs="Git" />
+    <mapping directory="$IDF_PATH$/components/cmock/CMock/vendor/c_exception" vcs="Git" />
+    <mapping directory="$IDF_PATH$/components/cmock/CMock/vendor/unity" vcs="Git" />
+    <mapping directory="$IDF_PATH$/components/esp_coex/lib" vcs="Git" />
+    <mapping directory="$IDF_PATH$/components/esp_phy/lib" vcs="Git" />
+    <mapping directory="$IDF_PATH$/components/esp_wifi/lib" vcs="Git" />
+    <mapping directory="$IDF_PATH$/components/heap/tlsf" vcs="Git" />
+    <mapping directory="$IDF_PATH$/components/lwip/lwip" vcs="Git" />
+    <mapping directory="$IDF_PATH$/components/mbedtls/mbedtls" vcs="Git" />
+    <mapping directory="$IDF_PATH$/components/openthread/lib" vcs="Git" />
+    <mapping directory="$IDF_PATH$/components/openthread/openthread" vcs="Git" />
+    <mapping directory="$IDF_PATH$/components/openthread/openthread/third_party/mbedtls/repo" vcs="Git" />
+    <mapping directory="$IDF_PATH$/components/openthread/openthread/third_party/mbedtls/repo/framework" vcs="Git" />
+    <mapping directory="$IDF_PATH$/components/protobuf-c/protobuf-c" vcs="Git" />
+    <mapping directory="$IDF_PATH$/components/spiffs/spiffs" vcs="Git" />
+    <mapping directory="$IDF_PATH$/components/unity/unity" vcs="Git" />
+  </component>
+</project>

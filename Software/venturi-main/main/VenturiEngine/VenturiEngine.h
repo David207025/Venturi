@@ -1,7 +1,6 @@
 #ifndef VENTURI_ENGINE_H
 #define VENTURI_ENGINE_H
 
-#include <Arduino.h>
 #include <driver/spi_master.h>
 
 #include "freertos/FreeRTOS.h"
@@ -17,6 +16,7 @@ struct __attribute__((packed)) TelemetryFrame {
     uint16_t battery_mv;     // Offset 24 (2-byte aligned)
     uint16_t update_speed;   // Offset 26 (2-byte aligned)
     uint8_t  adc_data[16];   // Offset 28 (1-byte aligned) -> 16 bytes
+
 }; // Total: 44 Bytes. Zero hidden padding holes!
 
 class VenturiEngine {
@@ -33,10 +33,6 @@ protected:
 
     static TaskHandle_t _core0TaskHandle;
     static TaskHandle_t _core1TaskHandle;
-
-
-
-    static void IRAM_ATTR timerCallback(); // The static ISR
 
     static volatile bool frameReady;
 

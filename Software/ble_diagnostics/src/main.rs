@@ -210,7 +210,7 @@ async fn provision_ip_to_esp() -> Result<String, Box<dyn std::error::Error + Sen
             .await?
             .and_then(|prop| prop.local_name)
             .unwrap_or_default()
-            == "Venturi_P4"
+            == "Venturi"
         {
             p.connect().await?;
             p.discover_services().await?;

@@ -328,6 +328,269 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Connector:Conn_01x04_Pin"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x04_Pin"
+				(at 0 -7.62 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x04, script generated"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn_01x04_Pin_1_1"
+				(rectangle
+					(start 0.8636 2.667)
+					(end 0 2.413)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 0.8636 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 0.8636 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 0.8636 -4.953)
+					(end 0 -5.207)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 2.54) (xy 0.8636 2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy 0.8636 0)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -2.54) (xy 0.8636 -2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -5.08) (xy 0.8636 -5.08)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at 5.08 2.54 180)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -2.54 180)
+					(length 3.81)
+					(name "Pin_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -5.08 180)
+					(length 3.81)
+					(name "Pin_4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Connector:Conn_01x16_Socket"
 			(pin_names
 				(offset 1.016)
@@ -6480,6 +6743,16 @@
 	)
 	(wire
 		(pts
+			(xy 154.94 231.14) (xy 157.48 231.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0af20b38-e6c1-404b-b698-64bda0b2414a")
+	)
+	(wire
+		(pts
 			(xy 254 76.2) (xy 243.205 76.2)
 		)
 		(stroke
@@ -6870,6 +7143,26 @@
 	)
 	(wire
 		(pts
+			(xy 154.94 226.06) (xy 157.48 226.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2c8b48db-1a65-4266-9a4f-647996583c6c")
+	)
+	(wire
+		(pts
+			(xy 154.94 241.3) (xy 157.48 241.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2e082c0a-5b52-4983-870b-f48712486567")
+	)
+	(wire
+		(pts
 			(xy 171.45 146.05) (xy 177.8 146.05)
 		)
 		(stroke
@@ -6947,6 +7240,16 @@
 			(type default)
 		)
 		(uuid "397926ae-01f7-492b-83ee-37e54099bf87")
+	)
+	(wire
+		(pts
+			(xy 154.94 246.38) (xy 157.48 246.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "397cbf8d-2e2d-491e-91d5-f45ee2a00275")
 	)
 	(wire
 		(pts
@@ -7820,6 +8123,16 @@
 	)
 	(wire
 		(pts
+			(xy 154.94 238.76) (xy 157.48 238.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7f5a8924-bbb5-4054-ab78-6b01c6f68cd2")
+	)
+	(wire
+		(pts
 			(xy 368.3 139.7) (xy 365.76 139.7)
 		)
 		(stroke
@@ -8110,6 +8423,16 @@
 	)
 	(wire
 		(pts
+			(xy 154.94 228.6) (xy 157.48 228.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9ca85c45-8b8f-42c3-9873-d79cce503e98")
+	)
+	(wire
+		(pts
 			(xy 66.675 44.45) (xy 71.12 44.45)
 		)
 		(stroke
@@ -8217,6 +8540,16 @@
 			(type default)
 		)
 		(uuid "a6e162ef-a624-4be7-90f8-fade5b1d392a")
+	)
+	(wire
+		(pts
+			(xy 154.94 233.68) (xy 157.48 233.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a72ee5eb-a765-4fd0-b4c7-da5dacdde36d")
 	)
 	(wire
 		(pts
@@ -8437,6 +8770,16 @@
 			(type default)
 		)
 		(uuid "b8da9101-6f19-47ca-b810-6f97fb87eeb0")
+	)
+	(wire
+		(pts
+			(xy 154.94 243.84) (xy 157.48 243.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bb15e9b6-a023-4035-bf18-3e909e78c932")
 	)
 	(wire
 		(pts
@@ -9232,6 +9575,30 @@
 			)
 		)
 	)
+	(global_label "IMU_MISO"
+		(shape input)
+		(at 154.94 246.38 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "149754b8-c47b-4596-aaba-388d9f864872")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 143.0043 246.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "SK6812"
 		(shape input)
 		(at 77.47 223.52 180)
@@ -9640,6 +10007,30 @@
 			)
 		)
 	)
+	(global_label "CS"
+		(shape input)
+		(at 154.94 226.06 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "643709cf-3f91-4985-a7de-1be3478f709a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 149.4753 226.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "MISO"
 		(shape input)
 		(at 355.6 132.08 180)
@@ -9725,6 +10116,30 @@
 		(uuid "85f17ba4-55eb-42c9-9ad3-4ced8b31e666")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 348.0186 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "MOSI"
+		(shape input)
+		(at 154.94 231.14 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "9222d65e-aa51-4ccb-bad2-43195b96558e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 147.3586 231.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9856,6 +10271,30 @@
 			)
 		)
 	)
+	(global_label "CLK"
+		(shape input)
+		(at 154.94 228.6 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a38acb61-8155-4c4a-aa75-927d93272abe")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 148.3867 228.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "IMU_CS"
 		(shape input)
 		(at 52.07 218.44 180)
@@ -9952,6 +10391,30 @@
 			)
 		)
 	)
+	(global_label "MISO"
+		(shape input)
+		(at 154.94 233.68 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b960a43f-a48a-4533-88cd-58d27b64e978")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 147.3586 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "MA_ENC_B"
 		(shape input)
 		(at 302.895 62.865 0)
@@ -9976,6 +10439,30 @@
 			)
 		)
 	)
+	(global_label "IMU_MOSI"
+		(shape input)
+		(at 154.94 243.84 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c0fcd56a-3738-4e87-968d-ee70f04889ac")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 143.0043 243.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "IR_SENSOR"
 		(shape input)
 		(at 101.6 127 0)
@@ -9997,6 +10484,30 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+			)
+		)
+	)
+	(global_label "IMU_CS"
+		(shape input)
+		(at 154.94 238.76 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c122f0a9-684b-44ab-840e-f42588c700fd")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 145.121 238.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 	)
@@ -10093,6 +10604,30 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+			)
+		)
+	)
+	(global_label "IMU_CLK"
+		(shape input)
+		(at 154.94 241.3 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d3baba64-07a5-44a4-875e-b9661974ac89")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 144.0324 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 	)
@@ -10613,7 +11148,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "03f70668-46c5-4c6b-b63b-9dc1478a5c08")
-		(property "Reference" "#PWR06"
+		(property "Reference" "#PWR05"
 			(at 95.25 118.11 0)
 			(hide yes)
 			(show_name no)
@@ -10673,7 +11208,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR06")
+					(reference "#PWR05")
 					(unit 1)
 				)
 			)
@@ -11340,7 +11875,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "17076eab-7879-4824-a6be-e10c53c47568")
-		(property "Reference" "#PWR05"
+		(property "Reference" "#PWR04"
 			(at 87.63 46.99 0)
 			(hide yes)
 			(show_name no)
@@ -11400,7 +11935,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR05")
+					(reference "#PWR04")
 					(unit 1)
 				)
 			)
@@ -12347,7 +12882,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3a419670-fd7b-4849-a3c5-772f24687f86")
-		(property "Reference" "#PWR04"
+		(property "Reference" "#PWR06"
 			(at 96.52 279.4 0)
 			(hide yes)
 			(show_name no)
@@ -12407,7 +12942,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR04")
+					(reference "#PWR06")
 					(unit 1)
 				)
 			)
@@ -13075,7 +13610,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "47b5bf78-6b59-4261-83ba-1cc82df3c50d")
-		(property "Reference" "J5"
+		(property "Reference" "J7"
 			(at 292.1 52.07 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13149,7 +13684,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "J5")
+					(reference "J7")
 					(unit 1)
 				)
 			)
@@ -14412,7 +14947,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "71c064a8-02a5-4429-aa11-20646c488fad")
-		(property "Reference" "R2"
+		(property "Reference" "R3"
 			(at 52.07 211.455 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14476,7 +15011,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "R2")
+					(reference "R3")
 					(unit 1)
 				)
 			)
@@ -14729,7 +15264,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "76348a1d-351b-4e8a-8618-2c7dd7733acc")
-		(property "Reference" "R3"
+		(property "Reference" "R2"
 			(at 41.275 62.23 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14793,7 +15328,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "R3")
+					(reference "R2")
 					(unit 1)
 				)
 			)
@@ -15062,7 +15597,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7b4f7c9d-72a5-4d9b-9a06-51932518b4ae")
-		(property "Reference" "J6"
+		(property "Reference" "J8"
 			(at 292.1 109.22 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15136,7 +15671,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "J6")
+					(reference "J8")
 					(unit 1)
 				)
 			)
@@ -16250,6 +16785,94 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:Conn_01x04_Pin")
+		(at 162.56 243.84 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8cca9b68-6cbe-4794-b718-35c901acf23c")
+		(property "Reference" "J6"
+			(at 163.322 241.2999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "SPI_IMU"
+			(at 163.322 243.8399 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x04_P1.27mm_Vertical_SMD_Pin1Left"
+			(at 162.56 243.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 162.56 243.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x04, script generated"
+			(at 162.56 243.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1adc89f8-4ac1-447c-9ce5-3a682f5645e9")
+		)
+		(pin "4"
+			(uuid "0765df5d-39fb-4b87-8609-0912146a4bdd")
+		)
+		(pin "2"
+			(uuid "5484e9e3-9ab1-4fbe-8718-7a847fb6a5ab")
+		)
+		(pin "3"
+			(uuid "4f920ca2-8a49-4dff-9533-8de1aa37fc39")
+		)
+		(instances
+			(project "Venturi_MainPCB"
+				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
+					(reference "J6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 243.205 129.54 0)
 		(unit 1)
@@ -17149,6 +17772,94 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:Conn_01x04_Pin")
+		(at 162.56 231.14 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b6580d70-e119-40a1-a1a3-ab5ca0aa3ed6")
+		(property "Reference" "J5"
+			(at 163.322 228.5999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "SPI_ADC"
+			(at 163.322 231.1399 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x04_P1.27mm_Vertical_SMD_Pin1Left"
+			(at 162.56 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 162.56 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x04, script generated"
+			(at 162.56 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4db1198f-bb59-4576-9aa6-1c0ff40829b4")
+		)
+		(pin "4"
+			(uuid "8f990814-d3e0-4fcf-a2b4-149ba667c425")
+		)
+		(pin "2"
+			(uuid "56893003-f324-4202-a857-3bf36462da75")
+		)
+		(pin "3"
+			(uuid "fcf89807-95fa-4dbc-8ad8-6aaf23cb3647")
+		)
+		(instances
+			(project "Venturi_MainPCB"
+				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
+					(reference "J5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Mechanical:MountingHole")
 		(at 45.72 165.1 0)
 		(unit 1)
@@ -17315,7 +18026,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "bef1e57f-735d-4e44-a42f-301016c3a61d")
-		(property "Reference" "J7"
+		(property "Reference" "J9"
 			(at 378.46 130.81 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17419,7 +18130,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "J7")
+					(reference "J9")
 					(unit 1)
 				)
 			)
