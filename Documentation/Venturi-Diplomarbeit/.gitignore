@@ -1,0 +1,36 @@
+## Kern-Dateien (Auxiliary files)
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+
+## Bibliographie & Verzeichnisse
+*.bbl
+*.blg
+*.lof
+*.lot
+*.bcf
+*.run.xml
+
+## Glossar & Indizes
+*.glo
+*.idx
+*.ist
+*.acn
+*.acr
+*.alg
+*.glg
+*.gls
+
+## Editor-spezifische Dateien
+.vscode/
+.idea/
+*.swp
+*.bak
+*.sav
+
+## Das fertige Dokument (Optional)
+# Wenn du das PDF lieber im Repo hast, kommentiere die nächste Zeile aus.

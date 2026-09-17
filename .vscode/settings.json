@@ -1,0 +1,4 @@
+{
+    "tinymist.outputPath": "$root/Documentation/Venturi-Diplomarbeit/out/$name",
+    "tinymist.exportPdf": "onSave"
+}
