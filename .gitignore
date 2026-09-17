@@ -1,11 +1,6 @@
 Hardware/*/*-backups
-<<<<<<< HEAD
-Software/venturi-main/build
-=======
 Hardware/*/production
 Software/*/build
 
->>>>>>> platformio-version
 */**/.DS_Store
 .DS_Store
-
