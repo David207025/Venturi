@@ -164,18 +164,16 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 			)
 		)
 		(property "Value" "10k"
-			(at 3.3001 0.7366 0)
+			(at 3.0317 0.0688 0)
 			(layer "F.Fab")
 			(uuid "13ae8862-0fc9-4a7f-ad0f-22c460404244")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 			)
 		)
@@ -255,23 +253,12 @@
 			(layer "F.Fab")
 			(uuid "07540b2f-87f6-48c7-8590-add497fb0c26")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
-			(layer "F.Fab")
-			(uuid "8436907c-73bb-40d3-a791-70dbda5a715a")
-			(effects
-				(font
-					(size 0.4 0.4)
-					(thickness 0.06)
-				)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9125 0)
 			(size 0.975 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(IC1-GPIO1)")
+			(net "Net-(U1-GPIO1)")
 			(pintype "passive")
 			(uuid "0ff07bd9-f8f7-4b37-b48c-41fce4f978e1")
 		)
@@ -303,14 +290,13 @@
 		(at 230.5812 68.0212 90)
 		(descr "LED SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing)")
 		(tags "LED handsolder")
-		(property "Reference" "D1"
-			(at 0 -1.65 90)
+		(property "Reference" "H5"
+			(at 0.0062 -1.5562 90)
 			(layer "F.SilkS")
 			(uuid "24e0a9ae-179d-47a9-85ab-2c96d1442ba1")
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 			)
 		)
@@ -320,8 +306,7 @@
 			(uuid "edf34839-a743-4c71-8e8c-6e4ae7ec6026")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 			)
 		)
@@ -465,23 +450,12 @@
 			(layer "F.Fab")
 			(uuid "b96932ec-34f4-478d-9112-b8fc19b5d10f")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 90)
-			(layer "F.Fab")
-			(uuid "4b9b8255-568e-4574-b09b-6035815d6357")
-			(effects
-				(font
-					(size 0.5 0.5)
-					(thickness 0.08)
-				)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -1.025 0 90)
 			(size 1.15 1.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.217391)
-			(net "Net-(D1-K)")
+			(net "Net-(H5-K)")
 			(pinfunction "K_1")
 			(pintype "passive")
 			(uuid "3cb84c23-52b9-442a-b6a8-c59e98cf793f")
@@ -515,25 +489,23 @@
 		(at 76.7819 64.7344)
 		(descr "SOT, 3 Pin (JEDEC TO-236 Var AB https://www.jedec.org/document_search?search_api_views_fulltext=TO-236)")
 		(tags "SOT TO_SOT_SMD")
-		(property "Reference" "Q2"
-			(at 0 -2.4 0)
+		(property "Reference" "V14"
+			(at -0.0819 -3.6944 0)
 			(layer "F.SilkS")
 			(uuid "a0001eab-c6ab-4f8e-b5c9-9a3d41155fee")
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 			)
 		)
 		(property "Value" "BSS138"
-			(at 4.7267 -0.2692 0)
+			(at -0.2319 -2.3694 0)
 			(layer "F.Fab")
 			(uuid "6e01bd65-258c-4372-8273-2162ffaf02eb")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 			)
 		)
@@ -825,23 +797,12 @@
 			(layer "F.Fab")
 			(uuid "6975d387-2b04-4600-8802-ac43b1c7926f")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 90)
-			(layer "F.Fab")
-			(uuid "aa97a5c3-ca65-4055-98eb-ea18a77c6b13")
-			(effects
-				(font
-					(size 0.72 0.72)
-					(thickness 0.11)
-				)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9375 -0.95)
 			(size 1.475 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(IC1-GPIO1)")
+			(net "Net-(U1-GPIO1)")
 			(pinfunction "G_1")
 			(pintype "input")
 			(uuid "fbc7a6f9-f436-4e67-86f8-79a9fd2c0f48")
@@ -861,7 +822,7 @@
 			(size 1.475 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(Q2-D)")
+			(net "Net-(V14-D)")
 			(pinfunction "D_3")
 			(pintype "passive")
 			(uuid "5d0d9cfb-017e-4baa-8e57-3f5d0d58ecbc")
@@ -892,7 +853,6 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 			)
 		)
@@ -902,8 +862,7 @@
 			(uuid "5d23e453-3a28-468f-bb82-3ded7a865e52")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 			)
 		)
@@ -985,17 +944,6 @@
 			(layer "F.Fab")
 			(uuid "3bda1afa-9f3c-4012-a60a-86891d060b20")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
-			(layer "F.Fab")
-			(uuid "bb16be4b-2e6d-4480-8c86-85d909a1cf48")
-			(effects
-				(font
-					(size 0.4 0.4)
-					(thickness 0.06)
-				)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9125 0 180)
 			(size 0.975 0.95)
@@ -1010,7 +958,7 @@
 			(size 0.975 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(U9-A)")
+			(net "Net-(V9-A)")
 			(pintype "passive")
 			(uuid "1ed8c401-3460-472f-9bcd-5d22c8694301")
 		)
@@ -1040,7 +988,6 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 			)
 		)
@@ -1050,8 +997,7 @@
 			(uuid "f237f595-a1d8-4dba-afc1-43636637a01b")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 			)
 		)
@@ -1118,7 +1064,6 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 			)
 		)
@@ -1144,18 +1089,16 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 			)
 		)
 		(property "Value" "330R"
-			(at 0 1.43 90)
+			(at -2.343 1.0382 180)
 			(layer "F.Fab")
 			(uuid "b5694d2d-3f24-42e4-995d-656bf9ecad9c")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 			)
 		)
@@ -1237,23 +1180,12 @@
 			(layer "F.Fab")
 			(uuid "67db7953-76b3-4d7c-93bc-9b54f2bc7053")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 90)
-			(layer "F.Fab")
-			(uuid "761032e2-5ffa-452e-a38d-8e643047cebf")
-			(effects
-				(font
-					(size 0.4 0.4)
-					(thickness 0.06)
-				)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9125 0 90)
 			(size 0.975 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(D2-K)")
+			(net "Net-(H6-K)")
 			(pintype "passive")
 			(uuid "2d0fb3f3-c7e3-49cc-9930-74e187e81676")
 		)
@@ -1262,7 +1194,7 @@
 			(size 0.975 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(Q2-D)")
+			(net "Net-(V14-D)")
 			(pintype "passive")
 			(uuid "e92942a2-75de-43f7-a811-f2a2f7125fcf")
 		)
@@ -1292,18 +1224,16 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 			)
 		)
 		(property "Value" "100R"
-			(at 0 1.43 0)
+			(at 3.6192 0.8324 0)
 			(layer "F.Fab")
 			(uuid "b8dab7c2-eaaa-4a61-9424-c46503f59c68")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 			)
 		)
@@ -1385,17 +1315,6 @@
 			(layer "F.Fab")
 			(uuid "2cc48182-2253-4f07-9649-90e459432428")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
-			(layer "F.Fab")
-			(uuid "07656348-5c48-4a02-837b-2343f795cc87")
-			(effects
-				(font
-					(size 0.4 0.4)
-					(thickness 0.06)
-				)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9125 0)
 			(size 0.975 0.95)
@@ -1410,7 +1329,7 @@
 			(size 0.975 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(U1-A)")
+			(net "Net-(V1-A)")
 			(pintype "passive")
 			(uuid "46d5e70c-3210-4190-9ce7-a343985aab36")
 		)
@@ -1440,18 +1359,16 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 			)
 		)
 		(property "Value" "330R"
-			(at 2.1609 1.2954 180)
+			(at 0.3847 1.261 270)
 			(layer "F.Fab")
 			(uuid "0dd61dde-273b-4923-8a6c-0d09fe23ad04")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 			)
 		)
@@ -1533,23 +1450,12 @@
 			(layer "F.Fab")
 			(uuid "93a49a6f-58c8-447d-a75a-2936e38d561e")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 90)
-			(layer "F.Fab")
-			(uuid "16c6a70f-dfbe-4a5f-bc13-3afd5ab04b53")
-			(effects
-				(font
-					(size 0.4 0.4)
-					(thickness 0.06)
-				)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9125 0 90)
 			(size 0.975 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(D1-K)")
+			(net "Net-(H5-K)")
 			(pintype "passive")
 			(uuid "ce96bb8d-77e1-4f1c-ad82-672637562ca2")
 		)
@@ -1558,7 +1464,7 @@
 			(size 0.975 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(Q1-D)")
+			(net "Net-(V13-D)")
 			(pintype "passive")
 			(uuid "09654a7b-df21-400f-83f2-61ea29b99117")
 		)
@@ -1588,7 +1494,6 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 			)
 		)
@@ -1598,8 +1503,7 @@
 			(uuid "0d5d99d3-9051-436e-b946-8e78c05b8db9")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 			)
 		)
@@ -1666,7 +1570,6 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 			)
 		)
@@ -1685,14 +1588,13 @@
 		(at 74.2188 68.1736 90)
 		(descr "LED SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing)")
 		(tags "LED handsolder")
-		(property "Reference" "D2"
+		(property "Reference" "H6"
 			(at 0 -1.65 90)
 			(layer "F.SilkS")
 			(uuid "ec4dbbb2-79a2-4a59-b276-96750b0e01d8")
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 			)
 		)
@@ -1702,8 +1604,7 @@
 			(uuid "a9387b5c-232c-478a-b9aa-b042f1ca5a3d")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 			)
 		)
@@ -1847,23 +1748,12 @@
 			(layer "F.Fab")
 			(uuid "1cda56a9-b26c-45e7-856d-0ec85dfb96ef")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 90)
-			(layer "F.Fab")
-			(uuid "e315bd41-634c-43dc-b619-8ca59257b4f7")
-			(effects
-				(font
-					(size 0.5 0.5)
-					(thickness 0.08)
-				)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -1.025 0 90)
 			(size 1.15 1.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.217391)
-			(net "Net-(D2-K)")
+			(net "Net-(H6-K)")
 			(pinfunction "K_1")
 			(pintype "passive")
 			(uuid "c3de2e8d-3775-4c9d-a867-6103cc022604")
@@ -1904,7 +1794,6 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 			)
 		)
@@ -1914,8 +1803,7 @@
 			(uuid "e5067798-ffdc-44ac-8a82-70f5ca353d15")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 			)
 		)
@@ -1997,17 +1885,6 @@
 			(layer "F.Fab")
 			(uuid "05467f76-c1e6-41c7-8dab-09380f33d491")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
-			(layer "F.Fab")
-			(uuid "f74449b7-16df-4733-8be0-e63c076b23c4")
-			(effects
-				(font
-					(size 0.4 0.4)
-					(thickness 0.06)
-				)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9125 0 180)
 			(size 0.975 0.95)
@@ -2022,7 +1899,7 @@
 			(size 0.975 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(U5-A)")
+			(net "Net-(V5-A)")
 			(pintype "passive")
 			(uuid "bcbe0708-ee0b-4e5d-852e-5c5c2a993efc")
 		)
@@ -2045,25 +1922,23 @@
 		(at 227.203 64.0842 180)
 		(descr "SOT, 3 Pin (JEDEC TO-236 Var AB https://www.jedec.org/document_search?search_api_views_fulltext=TO-236)")
 		(tags "SOT TO_SOT_SMD")
-		(property "Reference" "Q1"
-			(at 1.8288 1.2954 0)
+		(property "Reference" "V13"
+			(at 2.228 1.1942 0)
 			(layer "F.SilkS")
 			(uuid "f877b686-b05d-4662-ae0b-76887b1cd40b")
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 			)
 		)
 		(property "Value" "BSS138"
-			(at 0 2.4 0)
+			(at -0.022 2.4 0)
 			(layer "F.Fab")
 			(uuid "98bcc02b-5f1e-4357-a05c-ebcc2397eaa0")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 			)
 		)
@@ -2355,23 +2230,12 @@
 			(layer "F.Fab")
 			(uuid "bc817b25-7759-49e6-9d51-313affeb3392")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 90)
-			(layer "F.Fab")
-			(uuid "bbefa582-e40a-4240-9973-24af120d438d")
-			(effects
-				(font
-					(size 0.72 0.72)
-					(thickness 0.11)
-				)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9375 -0.95 180)
 			(size 1.475 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(IC1-GPIO0)")
+			(net "Net-(U1-GPIO0)")
 			(pinfunction "G_1")
 			(pintype "input")
 			(uuid "88b0ad38-0860-49c6-aa85-b55ac03d37ba")
@@ -2391,7 +2255,7 @@
 			(size 1.475 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(Q1-D)")
+			(net "Net-(V13-D)")
 			(pinfunction "D_3")
 			(pintype "passive")
 			(uuid "2ff41732-caf1-4c7d-ae4b-4a18b1bd83ff")
@@ -2422,7 +2286,6 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 			)
 		)
@@ -2432,8 +2295,7 @@
 			(uuid "5e0523d4-0820-4739-b82d-7c7642db2d02")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 			)
 		)
@@ -2500,7 +2362,6 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 			)
 		)
@@ -2526,18 +2387,16 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 			)
 		)
 		(property "Value" "10k"
-			(at 0 1.43 0)
+			(at 1.5398 1.1438 0)
 			(layer "F.Fab")
 			(uuid "51c4a7d3-85dd-4519-9eb4-9382e99d47d1")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 			)
 		)
@@ -2617,23 +2476,12 @@
 			(layer "F.Fab")
 			(uuid "981f2d1f-7443-4787-8113-4e01d171202d")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
-			(layer "F.Fab")
-			(uuid "a3dace7e-4942-4a40-be54-9d35d454d81d")
-			(effects
-				(font
-					(size 0.4 0.4)
-					(thickness 0.06)
-				)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9125 0)
 			(size 0.975 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(IC1-GPIO0)")
+			(net "Net-(U1-GPIO0)")
 			(pintype "passive")
 			(uuid "705ebaa9-b0ab-48f5-8d88-328015162d42")
 		)
@@ -2672,7 +2520,6 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 			)
 		)
@@ -2682,8 +2529,7 @@
 			(uuid "dc125a13-d5aa-4f21-9829-64d1584ab06e")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 			)
 		)
@@ -2750,7 +2596,6 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 			)
 		)
@@ -2776,7 +2621,6 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 			)
 		)
@@ -2786,8 +2630,7 @@
 			(uuid "7af2490b-b98c-430f-a0f4-0d10980acc1f")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 			)
 		)
@@ -2869,17 +2712,6 @@
 			(layer "F.Fab")
 			(uuid "09f7fd62-aee8-4e7f-976c-cb8c76b3eaba")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
-			(layer "F.Fab")
-			(uuid "011d256d-90c7-4edb-8a15-8b064ab958a5")
-			(effects
-				(font
-					(size 0.4 0.4)
-					(thickness 0.06)
-				)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9125 0 180)
 			(size 0.975 0.95)
@@ -2894,7 +2726,7 @@
 			(size 0.975 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(U15-A)")
+			(net "Net-(V17-A)")
 			(pintype "passive")
 			(uuid "29253072-3959-4f96-9984-513fc3aafb61")
 		)
@@ -2924,7 +2756,6 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 			)
 		)
@@ -2934,8 +2765,7 @@
 			(uuid "35b97b97-1035-4989-9256-b80609cdd2bd")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 			)
 		)
@@ -3017,17 +2847,6 @@
 			(layer "F.Fab")
 			(uuid "f0cb6a1f-20ab-4d03-8e20-bd98ba527f83")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
-			(layer "F.Fab")
-			(uuid "bdeb380c-bfab-4dbc-b5c6-c409ae2cd607")
-			(effects
-				(font
-					(size 0.4 0.4)
-					(thickness 0.06)
-				)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9125 0 180)
 			(size 0.975 0.95)
@@ -3042,7 +2861,7 @@
 			(size 0.975 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(U13-A)")
+			(net "Net-(V15-A)")
 			(pintype "passive")
 			(uuid "0fb66f56-4f7d-4681-9d97-1ecff013b153")
 		)
@@ -3072,7 +2891,6 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 			)
 		)
@@ -3082,8 +2900,7 @@
 			(uuid "d247bb8e-15ed-4a0c-be2c-eefc0607001d")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 			)
 		)
@@ -3165,17 +2982,6 @@
 			(layer "F.Fab")
 			(uuid "98d13a0b-536e-4162-8761-755ccf91c34c")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
-			(layer "F.Fab")
-			(uuid "80e1037e-aa49-4a84-a7a9-790bcc83f521")
-			(effects
-				(font
-					(size 0.4 0.4)
-					(thickness 0.06)
-				)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9125 0 180)
 			(size 0.975 0.95)
@@ -3190,7 +2996,7 @@
 			(size 0.975 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(U3-A)")
+			(net "Net-(V3-A)")
 			(pintype "passive")
 			(uuid "b83a2796-cb6c-4809-b179-4a3628cbf5a2")
 		)
@@ -3220,7 +3026,6 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 			)
 		)
@@ -3230,8 +3035,7 @@
 			(uuid "4d897d85-0058-40f1-99b5-2e6aebba7ec9")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 			)
 		)
@@ -3313,17 +3117,6 @@
 			(layer "F.Fab")
 			(uuid "44a003a1-846f-4f93-b52d-535c61768ec1")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
-			(layer "F.Fab")
-			(uuid "239ef2b0-784a-4f8f-8257-268bcfd7382c")
-			(effects
-				(font
-					(size 0.4 0.4)
-					(thickness 0.06)
-				)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9125 0 180)
 			(size 0.975 0.95)
@@ -3338,7 +3131,7 @@
 			(size 0.975 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(U7-A)")
+			(net "Net-(V7-A)")
 			(pintype "passive")
 			(uuid "18dcc300-8f01-4fb9-8e28-a0f76526bb8d")
 		)
@@ -3368,18 +3161,16 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 			)
 		)
-		(property "Value" "3k3"
+		(property "Value" "22R"
 			(at 0 1.65 90)
 			(layer "F.Fab")
 			(uuid "b573e85a-bcdf-4f52-b720-12cff32a88a9")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 			)
 		)
@@ -3459,23 +3250,12 @@
 			(layer "F.Fab")
 			(uuid "d091d1f3-a34a-462a-8ba7-6443c33e5c81")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 90)
-			(layer "F.Fab")
-			(uuid "e17f487d-23a5-4ca3-81d7-fcf0b98c58e6")
-			(effects
-				(font
-					(size 0.5 0.5)
-					(thickness 0.08)
-				)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -1 0 90)
 			(size 1.2 1.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.208333)
-			(net "Net-(IC1-SDO)")
+			(net "Net-(U1-SDO)")
 			(pintype "passive")
 			(uuid "fa692e00-4455-46f4-b0c2-9348fa259635")
 		)
@@ -3514,7 +3294,6 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 			)
 		)
@@ -3524,8 +3303,7 @@
 			(uuid "f3ede74e-c2ce-485f-9270-650ef918a3e2")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 			)
 		)
@@ -3607,17 +3385,6 @@
 			(layer "F.Fab")
 			(uuid "32ea70c0-f540-4263-9a05-d1f1c7063210")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
-			(layer "F.Fab")
-			(uuid "20c69c8a-0b26-4726-807c-de91f25cda96")
-			(effects
-				(font
-					(size 0.4 0.4)
-					(thickness 0.06)
-				)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9125 0 180)
 			(size 0.975 0.95)
@@ -3632,7 +3399,7 @@
 			(size 0.975 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(U11-A)")
+			(net "Net-(V11-A)")
 			(pintype "passive")
 			(uuid "cd059abf-dbff-4600-88bc-eabb867637cd")
 		)
@@ -3662,7 +3429,6 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 				(justify mirror)
 			)
@@ -3673,8 +3439,7 @@
 			(uuid "39e1da18-cfe0-43d6-95d9-f58923f8ef35")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 				(justify mirror)
 			)
@@ -3759,18 +3524,6 @@
 			(layer "B.Fab")
 			(uuid "98c8971a-77f8-47d3-99a5-c109a979ffbe")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
-			(layer "B.Fab")
-			(uuid "76bce2ff-4b99-4d68-9f75-bfa1b88ebf82")
-			(effects
-				(font
-					(size 0.4 0.4)
-					(thickness 0.06)
-				)
-				(justify mirror)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9125 0 180)
 			(size 0.975 0.95)
@@ -3808,26 +3561,24 @@
 		(at 137.16 75.692 -90)
 		(descr "OnSemi CASE 100CY, light-direction upwards, see http://www.onsemi.com/pub/Collateral/QRE1113-D.PDF")
 		(tags "refective opto couple photo coupler")
-		(property "Reference" "U7"
-			(at -2.5 0 0)
+		(property "Reference" "V7"
+			(at -3.602 0.01 0)
 			(layer "B.SilkS")
 			(uuid "7a20fa4d-9970-4ccd-98ab-fdc855c8c548")
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 				(justify mirror)
 			)
 		)
 		(property "Value" "QRE1113GR"
-			(at 0 -3.9 90)
+			(at -2.502 -0.44 0)
 			(layer "B.Fab")
 			(uuid "bbf832ab-8d52-48f7-8959-f96de1710443")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 				(justify mirror)
 			)
@@ -3994,24 +3745,12 @@
 			(layer "B.Fab")
 			(uuid "4a53827a-0474-4e83-b9a6-298e9096f5f6")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 -0.2 90)
-			(layer "B.Fab")
-			(uuid "1ecd83c7-826d-40c8-820f-2f4043376504")
-			(effects
-				(font
-					(size 0.75 0.75)
-					(thickness 0.15)
-				)
-				(justify mirror)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9 2 270)
 			(size 0.79 1.66)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(U7-A)")
+			(net "Net-(V7-A)")
 			(pinfunction "A_1")
 			(pintype "passive")
 			(uuid "82205e9a-0f7c-4b19-ba58-0731a6fea635")
@@ -4021,7 +3760,7 @@
 			(size 0.79 1.66)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(U7-K)")
+			(net "Net-(V7-K)")
 			(pinfunction "K_2")
 			(pintype "passive")
 			(uuid "c2d3d1bc-d947-4ea7-99e5-61e125e3d836")
@@ -4070,7 +3809,6 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 				(justify mirror)
 			)
@@ -4081,8 +3819,7 @@
 			(uuid "580deaf1-752e-42d4-845c-b719f8a2c8ca")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 				(justify mirror)
 			)
@@ -4167,18 +3904,6 @@
 			(layer "B.Fab")
 			(uuid "c50b7279-d7b7-4d16-9f8a-6f99e901a6ca")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
-			(layer "B.Fab")
-			(uuid "2bcf162e-afa7-4e5b-8cac-642257030a71")
-			(effects
-				(font
-					(size 0.4 0.4)
-					(thickness 0.06)
-				)
-				(justify mirror)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9125 0 180)
 			(size 0.975 0.95)
@@ -4216,26 +3941,24 @@
 		(at 96.52 70.612 -90)
 		(descr "OnSemi CASE 100CY, light-direction upwards, see http://www.onsemi.com/pub/Collateral/QRE1113-D.PDF")
 		(tags "refective opto couple photo coupler")
-		(property "Reference" "U3"
-			(at -2.5 0 0)
+		(property "Reference" "V3"
+			(at -3.497 -0.03 0)
 			(layer "B.SilkS")
 			(uuid "516bb328-21aa-42b9-ab10-8f2369769655")
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 				(justify mirror)
 			)
 		)
 		(property "Value" "QRE1113GR"
-			(at 0 -3.9 90)
+			(at -2.422 -0.23 0)
 			(layer "B.Fab")
 			(uuid "81b3ab32-c822-46e6-951f-15b95a9b5a84")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 				(justify mirror)
 			)
@@ -4402,24 +4125,12 @@
 			(layer "B.Fab")
 			(uuid "f9a8fd81-ef09-4ca5-b432-c55ce942482d")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 -0.2 90)
-			(layer "B.Fab")
-			(uuid "5c335b43-6094-4e96-b2fe-4e71cc3baefa")
-			(effects
-				(font
-					(size 0.75 0.75)
-					(thickness 0.15)
-				)
-				(justify mirror)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9 2 270)
 			(size 0.79 1.66)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(U3-A)")
+			(net "Net-(V3-A)")
 			(pinfunction "A_1")
 			(pintype "passive")
 			(uuid "1ddfcbb0-af7c-42b6-9b18-9bb367260008")
@@ -4429,7 +4140,7 @@
 			(size 0.79 1.66)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(U3-K)")
+			(net "Net-(V3-K)")
 			(pinfunction "K_2")
 			(pintype "passive")
 			(uuid "2cbabb97-35b9-4628-b87c-b1e7c6d6da5a")
@@ -4478,7 +4189,6 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 				(justify mirror)
 			)
@@ -4489,8 +4199,7 @@
 			(uuid "0dc5c407-e8d3-47c6-a658-d727df10b3fa")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 				(justify mirror)
 			)
@@ -4575,18 +4284,6 @@
 			(layer "B.Fab")
 			(uuid "ad076683-1f95-4a8b-983b-424c4969e368")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
-			(layer "B.Fab")
-			(uuid "38ebbf2d-7a9c-4d4a-8bf9-2107fc175d42")
-			(effects
-				(font
-					(size 0.4 0.4)
-					(thickness 0.06)
-				)
-				(justify mirror)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9125 0 180)
 			(size 0.975 0.95)
@@ -4631,7 +4328,6 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 				(justify mirror)
 			)
@@ -4642,8 +4338,7 @@
 			(uuid "f9113022-304c-4838-8586-3aa9bc92296f")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 				(justify mirror)
 			)
@@ -4728,18 +4423,6 @@
 			(layer "B.Fab")
 			(uuid "48b6e2eb-9005-40e2-b94a-d91dad7d8f48")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
-			(layer "B.Fab")
-			(uuid "b524713a-4512-4f0a-9550-cc62dacd3325")
-			(effects
-				(font
-					(size 0.4 0.4)
-					(thickness 0.06)
-				)
-				(justify mirror)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9125 0 180)
 			(size 0.975 0.95)
@@ -4784,7 +4467,6 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 				(justify mirror)
 			)
@@ -4795,8 +4477,7 @@
 			(uuid "8238d953-ac86-46f9-a7fd-e3ba975c0865")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 				(justify mirror)
 			)
@@ -4881,18 +4562,6 @@
 			(layer "B.Fab")
 			(uuid "5f7edf54-11d9-4935-b864-4cf8908db51b")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
-			(layer "B.Fab")
-			(uuid "689a9d87-34e7-45af-8e8e-77eb9f2cbf8f")
-			(effects
-				(font
-					(size 0.4 0.4)
-					(thickness 0.06)
-				)
-				(justify mirror)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9125 0 180)
 			(size 0.975 0.95)
@@ -4937,7 +4606,6 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 				(justify mirror)
 			)
@@ -4948,8 +4616,7 @@
 			(uuid "cbbaf97f-6a2e-47f6-ae2b-d4a0c8b834d6")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 				(justify mirror)
 			)
@@ -5034,18 +4701,6 @@
 			(layer "B.Fab")
 			(uuid "5bda77c4-0ccd-49cf-9ed7-a3c0022989d4")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
-			(layer "B.Fab")
-			(uuid "0c4399f7-e632-40a3-a7b5-c23ae71fee52")
-			(effects
-				(font
-					(size 0.4 0.4)
-					(thickness 0.06)
-				)
-				(justify mirror)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9125 0 180)
 			(size 0.975 0.95)
@@ -5090,7 +4745,6 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 				(justify mirror)
 			)
@@ -5101,8 +4755,7 @@
 			(uuid "58895a5e-6033-4fcc-8f99-f2ebe144b9f4")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 				(justify mirror)
 			)
@@ -5187,18 +4840,6 @@
 			(layer "B.Fab")
 			(uuid "39c4645f-9fb1-4b4a-8987-6f66b2ceb26c")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
-			(layer "B.Fab")
-			(uuid "a27d9b96-e752-4185-8056-efb72bf26cd9")
-			(effects
-				(font
-					(size 0.4 0.4)
-					(thickness 0.06)
-				)
-				(justify mirror)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9125 0 180)
 			(size 0.975 0.95)
@@ -5236,26 +4877,24 @@
 		(at 116.84 73.152 -90)
 		(descr "OnSemi CASE 100CY, light-direction upwards, see http://www.onsemi.com/pub/Collateral/QRE1113-D.PDF")
 		(tags "refective opto couple photo coupler")
-		(property "Reference" "U5"
-			(at -2.5 0 0)
+		(property "Reference" "V5"
+			(at -3.687 -0.01 0)
 			(layer "B.SilkS")
 			(uuid "b4fe9a60-a3af-4a22-85d7-26c9e785a708")
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 				(justify mirror)
 			)
 		)
 		(property "Value" "QRE1113GR"
-			(at 0 -3.9 90)
+			(at -2.412 -0.285 0)
 			(layer "B.Fab")
 			(uuid "5446b239-c65d-4e87-b7af-814313bbb489")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 				(justify mirror)
 			)
@@ -5422,24 +5061,12 @@
 			(layer "B.Fab")
 			(uuid "9d76b671-55a3-4bf6-adc7-8f462b798fef")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 -0.2 90)
-			(layer "B.Fab")
-			(uuid "ed31158a-e00d-463a-bc32-702115aad6c5")
-			(effects
-				(font
-					(size 0.75 0.75)
-					(thickness 0.15)
-				)
-				(justify mirror)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9 2 270)
 			(size 0.79 1.66)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(U5-A)")
+			(net "Net-(V5-A)")
 			(pinfunction "A_1")
 			(pintype "passive")
 			(uuid "fdf0a580-0927-4bd5-a1cd-827fd314237a")
@@ -5449,7 +5076,7 @@
 			(size 0.79 1.66)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(U5-K)")
+			(net "Net-(V5-K)")
 			(pinfunction "K_2")
 			(pintype "passive")
 			(uuid "0abd488a-8592-4a0b-87c6-a930f150bda6")
@@ -5491,26 +5118,24 @@
 		(at 127 73.152 -90)
 		(descr "OnSemi CASE 100CY, light-direction upwards, see http://www.onsemi.com/pub/Collateral/QRE1113-D.PDF")
 		(tags "refective opto couple photo coupler")
-		(property "Reference" "U6"
+		(property "Reference" "V6"
 			(at -2.5 0 0)
 			(layer "B.SilkS")
 			(uuid "3e347614-117b-4130-9631-fbf2b9d5507b")
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 				(justify mirror)
 			)
 		)
 		(property "Value" "QRE1113GR"
-			(at 0 -3.9 90)
+			(at 2.463 0 0)
 			(layer "B.Fab")
 			(uuid "343e6b47-6931-461f-a0c1-077ad680dae5")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 				(justify mirror)
 			)
@@ -5677,24 +5302,12 @@
 			(layer "B.Fab")
 			(uuid "3a64a836-7f06-4bfc-a6e4-1977e46d4d16")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 -0.2 90)
-			(layer "B.Fab")
-			(uuid "1499ed81-3b09-4e71-95b8-d74ecc186b1f")
-			(effects
-				(font
-					(size 0.75 0.75)
-					(thickness 0.15)
-				)
-				(justify mirror)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9 2 270)
 			(size 0.79 1.66)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(U5-K)")
+			(net "Net-(V5-K)")
 			(pinfunction "A_1")
 			(pintype "passive")
 			(uuid "08af6202-a700-4566-b312-2dc4ec59ca0a")
@@ -5746,26 +5359,24 @@
 		(at 218.44 68.072 -90)
 		(descr "OnSemi CASE 100CY, light-direction upwards, see http://www.onsemi.com/pub/Collateral/QRE1113-D.PDF")
 		(tags "refective opto couple photo coupler")
-		(property "Reference" "U15"
+		(property "Reference" "V17"
 			(at -2.5 0 0)
 			(layer "B.SilkS")
 			(uuid "97d2bc51-47e7-41e1-bc07-6bc6bccc77e7")
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 				(justify mirror)
 			)
 		)
 		(property "Value" "QRE1113GR"
-			(at 0 -3.9 90)
+			(at 2.518 -0.01 0)
 			(layer "B.Fab")
 			(uuid "e5090817-9d2c-444d-a96d-799dd82fcd29")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 				(justify mirror)
 			)
@@ -5932,24 +5543,12 @@
 			(layer "B.Fab")
 			(uuid "f0ac9fc6-1780-441a-a7cc-857ff9df2950")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 -0.2 90)
-			(layer "B.Fab")
-			(uuid "273d0a66-91e7-475e-92ed-15a858649b00")
-			(effects
-				(font
-					(size 0.75 0.75)
-					(thickness 0.15)
-				)
-				(justify mirror)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9 2 270)
 			(size 0.79 1.66)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(U15-A)")
+			(net "Net-(V17-A)")
 			(pinfunction "A_1")
 			(pintype "passive")
 			(uuid "bf92de6a-f23a-4da1-882b-6f988111fb63")
@@ -5959,7 +5558,7 @@
 			(size 0.79 1.66)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(U15-K)")
+			(net "Net-(V17-K)")
 			(pinfunction "K_2")
 			(pintype "passive")
 			(uuid "11e2d528-5ca3-4ac8-8503-8298e6d0baa6")
@@ -6002,25 +5601,23 @@
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "capacitor handsolder")
 		(property "Reference" "C6"
-			(at 0 1.43 0)
+			(at 0.0033 -1.4486 0)
 			(layer "B.SilkS")
-			(uuid "7580e3ef-3f1a-43f4-81d9-4b9ad77a53ab")
+			(uuid "e8d7c8cb-b4bb-4b1c-ba87-17a6b42eec06")
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 				(justify mirror)
 			)
 		)
 		(property "Value" "1u"
-			(at 0 -1.43 0)
+			(at 0.0283 -2.5236 0)
 			(layer "B.Fab")
-			(uuid "ecb98f30-36a7-4908-8a2b-10dfc43eeb81")
+			(uuid "36217264-111d-42e6-be69-74a01b8b879d")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 				(justify mirror)
 			)
@@ -6029,7 +5626,7 @@
 			(at 0 0 0)
 			(layer "B.Fab")
 			(hide yes)
-			(uuid "114386c1-09ef-41ff-a8d7-4c5202f90a14")
+			(uuid "5ccbcff5-0e26-44cc-a92c-23647f55c7f7")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6042,7 +5639,7 @@
 			(at 0 0 0)
 			(layer "B.Fab")
 			(hide yes)
-			(uuid "6b162b44-695d-45b0-ab35-b9358fd3635c")
+			(uuid "31f7290f-f790-459a-b3a8-322452b80447")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6105,18 +5702,6 @@
 			(layer "B.Fab")
 			(uuid "53467105-5d8a-4b0e-a51b-bf9aa405639f")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
-			(layer "B.Fab")
-			(uuid "10223d75-155f-4d55-9e66-d81f4b39a8f1")
-			(effects
-				(font
-					(size 0.4 0.4)
-					(thickness 0.06)
-				)
-				(justify mirror)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.8625 0 180)
 			(size 1.075 0.95)
@@ -6161,7 +5746,6 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 				(justify mirror)
 			)
@@ -6172,8 +5756,7 @@
 			(uuid "b74b69f1-e16e-40b7-823d-05cd037d8e9c")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 				(justify mirror)
 			)
@@ -6258,18 +5841,6 @@
 			(layer "B.Fab")
 			(uuid "4e9b5828-52b9-454a-b374-8e55c8702472")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
-			(layer "B.Fab")
-			(uuid "1abad9ff-43a5-446d-ac37-7ddd6acd5dc2")
-			(effects
-				(font
-					(size 0.4 0.4)
-					(thickness 0.06)
-				)
-				(justify mirror)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9125 0)
 			(size 0.975 0.95)
@@ -6307,26 +5878,24 @@
 		(at 198.12 70.612 -90)
 		(descr "OnSemi CASE 100CY, light-direction upwards, see http://www.onsemi.com/pub/Collateral/QRE1113-D.PDF")
 		(tags "refective opto couple photo coupler")
-		(property "Reference" "U13"
-			(at -2.5 0 0)
+		(property "Reference" "V15"
+			(at -3.522 -0.005 0)
 			(layer "B.SilkS")
 			(uuid "f080899f-3f5b-4234-ab29-aa70829158f9")
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 				(justify mirror)
 			)
 		)
 		(property "Value" "QRE1113GR"
-			(at 0 -3.9 90)
+			(at -2.397 -0.155 0)
 			(layer "B.Fab")
 			(uuid "c4ca4ece-07a9-4d98-81d9-5a050bd25049")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 				(justify mirror)
 			)
@@ -6493,24 +6062,12 @@
 			(layer "B.Fab")
 			(uuid "93a139b3-58f0-4b6d-91f0-a96ae6e60d69")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 -0.2 90)
-			(layer "B.Fab")
-			(uuid "433d799b-202d-45d1-bf63-78fe6e51c9fc")
-			(effects
-				(font
-					(size 0.75 0.75)
-					(thickness 0.15)
-				)
-				(justify mirror)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9 2 270)
 			(size 0.79 1.66)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(U13-A)")
+			(net "Net-(V15-A)")
 			(pinfunction "A_1")
 			(pintype "passive")
 			(uuid "96011ac2-4ba1-4f81-8fec-d471135e0094")
@@ -6520,7 +6077,7 @@
 			(size 0.79 1.66)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(U13-K)")
+			(net "Net-(V15-K)")
 			(pinfunction "K_2")
 			(pintype "passive")
 			(uuid "07f2e95b-24ca-4896-b41c-3a8379aa6c1b")
@@ -6562,26 +6119,24 @@
 		(at 208.28 70.612 -90)
 		(descr "OnSemi CASE 100CY, light-direction upwards, see http://www.onsemi.com/pub/Collateral/QRE1113-D.PDF")
 		(tags "refective opto couple photo coupler")
-		(property "Reference" "U14"
-			(at -2.413 -0.0254 0)
+		(property "Reference" "V16"
+			(at -3.447 0.03 0)
 			(layer "B.SilkS")
 			(uuid "fbb7edd1-fc47-4373-a01f-6bd9f6a420ae")
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 				(justify mirror)
 			)
 		)
 		(property "Value" "QRE1113GR"
-			(at 0 -3.9 90)
+			(at -2.372 -0.045 0)
 			(layer "B.Fab")
 			(uuid "6a3eb641-2b63-46e2-a085-3c5a862335d6")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 				(justify mirror)
 			)
@@ -6748,24 +6303,12 @@
 			(layer "B.Fab")
 			(uuid "7159ca7b-e578-4206-9568-aa17629c5440")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 -0.2 90)
-			(layer "B.Fab")
-			(uuid "dcafa76a-ac09-4b7c-846f-e7a04708c47e")
-			(effects
-				(font
-					(size 0.75 0.75)
-					(thickness 0.15)
-				)
-				(justify mirror)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9 2 270)
 			(size 0.79 1.66)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(U13-K)")
+			(net "Net-(V15-K)")
 			(pinfunction "A_1")
 			(pintype "passive")
 			(uuid "543b072d-924c-4525-8610-7e8484282246")
@@ -6824,7 +6367,6 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 				(justify mirror)
 			)
@@ -6835,8 +6377,7 @@
 			(uuid "93a15fd0-1cd3-44da-9c0d-daac6447edea")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 				(justify mirror)
 			)
@@ -6921,18 +6462,6 @@
 			(layer "B.Fab")
 			(uuid "6bd1eb33-339b-488b-9397-49d64059d123")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
-			(layer "B.Fab")
-			(uuid "4adcb2cd-948a-41c1-a46c-3571b8b083e3")
-			(effects
-				(font
-					(size 0.4 0.4)
-					(thickness 0.06)
-				)
-				(justify mirror)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9125 0 180)
 			(size 0.975 0.95)
@@ -6970,26 +6499,24 @@
 		(at 228.6 68.072 -90)
 		(descr "OnSemi CASE 100CY, light-direction upwards, see http://www.onsemi.com/pub/Collateral/QRE1113-D.PDF")
 		(tags "refective opto couple photo coupler")
-		(property "Reference" "U16"
+		(property "Reference" "V18"
 			(at -2.5 0 0)
 			(layer "B.SilkS")
 			(uuid "5a40c7be-83c7-476b-90ad-bed28db3ae7a")
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 				(justify mirror)
 			)
 		)
 		(property "Value" "QRE1113GR"
-			(at 0 -3.9 90)
+			(at -1.207 -3.6 90)
 			(layer "B.Fab")
 			(uuid "ca04919b-058c-4448-a10a-71bf64b6ed23")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 				(justify mirror)
 			)
@@ -7156,24 +6683,12 @@
 			(layer "B.Fab")
 			(uuid "e7bd4be8-114b-4b52-a59e-c73f41124dbc")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 -0.2 90)
-			(layer "B.Fab")
-			(uuid "069bfdc7-2f9b-40fa-bc4f-8df4844d5d20")
-			(effects
-				(font
-					(size 0.75 0.75)
-					(thickness 0.15)
-				)
-				(justify mirror)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9 2 270)
 			(size 0.79 1.66)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(U15-K)")
+			(net "Net-(V17-K)")
 			(pinfunction "A_1")
 			(pintype "passive")
 			(uuid "7b9f6fb5-0ef1-470b-aa76-d24d1d3ad0d2")
@@ -7232,7 +6747,6 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 				(justify mirror)
 			)
@@ -7243,8 +6757,7 @@
 			(uuid "8e9c70f9-4046-40f7-86c6-78c1423baee7")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 				(justify mirror)
 			)
@@ -7327,18 +6840,6 @@
 			(layer "B.Fab")
 			(uuid "f430f80a-88c4-4d2e-8d69-324379a4936a")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
-			(layer "B.Fab")
-			(uuid "fff85fbc-3033-4986-9585-04eccd514e4d")
-			(effects
-				(font
-					(size 0.5 0.5)
-					(thickness 0.08)
-				)
-				(justify mirror)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -1.0375 0 180)
 			(size 1.175 1.45)
@@ -7376,26 +6877,24 @@
 		(at 177.8 73.152 -90)
 		(descr "OnSemi CASE 100CY, light-direction upwards, see http://www.onsemi.com/pub/Collateral/QRE1113-D.PDF")
 		(tags "refective opto couple photo coupler")
-		(property "Reference" "U11"
+		(property "Reference" "V11"
 			(at -2.5 0 0)
 			(layer "B.SilkS")
 			(uuid "ea3bbcf6-3c65-4e6b-9941-6d6d225e838b")
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 				(justify mirror)
 			)
 		)
 		(property "Value" "QRE1113GR"
-			(at 0 -3.9 90)
+			(at 2.438 -0.175 0)
 			(layer "B.Fab")
 			(uuid "0343a3f8-6bd3-40d2-8078-5b58984a2c60")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 				(justify mirror)
 			)
@@ -7562,24 +7061,12 @@
 			(layer "B.Fab")
 			(uuid "5cb66852-8a84-43e8-90cf-88f5212e0086")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 -0.2 90)
-			(layer "B.Fab")
-			(uuid "2767cb57-52af-4d54-a6ba-4cfabafd4c96")
-			(effects
-				(font
-					(size 0.75 0.75)
-					(thickness 0.15)
-				)
-				(justify mirror)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9 2 270)
 			(size 0.79 1.66)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(U11-A)")
+			(net "Net-(V11-A)")
 			(pinfunction "A_1")
 			(pintype "passive")
 			(uuid "c2bbaffa-9cb1-4895-ab25-30980f85b0f6")
@@ -7589,7 +7076,7 @@
 			(size 0.79 1.66)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(U11-K)")
+			(net "Net-(V11-K)")
 			(pinfunction "K_2")
 			(pintype "passive")
 			(uuid "81fde606-9b8d-4d72-8d2a-8dfae5bfb299")
@@ -7638,7 +7125,6 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 				(justify mirror)
 			)
@@ -7649,8 +7135,7 @@
 			(uuid "ac95371a-f848-44ad-ab0a-3f4a22e6ac44")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 				(justify mirror)
 			)
@@ -7733,18 +7218,6 @@
 			(layer "B.Fab")
 			(uuid "b4e6d7cb-9c96-42f8-a87c-9611f2432dda")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
-			(layer "B.Fab")
-			(uuid "a541fbbc-6da2-4636-b1ce-9bc16c724ae5")
-			(effects
-				(font
-					(size 0.5 0.5)
-					(thickness 0.08)
-				)
-				(justify mirror)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -1.0375 0)
 			(size 1.175 1.45)
@@ -7782,26 +7255,24 @@
 		(at 187.96 73.152 -90)
 		(descr "OnSemi CASE 100CY, light-direction upwards, see http://www.onsemi.com/pub/Collateral/QRE1113-D.PDF")
 		(tags "refective opto couple photo coupler")
-		(property "Reference" "U12"
-			(at -2.5 0 0)
+		(property "Reference" "V12"
+			(at -3.437 0 0)
 			(layer "B.SilkS")
 			(uuid "c76232f4-930b-414e-9cb9-9c1814df3d5a")
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 				(justify mirror)
 			)
 		)
 		(property "Value" "QRE1113GR"
-			(at 0 -3.9 90)
+			(at -2.362 -0.04 0)
 			(layer "B.Fab")
 			(uuid "a11432d9-247d-4ef5-8451-f7c2aace2d05")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 				(justify mirror)
 			)
@@ -7968,24 +7439,12 @@
 			(layer "B.Fab")
 			(uuid "ac1c8f07-46e5-4193-a84d-c05571119e18")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 -0.2 90)
-			(layer "B.Fab")
-			(uuid "d741d0a3-7a29-4fa5-9831-a625986ae24f")
-			(effects
-				(font
-					(size 0.75 0.75)
-					(thickness 0.15)
-				)
-				(justify mirror)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9 2 270)
 			(size 0.79 1.66)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(U11-K)")
+			(net "Net-(V11-K)")
 			(pinfunction "A_1")
 			(pintype "passive")
 			(uuid "8636554e-e598-474e-94ff-38c85af56999")
@@ -8044,7 +7503,6 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 				(justify mirror)
 			)
@@ -8055,8 +7513,7 @@
 			(uuid "9795eb06-1b7e-46e4-980b-266c7a8f878a")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 				(justify mirror)
 			)
@@ -8141,18 +7598,6 @@
 			(layer "B.Fab")
 			(uuid "f959c0d5-f40a-4722-be73-65892d9c35bb")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
-			(layer "B.Fab")
-			(uuid "5a806d84-45c3-439e-9d67-a3544728311e")
-			(effects
-				(font
-					(size 0.4 0.4)
-					(thickness 0.06)
-				)
-				(justify mirror)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.8625 0 180)
 			(size 1.075 0.95)
@@ -8197,7 +7642,6 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 				(justify mirror)
 			)
@@ -8208,8 +7652,7 @@
 			(uuid "2a1b288f-8405-46e0-9ed5-a19e493d1a11")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 				(justify mirror)
 			)
@@ -8294,18 +7737,6 @@
 			(layer "B.Fab")
 			(uuid "d6fae672-502c-416a-b450-e2f3b9a13943")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
-			(layer "B.Fab")
-			(uuid "25d962cf-c931-4976-acee-958b4cb3deb7")
-			(effects
-				(font
-					(size 0.4 0.4)
-					(thickness 0.06)
-				)
-				(justify mirror)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9125 0 180)
 			(size 0.975 0.95)
@@ -8344,13 +7775,12 @@
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "capacitor handsolder")
 		(property "Reference" "C5"
-			(at 0 1.3462 0)
+			(at 0.0096 1.4276 0)
 			(layer "B.SilkS")
 			(uuid "e4fa337b-b081-4556-bfaa-6aac571ab16f")
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 				(justify mirror)
 			)
@@ -8361,8 +7791,7 @@
 			(uuid "20dfacec-d7ee-40a6-a212-8ded026041b2")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 				(justify mirror)
 			)
@@ -8447,18 +7876,6 @@
 			(layer "B.Fab")
 			(uuid "ecaf057a-de0f-4ce0-8c5c-f0a0b0ff6103")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
-			(layer "B.Fab")
-			(uuid "8e2a7cf5-dfbf-46f4-a255-0bdf16610ac0")
-			(effects
-				(font
-					(size 0.4 0.4)
-					(thickness 0.06)
-				)
-				(justify mirror)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.8625 0 180)
 			(size 1.075 0.95)
@@ -8496,26 +7913,24 @@
 		(at 167.64 75.692 -90)
 		(descr "OnSemi CASE 100CY, light-direction upwards, see http://www.onsemi.com/pub/Collateral/QRE1113-D.PDF")
 		(tags "refective opto couple photo coupler")
-		(property "Reference" "U10"
-			(at -2.5 0 0)
+		(property "Reference" "V10"
+			(at -3.477 0.015 0)
 			(layer "B.SilkS")
 			(uuid "6dd2d5f8-00a2-4d73-ae1c-c447211e0e77")
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 				(justify mirror)
 			)
 		)
 		(property "Value" "QRE1113GR"
-			(at 0 -3.9 90)
+			(at -2.377 0.015 0)
 			(layer "B.Fab")
 			(uuid "b8916301-591e-4385-9925-60f9d2542b2a")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 				(justify mirror)
 			)
@@ -8682,24 +8097,12 @@
 			(layer "B.Fab")
 			(uuid "bb532c40-afd1-45c3-8a80-07e0233fe2e6")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 -0.2 90)
-			(layer "B.Fab")
-			(uuid "004baef8-d481-4ff0-abeb-42f29e466b3e")
-			(effects
-				(font
-					(size 0.75 0.75)
-					(thickness 0.15)
-				)
-				(justify mirror)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9 2 270)
 			(size 0.79 1.66)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(U10-A)")
+			(net "Net-(V10-A)")
 			(pinfunction "A_1")
 			(pintype "passive")
 			(uuid "a545fcfd-91ac-4b47-afbb-0d138f7ebb81")
@@ -8752,25 +8155,23 @@
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor handsolder")
 		(property "Reference" "R21"
-			(at 0 1.43 0)
+			(at 0 2.3514 0)
 			(layer "B.SilkS")
 			(uuid "8900ce89-bb59-4a1c-8f4b-fbf4d61ccf83")
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 				(justify mirror)
 			)
 		)
 		(property "Value" "10k"
-			(at 0 -1.43 0)
+			(at 0.0158 1.2514 0)
 			(layer "B.Fab")
 			(uuid "b320ef0e-d572-406e-982c-96cdc642ca78")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 				(justify mirror)
 			)
@@ -8855,18 +8256,6 @@
 			(layer "B.Fab")
 			(uuid "9ef84185-45fd-4307-99b7-351f4f6121da")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
-			(layer "B.Fab")
-			(uuid "34323fe0-e718-4f3f-9e7d-5cad51bedc3e")
-			(effects
-				(font
-					(size 0.4 0.4)
-					(thickness 0.06)
-				)
-				(justify mirror)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9125 0 180)
 			(size 0.975 0.95)
@@ -8904,14 +8293,13 @@
 		(at 152.4 56.134)
 		(descr "ZF5S-15-01-T-WT-TR-1")
 		(tags "Connector")
-		(property "Reference" "J1"
-			(at 0 0 180)
+		(property "Reference" "X1"
+			(at 6.2 2.231 180)
 			(layer "B.SilkS")
 			(uuid "6a0b78d2-1011-4ab3-a87f-0b6652255dbf")
 			(effects
 				(font
-					(size 1.27 1.27)
-					(thickness 0.254)
+					(size 1 1)
 				)
 				(justify mirror)
 			)
@@ -8923,8 +8311,7 @@
 			(uuid "4efa4f15-10d7-4d49-9952-ad81008335d2")
 			(effects
 				(font
-					(size 1.27 1.27)
-					(thickness 0.254)
+					(size 0.8 0.8)
 				)
 				(justify mirror)
 			)
@@ -9211,18 +8598,6 @@
 			(layer "B.Fab")
 			(uuid "5b06e34a-f43c-493a-b1fd-ed68b622e96a")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 180)
-			(layer "B.Fab")
-			(uuid "7a9dc539-7c96-4be2-a4c8-375707e870cc")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.254)
-				)
-				(justify mirror)
-			)
-		)
 		(pad "1" smd rect
 			(at -3.5 1.795)
 			(size 0.3 1.6)
@@ -9395,26 +8770,24 @@
 		(at 76.2 68.072 -90)
 		(descr "OnSemi CASE 100CY, light-direction upwards, see http://www.onsemi.com/pub/Collateral/QRE1113-D.PDF")
 		(tags "refective opto couple photo coupler")
-		(property "Reference" "U1"
-			(at -2.5 0 0)
+		(property "Reference" "V1"
+			(at -3.482 0 0)
 			(layer "B.SilkS")
 			(uuid "f050eed8-647c-41b8-b3d6-640fb6fab00e")
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 				(justify mirror)
 			)
 		)
 		(property "Value" "QRE1113GR"
-			(at 0 -3.9 90)
+			(at -2.332 -0.025 0)
 			(layer "B.Fab")
 			(uuid "9ce13f23-eb12-40de-8870-da3f5698a4cf")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 				(justify mirror)
 			)
@@ -9581,24 +8954,12 @@
 			(layer "B.Fab")
 			(uuid "398e2682-5444-40eb-8e4a-fd16c73210cc")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 -0.2 90)
-			(layer "B.Fab")
-			(uuid "473d6e4d-5fc3-48b0-adf7-afcaaac87a4a")
-			(effects
-				(font
-					(size 0.75 0.75)
-					(thickness 0.15)
-				)
-				(justify mirror)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9 2 270)
 			(size 0.79 1.66)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(U1-A)")
+			(net "Net-(V1-A)")
 			(pinfunction "A_1")
 			(pintype "passive")
 			(uuid "f03ba8ec-5209-43f4-a255-5f6246eb46e5")
@@ -9608,7 +8969,7 @@
 			(size 0.79 1.66)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(U1-K)")
+			(net "Net-(V1-K)")
 			(pinfunction "K_2")
 			(pintype "passive")
 			(uuid "d3a95ff7-6b58-4c7b-90af-5a3cca0b536a")
@@ -9650,14 +9011,13 @@
 		(at 152.4 68.072 180)
 		(descr "DBT (R-PDSO-G38)")
 		(tags "Integrated Circuit")
-		(property "Reference" "IC1"
-			(at 0 0 0)
+		(property "Reference" "U1"
+			(at 0.025 5.682 0)
 			(layer "B.SilkS")
 			(uuid "9bb1f47d-311e-4718-b32a-611d6fd4178b")
 			(effects
 				(font
-					(size 1.27 1.27)
-					(thickness 0.254)
+					(size 1 1)
 				)
 				(justify mirror)
 			)
@@ -9669,8 +9029,7 @@
 			(uuid "07d864f0-118b-48da-b1cf-5a418578bf1d")
 			(effects
 				(font
-					(size 1.27 1.27)
-					(thickness 0.254)
+					(size 0.8 0.8)
 				)
 				(justify mirror)
 			)
@@ -9925,23 +9284,11 @@
 			(layer "B.Fab")
 			(uuid "19b5a8b1-0418-48f8-a1aa-d02433f9cef6")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
-			(layer "B.Fab")
-			(uuid "1a69ee37-fb02-45cc-a091-e4d24ea63f33")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.254)
-				)
-				(justify mirror)
-			)
-		)
 		(pad "1" smd rect
 			(at -2.938 4.5 90)
 			(size 0.3 1.475)
 			(layers "B.Cu" "B.Mask" "B.Paste")
-			(net "unconnected-(IC1-GPIO2-Pad1)")
+			(net "unconnected-(U1-GPIO2-Pad1)")
 			(pinfunction "GPIO2_1")
 			(pintype "passive")
 			(uuid "7660d274-f051-41df-b26d-95f899458d1f")
@@ -9950,7 +9297,7 @@
 			(at -2.938 4 90)
 			(size 0.3 1.475)
 			(layers "B.Cu" "B.Mask" "B.Paste")
-			(net "unconnected-(IC1-GPIO3-Pad2)")
+			(net "unconnected-(U1-GPIO3-Pad2)")
 			(pinfunction "GPIO3_2")
 			(pintype "passive")
 			(uuid "62a5e9e7-577a-4b5e-acb1-3586d84e123b")
@@ -9995,7 +9342,7 @@
 			(at -2.938 1.5 90)
 			(size 0.3 1.475)
 			(layers "B.Cu" "B.Mask" "B.Paste")
-			(net "Net-(IC1-AINP)")
+			(net "Net-(U1-AINP)")
 			(pinfunction "MXO_7")
 			(pintype "passive")
 			(uuid "7f7ddbfd-c63c-44e5-b2de-14e6e9fe63f6")
@@ -10004,7 +9351,7 @@
 			(at -2.938 1 90)
 			(size 0.3 1.475)
 			(layers "B.Cu" "B.Mask" "B.Paste")
-			(net "Net-(IC1-AINP)")
+			(net "Net-(U1-AINP)")
 			(pinfunction "AINP_8")
 			(pintype "passive")
 			(uuid "06b10217-b3e6-454a-be5b-969ff61565cc")
@@ -10238,7 +9585,7 @@
 			(at 2.938 2.5 90)
 			(size 0.3 1.475)
 			(layers "B.Cu" "B.Mask" "B.Paste")
-			(net "Net-(IC1-SDO)")
+			(net "Net-(U1-SDO)")
 			(pinfunction "SDO_34")
 			(pintype "passive")
 			(uuid "d8ac70e2-4839-425e-9f57-4ec31bb8170d")
@@ -10265,7 +9612,7 @@
 			(at 2.938 4 90)
 			(size 0.3 1.475)
 			(layers "B.Cu" "B.Mask" "B.Paste")
-			(net "Net-(IC1-GPIO0)")
+			(net "Net-(U1-GPIO0)")
 			(pinfunction "GPIO0_37")
 			(pintype "passive")
 			(uuid "5a85d617-1ca9-4c80-8856-9bff5687ea49")
@@ -10274,7 +9621,7 @@
 			(at 2.938 4.5 90)
 			(size 0.3 1.475)
 			(layers "B.Cu" "B.Mask" "B.Paste")
-			(net "Net-(IC1-GPIO1)")
+			(net "Net-(U1-GPIO1)")
 			(pinfunction "GPIO1_38")
 			(pintype "passive")
 			(uuid "da68acf2-c811-4246-95c9-cb79b6058861")
@@ -10298,26 +9645,24 @@
 		(at 106.68 70.612 -90)
 		(descr "OnSemi CASE 100CY, light-direction upwards, see http://www.onsemi.com/pub/Collateral/QRE1113-D.PDF")
 		(tags "refective opto couple photo coupler")
-		(property "Reference" "U4"
-			(at -2.5 0 0)
+		(property "Reference" "V4"
+			(at -3.497 0.005 0)
 			(layer "B.SilkS")
 			(uuid "5ad3bf27-d227-47bb-99eb-11f94f0da51d")
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 				(justify mirror)
 			)
 		)
 		(property "Value" "QRE1113GR"
-			(at 0 -3.9 90)
+			(at -2.347 -0.02 0)
 			(layer "B.Fab")
 			(uuid "90f5fd51-8430-4fb0-ae38-bb95b2703d5d")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 				(justify mirror)
 			)
@@ -10484,24 +9829,12 @@
 			(layer "B.Fab")
 			(uuid "cc980caf-0be7-465b-988a-1b4a6c92f75a")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 -0.2 90)
-			(layer "B.Fab")
-			(uuid "c4e2cd1d-7df4-4926-a034-edc00f236275")
-			(effects
-				(font
-					(size 0.75 0.75)
-					(thickness 0.15)
-				)
-				(justify mirror)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9 2 270)
 			(size 0.79 1.66)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(U3-K)")
+			(net "Net-(V3-K)")
 			(pinfunction "A_1")
 			(pintype "passive")
 			(uuid "35b966c7-0488-4b6b-b481-91ff4a30bd8c")
@@ -10560,7 +9893,6 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 				(justify mirror)
 			)
@@ -10571,8 +9903,7 @@
 			(uuid "e82022eb-2c44-4193-bd13-f687d537821b")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 				(justify mirror)
 			)
@@ -10657,18 +9988,6 @@
 			(layer "B.Fab")
 			(uuid "d358311e-61ff-4434-90bc-a329a1de2cb8")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
-			(layer "B.Fab")
-			(uuid "d3d0272e-986f-423d-a702-499646cfacdc")
-			(effects
-				(font
-					(size 0.4 0.4)
-					(thickness 0.06)
-				)
-				(justify mirror)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9125 0 180)
 			(size 0.975 0.95)
@@ -10706,26 +10025,24 @@
 		(at 157.48 75.692 -90)
 		(descr "OnSemi CASE 100CY, light-direction upwards, see http://www.onsemi.com/pub/Collateral/QRE1113-D.PDF")
 		(tags "refective opto couple photo coupler")
-		(property "Reference" "U9"
+		(property "Reference" "V9"
 			(at -2.5 0 0)
 			(layer "B.SilkS")
 			(uuid "cc06bfcb-8ee2-4f06-b138-5957197460a8")
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 				(justify mirror)
 			)
 		)
 		(property "Value" "QRE1113GR"
-			(at 0 -3.9 90)
+			(at 2.448 -0.02 0)
 			(layer "B.Fab")
 			(uuid "5f989be9-d90f-4fdd-a765-ef1691379b9d")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 				(justify mirror)
 			)
@@ -10892,24 +10209,12 @@
 			(layer "B.Fab")
 			(uuid "493618b0-7504-40b3-bc2e-2fd9845ddd99")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 -0.2 90)
-			(layer "B.Fab")
-			(uuid "154660ec-46f5-4a56-a132-bd0ee491ea02")
-			(effects
-				(font
-					(size 0.75 0.75)
-					(thickness 0.15)
-				)
-				(justify mirror)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9 2 270)
 			(size 0.79 1.66)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(U9-A)")
+			(net "Net-(V9-A)")
 			(pinfunction "A_1")
 			(pintype "passive")
 			(uuid "81abe562-e871-4012-8c42-1369ed1f662d")
@@ -10919,7 +10224,7 @@
 			(size 0.79 1.66)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(U10-A)")
+			(net "Net-(V10-A)")
 			(pinfunction "K_2")
 			(pintype "passive")
 			(uuid "79300fec-36dd-460e-a5f7-78d002804599")
@@ -10962,13 +10267,12 @@
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "capacitor handsolder")
 		(property "Reference" "C3"
-			(at -0.8139 2.9464 0)
+			(at -1.1112 2.5026 0)
 			(layer "B.SilkS")
 			(uuid "a6dc5d61-b965-4f3d-91db-e63ebff50ee8")
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 				(justify mirror)
 			)
@@ -10979,8 +10283,7 @@
 			(uuid "b9c14381-5dfc-4755-9a57-4353115424d0")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 				(justify mirror)
 			)
@@ -11065,18 +10368,6 @@
 			(layer "B.Fab")
 			(uuid "8aef7eda-56bb-43bd-b98b-af529ee51875")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
-			(layer "B.Fab")
-			(uuid "ba51a7b5-9e36-4fc0-bdef-3a6345f0b854")
-			(effects
-				(font
-					(size 0.4 0.4)
-					(thickness 0.06)
-				)
-				(justify mirror)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.8625 0 180)
 			(size 1.075 0.95)
@@ -11115,25 +10406,23 @@
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor handsolder")
 		(property "Reference" "R16"
-			(at 0 1.43 0)
+			(at -0.0031 2.3406 0)
 			(layer "B.SilkS")
 			(uuid "048c6df1-6937-4795-a4ad-8b3d93ec33cf")
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 				(justify mirror)
 			)
 		)
 		(property "Value" "10k"
-			(at 0 -1.43 0)
+			(at -0.0281 1.2406 0)
 			(layer "B.Fab")
 			(uuid "eadd0b7b-fe22-4efe-97ee-a5e3d5f40e99")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 				(justify mirror)
 			)
@@ -11218,18 +10507,6 @@
 			(layer "B.Fab")
 			(uuid "1a7f9dde-0d9f-49dc-9919-47bce55c3725")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
-			(layer "B.Fab")
-			(uuid "49e0293d-cb7d-499e-9ed2-4a3cddbaca9b")
-			(effects
-				(font
-					(size 0.4 0.4)
-					(thickness 0.06)
-				)
-				(justify mirror)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9125 0 180)
 			(size 0.975 0.95)
@@ -11274,7 +10551,6 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 				(justify mirror)
 			)
@@ -11285,8 +10561,7 @@
 			(uuid "da5972e2-3d43-40df-9dbd-77ee0d1cef71")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 				(justify mirror)
 			)
@@ -11371,18 +10646,6 @@
 			(layer "B.Fab")
 			(uuid "5cb2aed7-9a42-4d47-af2a-09885b651e1d")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
-			(layer "B.Fab")
-			(uuid "abe601f9-7939-462c-86f2-7f90f24bf409")
-			(effects
-				(font
-					(size 0.4 0.4)
-					(thickness 0.06)
-				)
-				(justify mirror)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9125 0 180)
 			(size 0.975 0.95)
@@ -11427,7 +10690,6 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 				(justify mirror)
 			)
@@ -11438,8 +10700,7 @@
 			(uuid "9cd1a682-1ece-44cc-8e20-ad6016d15a50")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 				(justify mirror)
 			)
@@ -11524,18 +10785,6 @@
 			(layer "B.Fab")
 			(uuid "7551ce83-51b9-4c48-ba33-a5452e25985a")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
-			(layer "B.Fab")
-			(uuid "eaf74fc7-d6a8-47db-826f-c53c8db87ef6")
-			(effects
-				(font
-					(size 0.4 0.4)
-					(thickness 0.06)
-				)
-				(justify mirror)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9125 0 180)
 			(size 0.975 0.95)
@@ -11580,7 +10829,6 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 				(justify mirror)
 			)
@@ -11591,8 +10839,7 @@
 			(uuid "dc420c62-caec-47e5-9690-4f42898fb4da")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 				(justify mirror)
 			)
@@ -11677,18 +10924,6 @@
 			(layer "B.Fab")
 			(uuid "7b581458-1eff-4ea0-b351-c8dfaf01a21c")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
-			(layer "B.Fab")
-			(uuid "c19d0f60-c330-4429-ba4d-9f0dcbeefdbd")
-			(effects
-				(font
-					(size 0.4 0.4)
-					(thickness 0.06)
-				)
-				(justify mirror)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9125 0 180)
 			(size 0.975 0.95)
@@ -11726,26 +10961,24 @@
 		(at 147.32 75.692 -90)
 		(descr "OnSemi CASE 100CY, light-direction upwards, see http://www.onsemi.com/pub/Collateral/QRE1113-D.PDF")
 		(tags "refective opto couple photo coupler")
-		(property "Reference" "U8"
+		(property "Reference" "V8"
 			(at -2.5 0 0)
 			(layer "B.SilkS")
 			(uuid "3197da7c-6cf6-4fa7-8138-904a7377fdd7")
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 				(justify mirror)
 			)
 		)
 		(property "Value" "QRE1113GR"
-			(at 0 -3.9 90)
+			(at 2.473 -0.055 0)
 			(layer "B.Fab")
 			(uuid "4648a8e4-986b-4b39-a12d-21f18cec3689")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 				(justify mirror)
 			)
@@ -11912,24 +11145,12 @@
 			(layer "B.Fab")
 			(uuid "1e84ed6d-d04a-4e15-9856-063523c33ef4")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 -0.2 90)
-			(layer "B.Fab")
-			(uuid "14b7c6a5-ec3d-4366-a42a-fc450114d7ee")
-			(effects
-				(font
-					(size 0.75 0.75)
-					(thickness 0.15)
-				)
-				(justify mirror)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9 2 270)
 			(size 0.79 1.66)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(U7-K)")
+			(net "Net-(V7-K)")
 			(pinfunction "A_1")
 			(pintype "passive")
 			(uuid "52000cbf-e68f-457a-b7b2-1d15390a4330")
@@ -11981,26 +11202,24 @@
 		(at 86.36 68.072 -90)
 		(descr "OnSemi CASE 100CY, light-direction upwards, see http://www.onsemi.com/pub/Collateral/QRE1113-D.PDF")
 		(tags "refective opto couple photo coupler")
-		(property "Reference" "U2"
-			(at -2.5 0 0)
+		(property "Reference" "V2"
+			(at -3.607 -0.015 0)
 			(layer "B.SilkS")
 			(uuid "32cf8d69-6374-4384-b38f-f084cc706c44")
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
 				)
 				(justify mirror)
 			)
 		)
 		(property "Value" "QRE1113GR"
-			(at 0 -3.9 90)
+			(at -2.407 -0.065 0)
 			(layer "B.Fab")
 			(uuid "3af027d0-ef6a-4095-be49-9a5f93910e50")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.8 0.8)
 				)
 				(justify mirror)
 			)
@@ -12167,24 +11386,12 @@
 			(layer "B.Fab")
 			(uuid "22f10621-fe7e-45b8-ab16-86dd124111bd")
 		)
-		(fp_text user "${REFERENCE}"
-			(at 0 -0.2 90)
-			(layer "B.Fab")
-			(uuid "4f8e9a50-41b6-45d5-9937-e647a31e19f1")
-			(effects
-				(font
-					(size 0.75 0.75)
-					(thickness 0.15)
-				)
-				(justify mirror)
-			)
-		)
 		(pad "1" smd roundrect
 			(at -0.9 2 270)
 			(size 0.79 1.66)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(U1-K)")
+			(net "Net-(V1-K)")
 			(pinfunction "A_1")
 			(pintype "passive")
 			(uuid "122811b0-54c8-40b9-9ab3-e875c795cd8b")
@@ -12405,7 +11612,7 @@
 		(end 80.257 64.095)
 		(width 0.1524)
 		(layer "F.Cu")
-		(net "Net-(IC1-GPIO1)")
+		(net "Net-(U1-GPIO1)")
 		(uuid "10fa21d4-504f-46bb-92f4-777b7dd78820")
 	)
 	(segment
@@ -12413,7 +11620,7 @@
 		(end 143.432427 72.9996)
 		(width 0.1524)
 		(layer "F.Cu")
-		(net "Net-(IC1-GPIO1)")
+		(net "Net-(U1-GPIO1)")
 		(uuid "1a689df2-62e2-4e17-b274-4faa839dd6ee")
 	)
 	(segment
@@ -12421,7 +11628,7 @@
 		(end 75.8444 63.7844)
 		(width 0.1524)
 		(layer "F.Cu")
-		(net "Net-(IC1-GPIO1)")
+		(net "Net-(U1-GPIO1)")
 		(uuid "51103834-5562-4451-98e9-1a5316bed414")
 	)
 	(segment
@@ -12429,7 +11636,7 @@
 		(end 125.1458 72.9996)
 		(width 0.1524)
 		(layer "F.Cu")
-		(net "Net-(IC1-GPIO1)")
+		(net "Net-(U1-GPIO1)")
 		(uuid "6123f466-f7ca-4be5-bef5-6b00b0f62bf5")
 	)
 	(segment
@@ -12437,7 +11644,7 @@
 		(end 122.9106 70.7644)
 		(width 0.1524)
 		(layer "F.Cu")
-		(net "Net-(IC1-GPIO1)")
+		(net "Net-(U1-GPIO1)")
 		(uuid "7023247f-8257-4687-9e82-529976760456")
 	)
 	(segment
@@ -12445,7 +11652,7 @@
 		(end 147.6248 62.4586)
 		(width 0.1524)
 		(layer "F.Cu")
-		(net "Net-(IC1-GPIO1)")
+		(net "Net-(U1-GPIO1)")
 		(uuid "79186d48-c79a-47ac-8438-4995ad2eabf5")
 	)
 	(segment
@@ -12453,7 +11660,7 @@
 		(end 145.415 64.6684)
 		(width 0.1524)
 		(layer "F.Cu")
-		(net "Net-(IC1-GPIO1)")
+		(net "Net-(U1-GPIO1)")
 		(uuid "899b1a7c-274e-41ae-9ef2-607783bddbb2")
 	)
 	(segment
@@ -12461,7 +11668,7 @@
 		(end 78.444 63.7844)
 		(width 0.1524)
 		(layer "F.Cu")
-		(net "Net-(IC1-GPIO1)")
+		(net "Net-(U1-GPIO1)")
 		(uuid "94a220ef-f6fd-489a-9d2b-41e792fd50cc")
 	)
 	(segment
@@ -12469,7 +11676,7 @@
 		(end 100.925303 65.339903)
 		(width 0.1524)
 		(layer "F.Cu")
-		(net "Net-(IC1-GPIO1)")
+		(net "Net-(U1-GPIO1)")
 		(uuid "9c8e9b36-7cdf-4791-8bd1-54163e299b4b")
 	)
 	(segment
@@ -12477,7 +11684,7 @@
 		(end 106.3498 70.7644)
 		(width 0.1524)
 		(layer "F.Cu")
-		(net "Net-(IC1-GPIO1)")
+		(net "Net-(U1-GPIO1)")
 		(uuid "b6cd4100-a28f-4504-90bd-22374dd374c9")
 	)
 	(segment
@@ -12485,7 +11692,7 @@
 		(end 92.833436 64.095)
 		(width 0.1524)
 		(layer "F.Cu")
-		(net "Net-(IC1-GPIO1)")
+		(net "Net-(U1-GPIO1)")
 		(uuid "f138cc53-18e0-4bdf-b432-6015352a70ce")
 	)
 	(segment
@@ -12493,7 +11700,7 @@
 		(end 145.415 71.017027)
 		(width 0.1524)
 		(layer "F.Cu")
-		(net "Net-(IC1-GPIO1)")
+		(net "Net-(U1-GPIO1)")
 		(uuid "f6a4c6bd-8e6f-46fa-8bf1-73b8e1dc85c8")
 	)
 	(segment
@@ -12501,7 +11708,7 @@
 		(end 79.5058 64.8462)
 		(width 0.1524)
 		(layer "F.Cu")
-		(net "Net-(IC1-GPIO1)")
+		(net "Net-(U1-GPIO1)")
 		(uuid "f82e4aea-0394-416a-9dec-c9893f72d1b0")
 	)
 	(via
@@ -12509,7 +11716,7 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
-		(net "Net-(IC1-GPIO1)")
+		(net "Net-(U1-GPIO1)")
 		(uuid "080256ee-5f13-4edc-a565-f3d2ca4182ac")
 	)
 	(segment
@@ -12517,7 +11724,7 @@
 		(end 148.4884 62.1792)
 		(width 0.1524)
 		(layer "B.Cu")
-		(net "Net-(IC1-GPIO1)")
+		(net "Net-(U1-GPIO1)")
 		(uuid "1754cb94-298f-4a81-b305-7454bdf07c54")
 	)
 	(segment
@@ -12525,7 +11732,7 @@
 		(end 149.462 63.572)
 		(width 0.1524)
 		(layer "B.Cu")
-		(net "Net-(IC1-GPIO1)")
+		(net "Net-(U1-GPIO1)")
 		(uuid "a5aae25e-8c33-46aa-b60c-c9cd9122eb1f")
 	)
 	(segment
@@ -12533,7 +11740,7 @@
 		(end 149.462 63.1528)
 		(width 0.1524)
 		(layer "B.Cu")
-		(net "Net-(IC1-GPIO1)")
+		(net "Net-(U1-GPIO1)")
 		(uuid "ea203153-f25f-483c-8346-42d2e7777164")
 	)
 	(via
@@ -14890,7 +14097,7 @@
 		(end 226.314 69.0372)
 		(width 0.2)
 		(layer "F.Cu")
-		(net "Net-(D1-K)")
+		(net "Net-(H5-K)")
 		(uuid "10c951d6-8942-4f46-b92d-86b554aff0e8")
 	)
 	(segment
@@ -14898,7 +14105,7 @@
 		(end 226.323 69.0462)
 		(width 0.3556)
 		(layer "F.Cu")
-		(net "Net-(D1-K)")
+		(net "Net-(H5-K)")
 		(uuid "891eb0a1-41d0-4f31-85b1-598b1619f6f7")
 	)
 	(segment
@@ -15810,7 +15017,7 @@
 		(end 78.5368 67.1595)
 		(width 0.1524)
 		(layer "F.Cu")
-		(net "Net-(Q2-D)")
+		(net "Net-(V14-D)")
 		(uuid "66b56f7c-b9db-4465-8a84-bedbe4e4dc93")
 	)
 	(segment
@@ -15818,7 +15025,7 @@
 		(end 78.5368 65.5518)
 		(width 0.1524)
 		(layer "F.Cu")
-		(net "Net-(Q2-D)")
+		(net "Net-(V14-D)")
 		(uuid "7ac387c0-b2eb-4dba-a746-faa8df781a0d")
 	)
 	(segment
@@ -16346,7 +15553,7 @@
 		(end 155.48 74.792)
 		(width 0.3556)
 		(layer "F.Cu")
-		(net "Net-(U9-A)")
+		(net "Net-(V9-A)")
 		(uuid "22724d9d-0324-4e39-98ae-bb419740b57c")
 	)
 	(segment
@@ -16354,7 +15561,7 @@
 		(end 158.6914 78.0034)
 		(width 0.3556)
 		(layer "F.Cu")
-		(net "Net-(U9-A)")
+		(net "Net-(V9-A)")
 		(uuid "d43e6ce8-552a-45a9-8c3d-558ef81307a3")
 	)
 	(via
@@ -16362,7 +15569,7 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
-		(net "Net-(U9-A)")
+		(net "Net-(V9-A)")
 		(uuid "8275dd73-75eb-414d-bf54-8c314c6b39d5")
 	)
 	(segment
@@ -16370,7 +15577,7 @@
 		(end 78.5368 68.9845)
 		(width 0.2)
 		(layer "F.Cu")
-		(net "Net-(D2-K)")
+		(net "Net-(H6-K)")
 		(uuid "107401f2-a117-4397-982b-256fc6685792")
 	)
 	(segment
@@ -16378,7 +15585,7 @@
 		(end 78.3227 69.1986)
 		(width 0.3556)
 		(layer "F.Cu")
-		(net "Net-(D2-K)")
+		(net "Net-(H6-K)")
 		(uuid "a27dc144-25a7-4198-a6ab-8e677bb7588e")
 	)
 	(segment
@@ -16386,7 +15593,7 @@
 		(end 82.2706 67.1303)
 		(width 0.2)
 		(layer "F.Cu")
-		(net "Net-(U1-A)")
+		(net "Net-(V1-A)")
 		(uuid "0e5662d0-61ac-47f5-a0b1-ad710872fee8")
 	)
 	(segment
@@ -16394,7 +15601,7 @@
 		(end 82.2433 67.1576)
 		(width 0.2)
 		(layer "F.Cu")
-		(net "Net-(U1-A)")
+		(net "Net-(V1-A)")
 		(uuid "619bfc9f-c353-479e-8d05-13c407296dde")
 	)
 	(via
@@ -16402,7 +15609,7 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
-		(net "Net-(U1-A)")
+		(net "Net-(V1-A)")
 		(uuid "1ac17208-69b8-4416-8c02-f75c5f9cbf1b")
 	)
 	(segment
@@ -16410,7 +15617,7 @@
 		(end 80.702727 66.2686)
 		(width 0.2032)
 		(layer "B.Cu")
-		(net "Net-(U1-A)")
+		(net "Net-(V1-A)")
 		(uuid "34e33c34-6ff3-466a-acf1-6a0fdff6de4b")
 	)
 	(segment
@@ -16418,7 +15625,7 @@
 		(end 80.701127 66.2702)
 		(width 0.2032)
 		(layer "B.Cu")
-		(net "Net-(U1-A)")
+		(net "Net-(V1-A)")
 		(uuid "8d0b24b9-4444-4700-b72b-781d1b8755a4")
 	)
 	(segment
@@ -16426,7 +15633,7 @@
 		(end 75.1034 66.2686)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "Net-(U1-A)")
+		(net "Net-(V1-A)")
 		(uuid "c04ee196-83ef-46b6-8694-69e0608f7deb")
 	)
 	(segment
@@ -16434,7 +15641,7 @@
 		(end 82.2706 66.2686)
 		(width 0.2032)
 		(layer "B.Cu")
-		(net "Net-(U1-A)")
+		(net "Net-(V1-A)")
 		(uuid "d12b0be0-27e0-44db-b1dc-6236f718c21a")
 	)
 	(segment
@@ -16442,7 +15649,7 @@
 		(end 80.201145 66.2686)
 		(width 0.2032)
 		(layer "B.Cu")
-		(net "Net-(U1-A)")
+		(net "Net-(V1-A)")
 		(uuid "f3a544f4-e8d0-489b-bd45-a17011a35a99")
 	)
 	(segment
@@ -16450,7 +15657,7 @@
 		(end 80.202745 66.2702)
 		(width 0.2032)
 		(layer "B.Cu")
-		(net "Net-(U1-A)")
+		(net "Net-(V1-A)")
 		(uuid "f414fc93-6bb0-4010-88db-253c64d95574")
 	)
 	(segment
@@ -16458,7 +15665,7 @@
 		(end 226.314 67.2122)
 		(width 0.1524)
 		(layer "F.Cu")
-		(net "Net-(Q1-D)")
+		(net "Net-(V13-D)")
 		(uuid "171231a9-9852-447e-8b53-e87f70435903")
 	)
 	(segment
@@ -16466,7 +15673,7 @@
 		(end 226.5218 67.0044)
 		(width 0.1524)
 		(layer "F.Cu")
-		(net "Net-(Q1-D)")
+		(net "Net-(V13-D)")
 		(uuid "561741c3-6f7a-42c5-89c3-53b261728323")
 	)
 	(segment
@@ -16474,7 +15681,7 @@
 		(end 114.8544 72.2376)
 		(width 0.3556)
 		(layer "F.Cu")
-		(net "Net-(U5-A)")
+		(net "Net-(V5-A)")
 		(uuid "b1da599e-6019-47c1-b999-3431dadef3c8")
 	)
 	(segment
@@ -16482,7 +15689,7 @@
 		(end 114.84 72.252)
 		(width 0.2)
 		(layer "F.Cu")
-		(net "Net-(U5-A)")
+		(net "Net-(V5-A)")
 		(uuid "bc082eae-70a7-4db0-9b92-50070057e3a3")
 	)
 	(via
@@ -16490,7 +15697,7 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
-		(net "Net-(U5-A)")
+		(net "Net-(V5-A)")
 		(uuid "8eca5546-35a8-42ef-aa01-3d1bcaf4901f")
 	)
 	(segment
@@ -16498,7 +15705,7 @@
 		(end 225.487106 63.5182)
 		(width 0.1524)
 		(layer "F.Cu")
-		(net "Net-(IC1-GPIO0)")
+		(net "Net-(U1-GPIO0)")
 		(uuid "0c4417a6-fe53-4494-a1c8-22e343bebf5c")
 	)
 	(segment
@@ -16506,7 +15713,7 @@
 		(end 148.189298 63.6426)
 		(width 0.1524)
 		(layer "F.Cu")
-		(net "Net-(IC1-GPIO0)")
+		(net "Net-(U1-GPIO0)")
 		(uuid "0e0d46ee-af6c-4114-9ffd-9975881820ae")
 	)
 	(segment
@@ -16514,7 +15721,7 @@
 		(end 149.5298 69.5706)
 		(width 0.1524)
 		(layer "F.Cu")
-		(net "Net-(IC1-GPIO0)")
+		(net "Net-(U1-GPIO0)")
 		(uuid "17bd9ca6-3a73-4d95-9100-09270d6ae4fc")
 	)
 	(segment
@@ -16522,7 +15729,7 @@
 		(end 228.1886 65.0444)
 		(width 0.1524)
 		(layer "F.Cu")
-		(net "Net-(IC1-GPIO0)")
+		(net "Net-(U1-GPIO0)")
 		(uuid "1d7dd254-f98c-4f79-bfef-f4a643a456e8")
 	)
 	(segment
@@ -16530,7 +15737,7 @@
 		(end 227.2792 63.753506)
 		(width 0.1524)
 		(layer "F.Cu")
-		(net "Net-(IC1-GPIO0)")
+		(net "Net-(U1-GPIO0)")
 		(uuid "37d77de3-b13c-42ec-947f-3903efd316cf")
 	)
 	(segment
@@ -16538,7 +15745,7 @@
 		(end 230.204 64.8208)
 		(width 0.1524)
 		(layer "F.Cu")
-		(net "Net-(IC1-GPIO0)")
+		(net "Net-(U1-GPIO0)")
 		(uuid "5b3a57fb-59be-48f4-aacc-c95dae5bd0f2")
 	)
 	(segment
@@ -16546,7 +15753,7 @@
 		(end 216.535 64.4398)
 		(width 0.1524)
 		(layer "F.Cu")
-		(net "Net-(IC1-GPIO0)")
+		(net "Net-(U1-GPIO0)")
 		(uuid "5bb1b5ea-cc5e-4f49-9077-afd81864f1db")
 	)
 	(segment
@@ -16554,7 +15761,7 @@
 		(end 216.4588 64.516)
 		(width 0.1524)
 		(layer "F.Cu")
-		(net "Net-(IC1-GPIO0)")
+		(net "Net-(U1-GPIO0)")
 		(uuid "68262e1e-1329-4e53-b2d6-bcf2f116591c")
 	)
 	(segment
@@ -16562,7 +15769,7 @@
 		(end 164.677909 72.0852)
 		(width 0.1524)
 		(layer "F.Cu")
-		(net "Net-(IC1-GPIO0)")
+		(net "Net-(U1-GPIO0)")
 		(uuid "6a0fd192-a070-47d0-a329-8b4ffe107aa9")
 	)
 	(segment
@@ -16570,7 +15777,7 @@
 		(end 152.0444 72.0852)
 		(width 0.1524)
 		(layer "F.Cu")
-		(net "Net-(IC1-GPIO0)")
+		(net "Net-(U1-GPIO0)")
 		(uuid "77770c07-885f-4f41-94bb-60f6164df767")
 	)
 	(segment
@@ -16578,7 +15785,7 @@
 		(end 209.230064 64.516)
 		(width 0.1524)
 		(layer "F.Cu")
-		(net "Net-(IC1-GPIO0)")
+		(net "Net-(U1-GPIO0)")
 		(uuid "946aeff2-cc6a-4851-a7b1-63a2544141d8")
 	)
 	(segment
@@ -16586,7 +15793,7 @@
 		(end 225.497306 63.508)
 		(width 0.1524)
 		(layer "F.Cu")
-		(net "Net-(IC1-GPIO0)")
+		(net "Net-(U1-GPIO0)")
 		(uuid "96590219-e113-4754-bc89-7a6fa8f4a577")
 	)
 	(segment
@@ -16594,7 +15801,7 @@
 		(end 227.033694 63.508)
 		(width 0.1524)
 		(layer "F.Cu")
-		(net "Net-(IC1-GPIO0)")
+		(net "Net-(U1-GPIO0)")
 		(uuid "9a548e1f-eef7-46e9-82a9-20ce6f22f1ed")
 	)
 	(segment
@@ -16602,7 +15809,7 @@
 		(end 216.6874 64.4398)
 		(width 0.1524)
 		(layer "F.Cu")
-		(net "Net-(IC1-GPIO0)")
+		(net "Net-(U1-GPIO0)")
 		(uuid "ae604df1-581c-472d-8a29-dd1b18bec7ec")
 	)
 	(segment
@@ -16610,7 +15817,7 @@
 		(end 165.522935 71.240174)
 		(width 0.1524)
 		(layer "F.Cu")
-		(net "Net-(IC1-GPIO0)")
+		(net "Net-(U1-GPIO0)")
 		(uuid "b2387998-2d1a-44e9-ae30-9125fb93cb9a")
 	)
 	(segment
@@ -16618,7 +15825,7 @@
 		(end 149.5298 64.983102)
 		(width 0.1524)
 		(layer "F.Cu")
-		(net "Net-(IC1-GPIO0)")
+		(net "Net-(U1-GPIO0)")
 		(uuid "b386d855-e674-41c5-a680-0df89184d6bf")
 	)
 	(segment
@@ -16626,7 +15833,7 @@
 		(end 229.9804 65.0444)
 		(width 0.1524)
 		(layer "F.Cu")
-		(net "Net-(IC1-GPIO0)")
+		(net "Net-(U1-GPIO0)")
 		(uuid "c0b63637-96ac-4225-8232-f02b175a1db6")
 	)
 	(segment
@@ -16634,7 +15841,7 @@
 		(end 217.609 63.5182)
 		(width 0.1524)
 		(layer "F.Cu")
-		(net "Net-(IC1-GPIO0)")
+		(net "Net-(U1-GPIO0)")
 		(uuid "c2e32961-759f-4454-b104-6205256c212b")
 	)
 	(segment
@@ -16642,7 +15849,7 @@
 		(end 227.2792 64.135)
 		(width 0.1524)
 		(layer "F.Cu")
-		(net "Net-(IC1-GPIO0)")
+		(net "Net-(U1-GPIO0)")
 		(uuid "fa010088-1307-447e-8bae-f3565a39f25b")
 	)
 	(via
@@ -16650,7 +15857,7 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
-		(net "Net-(IC1-GPIO0)")
+		(net "Net-(U1-GPIO0)")
 		(uuid "cb32529c-3eeb-49de-9f13-67c7759768ce")
 	)
 	(segment
@@ -16658,7 +15865,7 @@
 		(end 148.618698 64.072)
 		(width 0.1524)
 		(layer "B.Cu")
-		(net "Net-(IC1-GPIO0)")
+		(net "Net-(U1-GPIO0)")
 		(uuid "6657a300-6f59-4972-9236-dcd711b3a619")
 	)
 	(segment
@@ -16666,7 +15873,7 @@
 		(end 148.189298 63.6426)
 		(width 0.1524)
 		(layer "B.Cu")
-		(net "Net-(IC1-GPIO0)")
+		(net "Net-(U1-GPIO0)")
 		(uuid "799f6984-e8f0-4f25-9c0e-8a5b25d6f0d0")
 	)
 	(segment
@@ -16674,7 +15881,7 @@
 		(end 149.462 64.072)
 		(width 0.1524)
 		(layer "B.Cu")
-		(net "Net-(IC1-GPIO0)")
+		(net "Net-(U1-GPIO0)")
 		(uuid "d4a11b03-522b-4de5-9984-48b467e3e536")
 	)
 	(segment
@@ -16682,7 +15889,7 @@
 		(end 216.44 67.172)
 		(width 0.2)
 		(layer "F.Cu")
-		(net "Net-(U15-A)")
+		(net "Net-(V17-A)")
 		(uuid "4ef80e5b-02c3-48c8-8e2c-a38bfd9050d5")
 	)
 	(segment
@@ -16690,7 +15897,7 @@
 		(end 216.4544 67.1576)
 		(width 0.3556)
 		(layer "F.Cu")
-		(net "Net-(U15-A)")
+		(net "Net-(V17-A)")
 		(uuid "d5339c7b-768a-4c7d-ac11-c2c9794730c9")
 	)
 	(via
@@ -16698,7 +15905,7 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
-		(net "Net-(U15-A)")
+		(net "Net-(V17-A)")
 		(uuid "9e985ce7-c519-4f33-9fac-6368815332ce")
 	)
 	(segment
@@ -16706,7 +15913,7 @@
 		(end 196.1564 69.7484)
 		(width 0.3556)
 		(layer "F.Cu")
-		(net "Net-(U13-A)")
+		(net "Net-(V15-A)")
 		(uuid "37f64cdb-4581-4f48-a3d0-2428f3a7d65d")
 	)
 	(segment
@@ -16714,7 +15921,7 @@
 		(end 196.12 69.712)
 		(width 0.2)
 		(layer "F.Cu")
-		(net "Net-(U13-A)")
+		(net "Net-(V15-A)")
 		(uuid "5f180fc8-8306-465c-8ef8-866a8cec50a0")
 	)
 	(via
@@ -16722,7 +15929,7 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
-		(net "Net-(U13-A)")
+		(net "Net-(V15-A)")
 		(uuid "d5f155c8-0752-4152-bd47-1528ea5b5853")
 	)
 	(segment
@@ -16730,7 +15937,7 @@
 		(end 94.52 69.712)
 		(width 0.2)
 		(layer "F.Cu")
-		(net "Net-(U3-A)")
+		(net "Net-(V3-A)")
 		(uuid "716fd0a0-7aa5-4847-a7a7-48a996b7bebc")
 	)
 	(segment
@@ -16738,7 +15945,7 @@
 		(end 94.5388 69.6976)
 		(width 0.3556)
 		(layer "F.Cu")
-		(net "Net-(U3-A)")
+		(net "Net-(V3-A)")
 		(uuid "82f7f934-7cd3-402a-9c61-125866ea8e69")
 	)
 	(segment
@@ -16746,7 +15953,7 @@
 		(end 94.52 69.6788)
 		(width 0.2)
 		(layer "F.Cu")
-		(net "Net-(U3-A)")
+		(net "Net-(V3-A)")
 		(uuid "a80eeab2-148c-42a7-b6c9-5be5b40cc6d1")
 	)
 	(via
@@ -16754,7 +15961,7 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
-		(net "Net-(U3-A)")
+		(net "Net-(V3-A)")
 		(uuid "0a9b284f-0e4b-477a-adf0-1645a7e86b11")
 	)
 	(segment
@@ -16762,7 +15969,7 @@
 		(end 135.1744 74.7776)
 		(width 0.3556)
 		(layer "F.Cu")
-		(net "Net-(U7-A)")
+		(net "Net-(V7-A)")
 		(uuid "80d6c467-5a47-4d6e-ae0d-f875c2c365b7")
 	)
 	(segment
@@ -16770,7 +15977,7 @@
 		(end 135.16 74.792)
 		(width 0.2)
 		(layer "F.Cu")
-		(net "Net-(U7-A)")
+		(net "Net-(V7-A)")
 		(uuid "ddf1484e-1724-4779-b1b9-97fd56ba8ce8")
 	)
 	(via
@@ -16778,7 +15985,7 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
-		(net "Net-(U7-A)")
+		(net "Net-(V7-A)")
 		(uuid "3a59e5cd-7959-4f45-b1dc-f3028ca278cc")
 	)
 	(segment
@@ -16786,7 +15993,7 @@
 		(end 150.9268 65.532)
 		(width 0.2)
 		(layer "F.Cu")
-		(net "Net-(IC1-SDO)")
+		(net "Net-(U1-SDO)")
 		(uuid "559c5582-bdc4-4a18-9e81-a56202b5c36d")
 	)
 	(segment
@@ -16794,7 +16001,7 @@
 		(end 150.9268 65.472)
 		(width 0.2)
 		(layer "F.Cu")
-		(net "Net-(IC1-SDO)")
+		(net "Net-(U1-SDO)")
 		(uuid "80e8f132-880e-4538-b843-266ebfdeddaf")
 	)
 	(via
@@ -16802,7 +16009,7 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
-		(net "Net-(IC1-SDO)")
+		(net "Net-(U1-SDO)")
 		(uuid "35388581-1648-47da-b316-f05cba9c6eaf")
 	)
 	(segment
@@ -16810,7 +16017,7 @@
 		(end 149.462 65.572)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "Net-(IC1-SDO)")
+		(net "Net-(U1-SDO)")
 		(uuid "1ead719c-8692-4cc6-b57c-1f5cf2cd0765")
 	)
 	(segment
@@ -16818,7 +16025,7 @@
 		(end 150.3172 65.572)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "Net-(IC1-SDO)")
+		(net "Net-(U1-SDO)")
 		(uuid "8b754ad3-8bd9-4185-8421-5ede580b68b2")
 	)
 	(segment
@@ -16826,7 +16033,7 @@
 		(end 150.8268 65.572)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "Net-(IC1-SDO)")
+		(net "Net-(U1-SDO)")
 		(uuid "a57420ee-c27d-463f-bd50-db241633a391")
 	)
 	(segment
@@ -16834,7 +16041,7 @@
 		(end 149.462 65.572)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "Net-(IC1-SDO)")
+		(net "Net-(U1-SDO)")
 		(uuid "cff88d87-7519-4b80-8fc2-2391bf8f8009")
 	)
 	(segment
@@ -16882,7 +16089,7 @@
 		(end 175.8144 72.2376)
 		(width 0.3556)
 		(layer "F.Cu")
-		(net "Net-(U11-A)")
+		(net "Net-(V11-A)")
 		(uuid "3a7c0e48-a4b0-468f-98cf-19e42c084c1f")
 	)
 	(segment
@@ -16890,7 +16097,7 @@
 		(end 175.8 72.252)
 		(width 0.2)
 		(layer "F.Cu")
-		(net "Net-(U11-A)")
+		(net "Net-(V11-A)")
 		(uuid "ba5c6603-b4d1-43c0-9c2d-f2141fd81cc0")
 	)
 	(via
@@ -16898,7 +16105,7 @@
 		(size 0.6)
 		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
-		(net "Net-(U11-A)")
+		(net "Net-(V11-A)")
 		(uuid "3df6a5b9-431b-46c8-8fab-34bc92263b9d")
 	)
 	(segment
@@ -16986,7 +16193,7 @@
 		(end 139.16 74.792)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "Net-(U7-K)")
+		(net "Net-(V7-K)")
 		(uuid "640a7d22-d6ba-4fca-a569-2d23b4529cdc")
 	)
 	(segment
@@ -16994,7 +16201,7 @@
 		(end 144.9346 75.1774)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "Net-(U7-K)")
+		(net "Net-(V7-K)")
 		(uuid "680665ba-9ff9-4e66-b156-0d879a5c17d4")
 	)
 	(segment
@@ -17002,7 +16209,7 @@
 		(end 139.5454 75.1774)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "Net-(U7-K)")
+		(net "Net-(V7-K)")
 		(uuid "fbd86465-6e8e-4c74-b9e3-338271d1eece")
 	)
 	(segment
@@ -17186,7 +16393,7 @@
 		(end 104.68 69.712)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "Net-(U3-K)")
+		(net "Net-(V3-K)")
 		(uuid "9991d879-59ab-4307-96d3-82496a05514c")
 	)
 	(segment
@@ -17658,7 +16865,7 @@
 		(end 119.208 72.62)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "Net-(U5-K)")
+		(net "Net-(V5-K)")
 		(uuid "3c7bc1e9-9396-454e-844e-f38bab45a4d5")
 	)
 	(segment
@@ -17666,7 +16873,7 @@
 		(end 124.632 72.62)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "Net-(U5-K)")
+		(net "Net-(V5-K)")
 		(uuid "709579de-1bce-421e-be89-4ffeb3cf563d")
 	)
 	(segment
@@ -17674,7 +16881,7 @@
 		(end 125 72.252)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "Net-(U5-K)")
+		(net "Net-(V5-K)")
 		(uuid "a08cd901-c9d2-4dcb-9b1a-2d6f83e3f272")
 	)
 	(segment
@@ -17858,7 +17065,7 @@
 		(end 221.5432 68.2752)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "Net-(U15-K)")
+		(net "Net-(V17-K)")
 		(uuid "1229bbde-dee1-4f72-b92c-511924a03e8d")
 	)
 	(segment
@@ -17866,7 +17073,7 @@
 		(end 225.552 68.2752)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "Net-(U15-K)")
+		(net "Net-(V17-K)")
 		(uuid "52863de5-98d9-4c48-8b50-4027489fc469")
 	)
 	(segment
@@ -17874,7 +17081,7 @@
 		(end 220.44 67.172)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "Net-(U15-K)")
+		(net "Net-(V17-K)")
 		(uuid "87765178-6275-40f4-bf87-8e3169cdd2bb")
 	)
 	(segment
@@ -17882,7 +17089,7 @@
 		(end 226.6 67.2272)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "Net-(U15-K)")
+		(net "Net-(V17-K)")
 		(uuid "c345e144-f09b-44dc-8b70-aad8399d4482")
 	)
 	(segment
@@ -18186,7 +17393,7 @@
 		(end 206.28 69.712)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "Net-(U13-K)")
+		(net "Net-(V15-K)")
 		(uuid "fe11a3f2-4cf7-4a90-8f0f-1f36ef47ed90")
 	)
 	(segment
@@ -18250,7 +17457,7 @@
 		(end 185.96 72.252)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "Net-(U11-K)")
+		(net "Net-(V11-K)")
 		(uuid "24d9f095-4136-4faa-949b-2b786262f2c7")
 	)
 	(segment
@@ -18322,7 +17529,7 @@
 		(end 165.64 74.792)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "Net-(U10-A)")
+		(net "Net-(V10-A)")
 		(uuid "f3c0d92e-a245-4d24-ad66-1b4dca823b62")
 	)
 	(segment
@@ -18642,7 +17849,7 @@
 		(end 84.36 67.172)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "Net-(U1-K)")
+		(net "Net-(V1-K)")
 		(uuid "556b6423-fae5-45f8-b77a-01e108fef261")
 	)
 	(segment
@@ -22660,7 +21867,7 @@
 		)
 	)
 	(zone
-		(net "Net-(IC1-AINP)")
+		(net "Net-(U1-AINP)")
 		(layer "B.Cu")
 		(uuid "706fd15b-d7ce-40e7-9ae4-c948a1904183")
 		(hatch edge 0.5)

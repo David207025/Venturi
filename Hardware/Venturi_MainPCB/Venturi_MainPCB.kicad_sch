@@ -18376,7 +18376,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0004e4d2-1f8d-436d-a232-3e00839baf50")
-		(property "Reference" "#PWR041"
+		(property "Reference" "#PWR030"
 			(at 464.82 133.35 0)
 			(hide yes)
 			(show_name no)
@@ -18436,7 +18436,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR041")
+					(reference "#PWR030")
 					(unit 1)
 				)
 			)
@@ -18453,7 +18453,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "011540ff-7e60-4351-912a-533272a73c7e")
-		(property "Reference" "R17"
+		(property "Reference" "R18"
 			(at 140.97 214.63 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18517,7 +18517,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "R17")
+					(reference "R18")
 					(unit 1)
 				)
 			)
@@ -18535,7 +18535,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "014f13fd-9f77-4e44-bc70-540da1b0cfaa")
-		(property "Reference" "#PWR050"
+		(property "Reference" "#PWR021"
 			(at 523.875 115.57 0)
 			(hide yes)
 			(show_name no)
@@ -18595,7 +18595,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR050")
+					(reference "#PWR021")
 					(unit 1)
 				)
 			)
@@ -18689,7 +18689,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0390f0cc-ee10-4639-9bcf-2b74b181f995")
-		(property "Reference" "H10"
+		(property "Reference" "H11"
 			(at 53.34 157.4799 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18747,7 +18747,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "H10")
+					(reference "H11")
 					(unit 1)
 				)
 			)
@@ -18842,7 +18842,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "03f70668-46c5-4c6b-b63b-9dc1478a5c08")
-		(property "Reference" "#PWR08"
+		(property "Reference" "#PWR023"
 			(at 95.25 117.475 0)
 			(hide yes)
 			(show_name no)
@@ -18902,7 +18902,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR08")
+					(reference "#PWR023")
 					(unit 1)
 				)
 			)
@@ -18919,7 +18919,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "05164180-491f-464c-b7e4-c627f246cfd8")
-		(property "Reference" "R16"
+		(property "Reference" "R17"
 			(at 134.62 214.63 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18983,7 +18983,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "R16")
+					(reference "R17")
 					(unit 1)
 				)
 			)
@@ -19001,7 +19001,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "06dc2f4b-8109-4a47-aba8-96606b77ad9f")
-		(property "Reference" "#PWR032"
+		(property "Reference" "#PWR03"
 			(at 419.1 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -19061,7 +19061,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR032")
+					(reference "#PWR03")
 					(unit 1)
 				)
 			)
@@ -19078,7 +19078,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "09dcfcc0-5f3e-4b2b-b1b8-d37d7cf8a756")
-		(property "Reference" "Q1"
+		(property "Reference" "V2"
 			(at 77.47 53.34 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19148,7 +19148,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "Q1")
+					(reference "V2")
 					(unit 1)
 				)
 			)
@@ -19166,7 +19166,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0ccd9220-8211-4afd-bda7-140ef857b117")
-		(property "Reference" "C26"
+		(property "Reference" "C24"
 			(at 524.51 266.6999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19230,7 +19230,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "C26")
+					(reference "C24")
 					(unit 1)
 				)
 			)
@@ -19248,7 +19248,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0f4bd44d-caa1-41ff-88f6-250351ba32ae")
-		(property "Reference" "#PWR029"
+		(property "Reference" "#PWR02"
 			(at 408.305 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -19308,7 +19308,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR029")
+					(reference "#PWR02")
 					(unit 1)
 				)
 			)
@@ -19326,7 +19326,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0ffcddec-6d6d-4a11-bad9-dc473bbc80ab")
-		(property "Reference" "C29"
+		(property "Reference" "C26"
 			(at 549.91 266.6999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19390,7 +19390,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "C29")
+					(reference "C26")
 					(unit 1)
 				)
 			)
@@ -19407,7 +19407,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "10c89043-548d-42fd-9021-3acf0153f44a")
-		(property "Reference" "U8"
+		(property "Reference" "N2"
 			(at 457.2 245.11 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19492,7 +19492,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "U8")
+					(reference "N2")
 					(unit 1)
 				)
 			)
@@ -19510,7 +19510,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "118e1693-8f2b-42c8-9633-5fdd6d966326")
-		(property "Reference" "D5"
+		(property "Reference" "D6"
 			(at 476.885 203.1298 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19580,7 +19580,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "D5")
+					(reference "D6")
 					(unit 1)
 				)
 			)
@@ -19598,7 +19598,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1227f5b6-9260-4254-a169-c4033fbb006e")
-		(property "Reference" "R10"
+		(property "Reference" "R2"
 			(at 89.535 47.6249 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19662,7 +19662,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "R10")
+					(reference "R2")
 					(unit 1)
 				)
 			)
@@ -19680,7 +19680,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "125f63c7-dfb8-4ca7-a554-dfe534608775")
-		(property "Reference" "U4"
+		(property "Reference" "P1"
 			(at 190.5 298.45 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19796,7 +19796,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "U4")
+					(reference "P1")
 					(unit 1)
 				)
 			)
@@ -19813,7 +19813,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "12a6cc2d-62db-46ba-a30c-2aa2ca8d624b")
-		(property "Reference" "R26"
+		(property "Reference" "R12"
 			(at 297.815 96.52 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19877,7 +19877,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "R26")
+					(reference "R12")
 					(unit 1)
 				)
 			)
@@ -19895,7 +19895,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "12bc9a5e-b37c-4852-a344-e5931e0daf03")
-		(property "Reference" "#PWR051"
+		(property "Reference" "#PWR022"
 			(at 530.86 115.57 0)
 			(hide yes)
 			(show_name no)
@@ -19955,7 +19955,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR051")
+					(reference "#PWR022")
 					(unit 1)
 				)
 			)
@@ -19974,7 +19974,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "14323b8f-480a-4c9f-8059-65454cb6a944")
-		(property "Reference" "#PWR046"
+		(property "Reference" "#PWR09"
 			(at 501.65 68.58 0)
 			(hide yes)
 			(show_name no)
@@ -20035,7 +20035,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR046")
+					(reference "#PWR09")
 					(unit 1)
 				)
 			)
@@ -20053,7 +20053,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "14fc312a-5b67-4fa3-a6d2-ceb540765c6e")
-		(property "Reference" "#PWR039"
+		(property "Reference" "#PWR011"
 			(at 464.82 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -20113,7 +20113,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR039")
+					(reference "#PWR011")
 					(unit 1)
 				)
 			)
@@ -20131,7 +20131,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "17076eab-7879-4824-a6be-e10c53c47568")
-		(property "Reference" "#PWR07"
+		(property "Reference" "#PWR01"
 			(at 87.63 46.99 0)
 			(hide yes)
 			(show_name no)
@@ -20191,7 +20191,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR07")
+					(reference "#PWR01")
 					(unit 1)
 				)
 			)
@@ -20288,7 +20288,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1aff3187-e370-4e0d-b170-023c94721ca1")
-		(property "Reference" "H11"
+		(property "Reference" "H9"
 			(at 66.04 151.1299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20346,7 +20346,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "H11")
+					(reference "H9")
 					(unit 1)
 				)
 			)
@@ -20364,7 +20364,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1b3037f3-e413-4bfe-b666-6e1728f294c0")
-		(property "Reference" "J6"
+		(property "Reference" "X5"
 			(at 245.11 55.88 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20374,7 +20374,7 @@
 				)
 			)
 		)
-		(property "Value" "USB_C_Receptacle_USB2.0_14P"
+		(property "Value" "USB-C"
 			(at 245.11 58.42 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20465,7 +20465,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "J6")
+					(reference "X5")
 					(unit 1)
 				)
 			)
@@ -20483,7 +20483,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "1bc3bfc6-1167-440b-875e-a1302d79794d")
-		(property "Reference" "#PWR055"
+		(property "Reference" "#PWR06"
 			(at 572.77 50.165 0)
 			(hide yes)
 			(show_name no)
@@ -20544,7 +20544,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR055")
+					(reference "#PWR06")
 					(unit 1)
 				)
 			)
@@ -20679,7 +20679,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "1c819f02-86ea-4c55-983c-6c3ca60ec4f1")
-		(property "Reference" "R2"
+		(property "Reference" "R35"
 			(at 64.77 360.68 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20743,7 +20743,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "R2")
+					(reference "R35")
 					(unit 1)
 				)
 			)
@@ -20760,7 +20760,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "1cdc8ade-af6c-4680-a122-aea8f1bf3ad7")
-		(property "Reference" "#PWR01"
+		(property "Reference" "#PWR012"
 			(at 50.8 77.47 0)
 			(hide yes)
 			(show_name no)
@@ -20820,7 +20820,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR01")
+					(reference "#PWR012")
 					(unit 1)
 				)
 			)
@@ -20837,7 +20837,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "1e85ac31-305a-4510-a3cc-0668e5ab2c00")
-		(property "Reference" "R20"
+		(property "Reference" "R21"
 			(at 160.02 214.63 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20901,7 +20901,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "R20")
+					(reference "R21")
 					(unit 1)
 				)
 			)
@@ -20918,7 +20918,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "1fb01a31-20fe-4783-b205-8d94113d3caf")
-		(property "Reference" "C2"
+		(property "Reference" "C13"
 			(at 86.995 118.745 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20980,7 +20980,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "C2")
+					(reference "C13")
 					(unit 1)
 				)
 			)
@@ -20998,7 +20998,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "210e452f-0988-416f-b96c-7b89531dcc36")
-		(property "Reference" "R30"
+		(property "Reference" "R24"
 			(at 485.14 266.6999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21062,7 +21062,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "R30")
+					(reference "R24")
 					(unit 1)
 				)
 			)
@@ -21159,7 +21159,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "221ff476-fcef-49d9-88aa-f2584f8d18eb")
-		(property "Reference" "C27"
+		(property "Reference" "C25"
 			(at 537.21 266.6999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21223,7 +21223,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "C27")
+					(reference "C25")
 					(unit 1)
 				)
 			)
@@ -21240,7 +21240,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "23ffd353-20b9-441e-9a7b-d6d132343acf")
-		(property "Reference" "R24"
+		(property "Reference" "R11"
 			(at 280.67 96.52 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21304,7 +21304,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "R24")
+					(reference "R11")
 					(unit 1)
 				)
 			)
@@ -21322,7 +21322,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "26c4adb5-88b8-4965-a4b3-43a6ae0c9e55")
-		(property "Reference" "#PWR048"
+		(property "Reference" "#PWR04"
 			(at 509.27 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -21382,7 +21382,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR048")
+					(reference "#PWR04")
 					(unit 1)
 				)
 			)
@@ -21400,7 +21400,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "298c152e-d3ee-4844-9a3e-8d54cb4d8bf1")
-		(property "Reference" "C21"
+		(property "Reference" "C27"
 			(at 486.41 279.3999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21464,7 +21464,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "C21")
+					(reference "C27")
 					(unit 1)
 				)
 			)
@@ -21482,7 +21482,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2a0c3bda-db22-4451-8706-1600a12bbfb6")
-		(property "Reference" "#PWR011"
+		(property "Reference" "#PWR024"
 			(at 133.35 127 0)
 			(hide yes)
 			(show_name no)
@@ -21542,7 +21542,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR011")
+					(reference "#PWR024")
 					(unit 1)
 				)
 			)
@@ -21559,7 +21559,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "2b030211-941e-471e-a0ff-517dfb984349")
-		(property "Reference" "R23"
+		(property "Reference" "R10"
 			(at 274.32 96.52 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21623,7 +21623,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "R23")
+					(reference "R10")
 					(unit 1)
 				)
 			)
@@ -21640,7 +21640,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "30a0f0c9-3bee-416e-82ff-fe9fdbd84bc7")
-		(property "Reference" "R15"
+		(property "Reference" "R30"
 			(at 128.27 309.88 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21704,7 +21704,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "R15")
+					(reference "R30")
 					(unit 1)
 				)
 			)
@@ -21721,7 +21721,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "322fc3ba-01b0-4d3f-863c-829f91d7923f")
-		(property "Reference" "R6"
+		(property "Reference" "R32"
 			(at 82.55 339.09 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21785,7 +21785,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "R6")
+					(reference "R32")
 					(unit 1)
 				)
 			)
@@ -21802,7 +21802,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "32bc5752-19ba-49e8-a008-c430e0c8acad")
-		(property "Reference" "C28"
+		(property "Reference" "C21"
 			(at 539.115 193.04 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21864,7 +21864,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "C28")
+					(reference "C21")
 					(unit 1)
 				)
 			)
@@ -21881,7 +21881,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "35adfd47-ad85-4a8a-a930-6bb94e4f3aed")
-		(property "Reference" "R28"
+		(property "Reference" "R8"
 			(at 353.695 59.69 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21945,7 +21945,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "R28")
+					(reference "R8")
 					(unit 1)
 				)
 			)
@@ -21961,10 +21961,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "383e0a1d-afc2-4592-b814-69de4d5d789c")
-		(property "Reference" "U6"
-			(at 421.2433 75.565 0)
+		(property "Reference" "D1"
+			(at 421.64 74.93 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -21975,7 +21974,7 @@
 			)
 		)
 		(property "Value" "DRV8212P"
-			(at 421.2433 78.105 0)
+			(at 421.64 77.47 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -22048,7 +22047,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "U6")
+					(reference "D1")
 					(unit 1)
 				)
 			)
@@ -22066,7 +22065,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3ae2ebbe-99cd-4db6-a75a-9b4d45ae621b")
-		(property "Reference" "#PWR012"
+		(property "Reference" "#PWR049"
 			(at 142.24 302.26 0)
 			(hide yes)
 			(show_name no)
@@ -22127,7 +22126,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR012")
+					(reference "#PWR049")
 					(unit 1)
 				)
 			)
@@ -22145,7 +22144,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3fe3fd94-49c9-4e83-a6c1-5a6810d059fc")
-		(property "Reference" "D8"
+		(property "Reference" "D9"
 			(at 559.435 203.1298 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22215,7 +22214,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "D8")
+					(reference "D9")
 					(unit 1)
 				)
 			)
@@ -22234,7 +22233,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4017b001-cd4a-4860-991b-8346112195b0")
-		(property "Reference" "#PWR04"
+		(property "Reference" "#PWR051"
 			(at 64.77 324.485 0)
 			(hide yes)
 			(show_name no)
@@ -22294,7 +22293,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR04")
+					(reference "#PWR051")
 					(unit 1)
 				)
 			)
@@ -22312,7 +22311,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "412f5f4f-7241-491b-bcde-8b5aebe9e777")
-		(property "Reference" "D3"
+		(property "Reference" "D4"
 			(at 426.085 203.1298 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22382,7 +22381,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "D3")
+					(reference "D4")
 					(unit 1)
 				)
 			)
@@ -22400,7 +22399,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "41a2d1ce-d3ea-4c62-8021-5e46ca531da3")
-		(property "Reference" "#PWR021"
+		(property "Reference" "#PWR015"
 			(at 190.5 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -22460,7 +22459,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR021")
+					(reference "#PWR015")
 					(unit 1)
 				)
 			)
@@ -22478,7 +22477,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "429d8963-6e15-4663-9caa-ad005a598466")
-		(property "Reference" "C24"
+		(property "Reference" "C1"
 			(at 504.19 44.45 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22540,7 +22539,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "C24")
+					(reference "C1")
 					(unit 1)
 				)
 			)
@@ -22558,7 +22557,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "43a63789-349c-4651-8119-3a41ae0dd5c6")
-		(property "Reference" "R35"
+		(property "Reference" "R26"
 			(at 561.34 278.1299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22622,7 +22621,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "R35")
+					(reference "R26")
 					(unit 1)
 				)
 			)
@@ -22640,7 +22639,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "43b8405a-5277-45d3-8f97-41f7a03e2c10")
-		(property "Reference" "#PWR025"
+		(property "Reference" "#PWR018"
 			(at 237.49 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -22700,7 +22699,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR025")
+					(reference "#PWR018")
 					(unit 1)
 				)
 			)
@@ -22795,7 +22794,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "455e3c39-e78a-467f-8957-373b246c18c4")
-		(property "Reference" "#PWR045"
+		(property "Reference" "#PWR05"
 			(at 492.125 50.165 0)
 			(hide yes)
 			(show_name no)
@@ -22856,7 +22855,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR045")
+					(reference "#PWR05")
 					(unit 1)
 				)
 			)
@@ -22874,7 +22873,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "467a6020-0aee-4973-95fd-f2f075f5be92")
-		(property "Reference" "#PWR038"
+		(property "Reference" "#PWR07"
 			(at 464.82 54.61 0)
 			(hide yes)
 			(show_name no)
@@ -22934,7 +22933,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR038")
+					(reference "#PWR07")
 					(unit 1)
 				)
 			)
@@ -22952,7 +22951,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "47b5bf78-6b59-4261-83ba-1cc82df3c50d")
-		(property "Reference" "J7"
+		(property "Reference" "X4"
 			(at 457.2 52.07 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23026,7 +23025,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "J7")
+					(reference "X4")
 					(unit 1)
 				)
 			)
@@ -23200,7 +23199,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4fdab067-40f4-4fef-ba92-2d9fa3088618")
-		(property "Reference" "R11"
+		(property "Reference" "R6"
 			(at 89.535 62.2299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23264,7 +23263,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "R11")
+					(reference "R6")
 					(unit 1)
 				)
 			)
@@ -23281,7 +23280,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "51c1bc62-077a-4f0c-9b62-02d3ff6cc871")
-		(property "Reference" "C20"
+		(property "Reference" "C18"
 			(at 456.565 193.04 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23343,7 +23342,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "C20")
+					(reference "C18")
 					(unit 1)
 				)
 			)
@@ -23360,7 +23359,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "553f8401-59dc-4619-bff4-c113b46921c6")
-		(property "Reference" "C18"
+		(property "Reference" "C7"
 			(at 431.8 65.405 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23424,7 +23423,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "C18")
+					(reference "C7")
 					(unit 1)
 				)
 			)
@@ -23442,7 +23441,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "571e08ac-cd1e-4fee-bd04-3674b018a750")
-		(property "Reference" "C30"
+		(property "Reference" "C2"
 			(at 561.975 44.45 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23504,7 +23503,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "C30")
+					(reference "C2")
 					(unit 1)
 				)
 			)
@@ -23522,7 +23521,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "57275afb-23d8-4668-b87f-f2d8615d9597")
-		(property "Reference" "#PWR043"
+		(property "Reference" "#PWR042"
 			(at 482.6 234.95 0)
 			(hide yes)
 			(show_name no)
@@ -23582,7 +23581,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR043")
+					(reference "#PWR042")
 					(unit 1)
 				)
 			)
@@ -23598,10 +23597,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "57ebcd70-2417-474f-96b5-702aea4075aa")
-		(property "Reference" "D2"
-			(at 67.31 374.9674 90)
+		(property "Reference" "H13"
+			(at 66.04 374.396 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -23612,7 +23610,7 @@
 			)
 		)
 		(property "Value" "LED"
-			(at 67.31 377.5074 90)
+			(at 66.04 376.936 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -23675,7 +23673,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "D2")
+					(reference "H13")
 					(unit 1)
 				)
 			)
@@ -23693,7 +23691,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "58520f31-b063-48a3-8eee-94b7511a9fae")
-		(property "Reference" "IC1"
+		(property "Reference" "D2"
 			(at 325.12 55.88 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23844,7 +23842,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "IC1")
+					(reference "D2")
 					(unit 1)
 				)
 			)
@@ -24017,7 +24015,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5ba7fe98-418e-424d-b543-d6a86c72698f")
-		(property "Reference" "R32"
+		(property "Reference" "R22"
 			(at 510.54 257.8099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24081,7 +24079,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "R32")
+					(reference "R22")
 					(unit 1)
 				)
 			)
@@ -24180,7 +24178,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5c9920af-87bc-4091-9815-a29b92f0363f")
-		(property "Reference" "#PWR027"
+		(property "Reference" "#PWR08"
 			(at 285.75 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -24240,7 +24238,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR027")
+					(reference "#PWR08")
 					(unit 1)
 				)
 			)
@@ -24258,7 +24256,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "62996807-0150-465e-a9a7-d833c85e875b")
-		(property "Reference" "D6"
+		(property "Reference" "D7"
 			(at 508.635 203.1298 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24328,7 +24326,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "D6")
+					(reference "D7")
 					(unit 1)
 				)
 			)
@@ -24346,7 +24344,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "62b4348d-f3e0-4bd7-bf15-064f23cc2c32")
-		(property "Reference" "R29"
+		(property "Reference" "R23"
 			(at 424.18 262.8899 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24410,7 +24408,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "R29")
+					(reference "R23")
 					(unit 1)
 				)
 			)
@@ -24427,7 +24425,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "640111cb-f495-4d77-b01b-377b0ebee8a8")
-		(property "Reference" "R9"
+		(property "Reference" "R28"
 			(at 83.82 294.005 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24491,7 +24489,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "R9")
+					(reference "R28")
 					(unit 1)
 				)
 			)
@@ -24510,7 +24508,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "66bad601-613f-473e-8adc-02f8a53c2985")
-		(property "Reference" "#PWR042"
+		(property "Reference" "#PWR034"
 			(at 482.6 187.96 0)
 			(hide yes)
 			(show_name no)
@@ -24570,7 +24568,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR042")
+					(reference "#PWR034")
 					(unit 1)
 				)
 			)
@@ -24588,7 +24586,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6a55b849-499f-4b1a-9832-f34c9f5554b8")
-		(property "Reference" "#PWR033"
+		(property "Reference" "#PWR013"
 			(at 419.1 83.185 0)
 			(hide yes)
 			(show_name no)
@@ -24648,7 +24646,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR033")
+					(reference "#PWR013")
 					(unit 1)
 				)
 			)
@@ -24666,7 +24664,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6a6a4298-4845-4669-ae0c-41c2fdb35874")
-		(property "Reference" "U9"
+		(property "Reference" "B1"
 			(at 533.4 45.72 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24766,7 +24764,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "U9")
+					(reference "B1")
 					(unit 1)
 				)
 			)
@@ -24784,7 +24782,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6bd65f51-cdae-46b4-8a4c-e48ed98291fe")
-		(property "Reference" "H8"
+		(property "Reference" "H10"
 			(at 40.64 157.4799 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24842,7 +24840,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "H8")
+					(reference "H10")
 					(unit 1)
 				)
 			)
@@ -24860,7 +24858,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "6bde216d-079e-468a-a485-5cf21cc35672")
-		(property "Reference" "R31"
+		(property "Reference" "R3"
 			(at 497.205 58.42 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24922,7 +24920,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "R31")
+					(reference "R3")
 					(unit 1)
 				)
 			)
@@ -24939,7 +24937,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "6f18099a-fa73-4d54-bcfd-42df30d68084")
-		(property "Reference" "R7"
+		(property "Reference" "R33"
 			(at 82.55 344.17 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25003,7 +25001,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "R7")
+					(reference "R33")
 					(unit 1)
 				)
 			)
@@ -25020,7 +25018,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "719934a1-f368-45d4-a7b2-5b2996a9f42e")
-		(property "Reference" "Q3"
+		(property "Reference" "V5"
 			(at 294.64 86.36 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25090,7 +25088,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "Q3")
+					(reference "V5")
 					(unit 1)
 				)
 			)
@@ -25108,7 +25106,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "71c064a8-02a5-4429-aa11-20646c488fad")
-		(property "Reference" "R3"
+		(property "Reference" "R31"
 			(at 63.5 325.12 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25172,7 +25170,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "R3")
+					(reference "R31")
 					(unit 1)
 				)
 			)
@@ -25190,7 +25188,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "71c30349-8088-485a-ae18-c2cde38ef8ae")
-		(property "Reference" "U2"
+		(property "Reference" "N3"
 			(at 101.6 289.56 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25576,7 +25574,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "U2")
+					(reference "N3")
 					(unit 1)
 				)
 			)
@@ -25594,7 +25592,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "737d7e20-e461-4560-9cfe-6227458272e5")
-		(property "Reference" "D1"
+		(property "Reference" "V4"
 			(at 48.26 81.2799 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25662,7 +25660,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "D1")
+					(reference "V4")
 					(unit 1)
 				)
 			)
@@ -25679,7 +25677,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "73aaa9c1-6466-43ce-8923-6d1571a58a4d")
-		(property "Reference" "J2"
+		(property "Reference" "X9"
 			(at 78.105 323.215 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25738,7 +25736,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "J2")
+					(reference "X9")
 					(unit 1)
 				)
 			)
@@ -25755,7 +25753,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "743579b5-a01b-47af-b524-ac347b1fae93")
-		(property "Reference" "C7"
+		(property "Reference" "C6"
 			(at 127 50.8 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25819,7 +25817,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "C7")
+					(reference "C6")
 					(unit 1)
 				)
 			)
@@ -25837,7 +25835,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "74df8254-22b9-40c8-921a-bf4765113542")
-		(property "Reference" "#PWR028"
+		(property "Reference" "#PWR035"
 			(at 396.875 196.85 0)
 			(hide yes)
 			(show_name no)
@@ -25898,7 +25896,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR028")
+					(reference "#PWR035")
 					(unit 1)
 				)
 			)
@@ -25915,7 +25913,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "76348a1d-351b-4e8a-8618-2c7dd7733acc")
-		(property "Reference" "R1"
+		(property "Reference" "R4"
 			(at 41.275 62.23 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25979,7 +25977,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "R1")
+					(reference "R4")
 					(unit 1)
 				)
 			)
@@ -26078,7 +26076,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "76efbac4-e140-4b81-a86b-ca1fc8ac8b4e")
-		(property "Reference" "R27"
+		(property "Reference" "R7"
 			(at 340.995 59.69 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -26142,7 +26140,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "R27")
+					(reference "R7")
 					(unit 1)
 				)
 			)
@@ -26160,7 +26158,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "77427f31-01e8-4b56-a75c-6d8814f730d2")
-		(property "Reference" "#PWR02"
+		(property "Reference" "#PWR050"
 			(at 63.5 313.69 0)
 			(hide yes)
 			(show_name no)
@@ -26220,7 +26218,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR02")
+					(reference "#PWR050")
 					(unit 1)
 				)
 			)
@@ -26237,7 +26235,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "77f0d3d7-044a-4608-8d21-505d667af446")
-		(property "Reference" "C8"
+		(property "Reference" "C9"
 			(at 135.89 100.33 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -26301,7 +26299,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "C8")
+					(reference "C9")
 					(unit 1)
 				)
 			)
@@ -26318,7 +26316,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "78cbe715-401a-4e46-a747-21dcec5635f8")
-		(property "Reference" "C6"
+		(property "Reference" "C28"
 			(at 127 298.45 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -26380,7 +26378,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "C6")
+					(reference "C28")
 					(unit 1)
 				)
 			)
@@ -26398,7 +26396,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "79fc0ce1-d209-4ee9-a821-1cacf7aa000f")
-		(property "Reference" "D4"
+		(property "Reference" "D5"
 			(at 451.485 203.1298 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -26468,7 +26466,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "D4")
+					(reference "D5")
 					(unit 1)
 				)
 			)
@@ -26486,7 +26484,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7b4f7c9d-72a5-4d9b-9a06-51932518b4ae")
-		(property "Reference" "J8"
+		(property "Reference" "X6"
 			(at 457.2 109.22 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -26560,7 +26558,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "J8")
+					(reference "X6")
 					(unit 1)
 				)
 			)
@@ -26577,7 +26575,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "7b5fbfd0-4313-4021-9f1c-546093539e28")
-		(property "Reference" "J3"
+		(property "Reference" "X1"
 			(at 142.875 40.64 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -26636,7 +26634,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "J3")
+					(reference "X1")
 					(unit 1)
 				)
 			)
@@ -26733,7 +26731,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "80318706-7987-4afe-bee6-362fdcaecb23")
-		(property "Reference" "R13"
+		(property "Reference" "R16"
 			(at 93.98 118.745 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -26797,7 +26795,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "R13")
+					(reference "R16")
 					(unit 1)
 				)
 			)
@@ -26815,7 +26813,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8073fa53-cb34-4493-89ff-d0d5e75f09f7")
-		(property "Reference" "#PWR03"
+		(property "Reference" "#PWR054"
 			(at 63.5 393.7 0)
 			(hide yes)
 			(show_name no)
@@ -26875,7 +26873,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR03")
+					(reference "#PWR054")
 					(unit 1)
 				)
 			)
@@ -26893,7 +26891,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "80b25d4d-a465-4beb-9306-9dbfa4058756")
-		(property "Reference" "#PWR022"
+		(property "Reference" "#PWR028"
 			(at 190.5 127 0)
 			(hide yes)
 			(show_name no)
@@ -26953,7 +26951,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR022")
+					(reference "#PWR028")
 					(unit 1)
 				)
 			)
@@ -26971,7 +26969,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "80b6f329-64c3-4f39-b15a-195bcb65e770")
-		(property "Reference" "#PWR05"
+		(property "Reference" "#PWR010"
 			(at 66.675 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -27031,7 +27029,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR05")
+					(reference "#PWR010")
 					(unit 1)
 				)
 			)
@@ -27442,7 +27440,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "86946ceb-1bd6-49ce-9230-3063aaa3a147")
-		(property "Reference" "#PWR024"
+		(property "Reference" "#PWR043"
 			(at 212.725 252.095 0)
 			(hide yes)
 			(show_name no)
@@ -27502,7 +27500,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR024")
+					(reference "#PWR043")
 					(unit 1)
 				)
 			)
@@ -27520,7 +27518,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "87bc49f1-ac36-41d5-97b5-29e00d2d2074")
-		(property "Reference" "#PWR06"
+		(property "Reference" "#PWR031"
 			(at 76.2 139.065 0)
 			(hide yes)
 			(show_name no)
@@ -27580,7 +27578,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR06")
+					(reference "#PWR031")
 					(unit 1)
 				)
 			)
@@ -27597,7 +27595,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "87e1078f-f719-452b-91a6-dcc3afaf627c")
-		(property "Reference" "#PWR044"
+		(property "Reference" "#PWR038"
 			(at 479.425 196.85 0)
 			(hide yes)
 			(show_name no)
@@ -27658,7 +27656,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR044")
+					(reference "#PWR038")
 					(unit 1)
 				)
 			)
@@ -27676,7 +27674,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "88a052ea-968c-494f-bd79-00876f49a9e3")
-		(property "Reference" "#PWR035"
+		(property "Reference" "#PWR032"
 			(at 419.1 140.335 0)
 			(hide yes)
 			(show_name no)
@@ -27736,7 +27734,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR035")
+					(reference "#PWR032")
 					(unit 1)
 				)
 			)
@@ -27754,7 +27752,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8b1fd75f-8c4d-4f71-b49d-b59d8efae3f9")
-		(property "Reference" "U3"
+		(property "Reference" "N1"
 			(at 158.75 78.74 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -27826,7 +27824,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "U3")
+					(reference "N1")
 					(unit 1)
 				)
 			)
@@ -27844,7 +27842,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8b6ba32e-f05b-4ce8-a195-46fc875f96b6")
-		(property "Reference" "R33"
+		(property "Reference" "R25"
 			(at 510.54 266.6999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -27908,7 +27906,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "R33")
+					(reference "R25")
 					(unit 1)
 				)
 			)
@@ -27925,7 +27923,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "8d3ef3c0-37b9-417a-bb81-15474d3fed9c")
-		(property "Reference" "C14"
+		(property "Reference" "C15"
 			(at 400.685 128.27 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -27989,7 +27987,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "C14")
+					(reference "C15")
 					(unit 1)
 				)
 			)
@@ -28006,7 +28004,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "8ec1f4b2-7674-4fbf-a01e-46692263bfd7")
-		(property "Reference" "R19"
+		(property "Reference" "R20"
 			(at 153.67 214.63 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -28070,7 +28068,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "R19")
+					(reference "R20")
 					(unit 1)
 				)
 			)
@@ -28167,7 +28165,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8f78a4b7-8451-46b4-b8b0-3ed80628309b")
-		(property "Reference" "#PWR09"
+		(property "Reference" "#PWR055"
 			(at 101.6 400.05 0)
 			(hide yes)
 			(show_name no)
@@ -28227,7 +28225,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR09")
+					(reference "#PWR055")
 					(unit 1)
 				)
 			)
@@ -28244,7 +28242,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "97cc23ef-6aff-435c-9996-fc72e6e21c9b")
-		(property "Reference" "J4"
+		(property "Reference" "X3"
 			(at 142.875 45.72 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -28303,7 +28301,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "J4")
+					(reference "X3")
 					(unit 1)
 				)
 			)
@@ -28321,7 +28319,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9b36edc1-1fab-49d4-aa5d-b40b4e2d3b18")
-		(property "Reference" "#PWR013"
+		(property "Reference" "#PWR052"
 			(at 139.7 332.105 0)
 			(hide yes)
 			(show_name no)
@@ -28381,7 +28379,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR013")
+					(reference "#PWR052")
 					(unit 1)
 				)
 			)
@@ -28398,7 +28396,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "9c5451d9-fbd2-45ca-b157-292484896cb3")
-		(property "Reference" "R14"
+		(property "Reference" "R29"
 			(at 121.92 309.88 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -28462,7 +28460,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "R14")
+					(reference "R29")
 					(unit 1)
 				)
 			)
@@ -28561,7 +28559,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "a5ef5434-d460-4d05-9b2f-88b6b1222154")
-		(property "Reference" "C1"
+		(property "Reference" "C29"
 			(at 64.77 304.8 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -28625,7 +28623,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "C1")
+					(reference "C29")
 					(unit 1)
 				)
 			)
@@ -28643,7 +28641,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a8f8797a-56b5-4157-b188-6c0f8b98689a")
-		(property "Reference" "#PWR040"
+		(property "Reference" "#PWR020"
 			(at 464.82 111.76 0)
 			(hide yes)
 			(show_name no)
@@ -28703,7 +28701,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR040")
+					(reference "#PWR020")
 					(unit 1)
 				)
 			)
@@ -28721,7 +28719,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ab51a89e-1e95-4b37-9353-30fb41b44d5a")
-		(property "Reference" "#PWR030"
+		(property "Reference" "#PWR016"
 			(at 408.305 105.41 0)
 			(hide yes)
 			(show_name no)
@@ -28781,7 +28779,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR030")
+					(reference "#PWR016")
 					(unit 1)
 				)
 			)
@@ -28879,7 +28877,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ae9f2ed3-c957-47d0-8f9a-8a83d18d0aa2")
-		(property "Reference" "J1"
+		(property "Reference" "X2"
 			(at 32.385 39.37 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -28941,7 +28939,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "J1")
+					(reference "X2")
 					(unit 1)
 				)
 			)
@@ -28960,7 +28958,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b15f01a5-08e1-4bcc-a07a-42089960dfb9")
-		(property "Reference" "#PWR017"
+		(property "Reference" "#PWR041"
 			(at 167.005 212.09 0)
 			(hide yes)
 			(show_name no)
@@ -29020,7 +29018,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR017")
+					(reference "#PWR041")
 					(unit 1)
 				)
 			)
@@ -29118,10 +29116,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "b344dcc4-e2e1-45e5-b80f-adbe683fe49f")
-		(property "Reference" "U7"
-			(at 421.2433 132.715 0)
+		(property "Reference" "D3"
+			(at 421.64 132.08 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -29132,7 +29129,7 @@
 			)
 		)
 		(property "Value" "DRV8212P"
-			(at 421.2433 135.255 0)
+			(at 421.894 134.62 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -29205,7 +29202,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "U7")
+					(reference "D3")
 					(unit 1)
 				)
 			)
@@ -29298,7 +29295,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "be704921-5287-49b8-9fdb-29765ce2be99")
-		(property "Reference" "C25"
+		(property "Reference" "C20"
 			(at 513.715 193.04 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -29360,7 +29357,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "C25")
+					(reference "C20")
 					(unit 1)
 				)
 			)
@@ -29378,8 +29375,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "bef1e57f-735d-4e44-a42f-301016c3a61d")
-		(property "Reference" "J9"
-			(at 543.56 130.81 90)
+		(property "Reference" "X7"
+			(at 546.1 130.81 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -29389,7 +29386,7 @@
 			)
 		)
 		(property "Value" "Sensor-PCB"
-			(at 541.02 130.81 90)
+			(at 546.1 133.35 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -29482,7 +29479,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "J9")
+					(reference "X7")
 					(unit 1)
 				)
 			)
@@ -29499,7 +29496,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "bf153f71-6d26-457e-b284-0f1c20acf213")
-		(property "Reference" "C16"
+		(property "Reference" "C23"
 			(at 416.56 262.89 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -29563,7 +29560,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "C16")
+					(reference "C23")
 					(unit 1)
 				)
 			)
@@ -29580,7 +29577,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c669c931-ddd7-40fa-b10b-469a87306494")
-		(property "Reference" "C9"
+		(property "Reference" "C30"
 			(at 128.27 322.58 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -29644,7 +29641,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "C9")
+					(reference "C30")
 					(unit 1)
 				)
 			)
@@ -29662,7 +29659,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c8f9b62d-2e86-4d3d-b2a8-a2c7618e586b")
-		(property "Reference" "R34"
+		(property "Reference" "R27"
 			(at 510.54 279.3999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -29726,7 +29723,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "R34")
+					(reference "R27")
 					(unit 1)
 				)
 			)
@@ -29744,7 +29741,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "caa906ee-f013-4c8a-938d-b24830202eef")
-		(property "Reference" "#PWR019"
+		(property "Reference" "#PWR027"
 			(at 177.8 127 0)
 			(hide yes)
 			(show_name no)
@@ -29804,7 +29801,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR019")
+					(reference "#PWR027")
 					(unit 1)
 				)
 			)
@@ -29822,7 +29819,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cadd08c9-2870-433e-9058-a66c55a5a171")
-		(property "Reference" "#PWR031"
+		(property "Reference" "#PWR045"
 			(at 414.02 252.73 0)
 			(hide yes)
 			(show_name no)
@@ -29882,7 +29879,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR031")
+					(reference "#PWR045")
 					(unit 1)
 				)
 			)
@@ -29900,7 +29897,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cecc9ee4-10e2-470c-81a8-8ba72be70ea9")
-		(property "Reference" "U1"
+		(property "Reference" "V6"
 			(at 61.765 114.935 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -29965,7 +29962,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "U1")
+					(reference "V6")
 					(unit 1)
 				)
 			)
@@ -29982,7 +29979,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "cf463eba-6f01-4b5b-b5d2-457cb71fb62a")
-		(property "Reference" "R8"
+		(property "Reference" "R34"
 			(at 73.025 346.71 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -30046,7 +30043,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "R8")
+					(reference "R34")
 					(unit 1)
 				)
 			)
@@ -30064,7 +30061,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d0ed8236-ada6-4b4c-8273-f013e43b48f2")
-		(property "Reference" "#PWR020"
+		(property "Reference" "#PWR053"
 			(at 182.245 340.995 0)
 			(hide yes)
 			(show_name no)
@@ -30124,7 +30121,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR020")
+					(reference "#PWR053")
 					(unit 1)
 				)
 			)
@@ -30143,7 +30140,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d2b39d95-2e97-4b52-b0b2-4bf7f846c434")
-		(property "Reference" "#PWR010"
+		(property "Reference" "#PWR047"
 			(at 120.65 289.56 0)
 			(hide yes)
 			(show_name no)
@@ -30203,7 +30200,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR010")
+					(reference "#PWR047")
 					(unit 1)
 				)
 			)
@@ -30220,7 +30217,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "d4882b12-06e1-42b8-b79e-383a81cc5704")
-		(property "Reference" "C19"
+		(property "Reference" "C14"
 			(at 431.8 122.555 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -30284,7 +30281,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "C19")
+					(reference "C14")
 					(unit 1)
 				)
 			)
@@ -30302,7 +30299,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d5d475b6-08dc-4dcf-a781-7adbaa55b93f")
-		(property "Reference" "#PWR034"
+		(property "Reference" "#PWR017"
 			(at 419.1 105.41 0)
 			(hide yes)
 			(show_name no)
@@ -30362,7 +30359,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR034")
+					(reference "#PWR017")
 					(unit 1)
 				)
 			)
@@ -30379,7 +30376,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "d5efb25f-55c6-4dda-ae02-537995302082")
-		(property "Reference" "R18"
+		(property "Reference" "R19"
 			(at 147.32 214.63 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -30443,7 +30440,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "R18")
+					(reference "R19")
 					(unit 1)
 				)
 			)
@@ -30461,7 +30458,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "d6a30bfa-0b0d-4bc1-8901-4d5c38f8e6c7")
-		(property "Reference" "Q2"
+		(property "Reference" "V1"
 			(at 76.2 37.465 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -30535,7 +30532,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "Q2")
+					(reference "V1")
 					(unit 1)
 				)
 			)
@@ -30552,7 +30549,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "d7e47d44-eacc-40d4-aef1-95183054de19")
-		(property "Reference" "R25"
+		(property "Reference" "R9"
 			(at 295.275 67.31 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -30616,7 +30613,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "R25")
+					(reference "R9")
 					(unit 1)
 				)
 			)
@@ -30633,7 +30630,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "d85824ff-b238-44a7-9dc8-8bcf84370a85")
-		(property "Reference" "R21"
+		(property "Reference" "R13"
 			(at 179.705 100.33 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -30697,7 +30694,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "R21")
+					(reference "R13")
 					(unit 1)
 				)
 			)
@@ -30715,7 +30712,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "daf69785-3093-4b89-9cb2-d92b48b3dcde")
-		(property "Reference" "#PWR023"
+		(property "Reference" "#PWR029"
 			(at 203.2 127 0)
 			(hide yes)
 			(show_name no)
@@ -30775,7 +30772,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR023")
+					(reference "#PWR029")
 					(unit 1)
 				)
 			)
@@ -30870,7 +30867,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "deb1b236-e23a-485c-9f76-5b2eb2b12dbf")
-		(property "Reference" "R22"
+		(property "Reference" "R14"
 			(at 179.705 113.03 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -30934,7 +30931,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "R22")
+					(reference "R14")
 					(unit 1)
 				)
 			)
@@ -30952,7 +30949,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e081cc25-6bc7-4493-b0e9-0c7c1de8985b")
-		(property "Reference" "#PWR026"
+		(property "Reference" "#PWR019"
 			(at 245.11 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -31012,7 +31009,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR026")
+					(reference "#PWR019")
 					(unit 1)
 				)
 			)
@@ -31030,7 +31027,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e4581cf7-924e-4d65-9a23-76faa60e0c38")
-		(property "Reference" "D7"
+		(property "Reference" "D8"
 			(at 534.035 203.1298 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -31100,7 +31097,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "D7")
+					(reference "D8")
 					(unit 1)
 				)
 			)
@@ -31118,7 +31115,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e65305b5-74f4-4edb-9fad-b608c10b0d50")
-		(property "Reference" "D9"
+		(property "Reference" "V7"
 			(at 562.61 268.2874 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -31193,7 +31190,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "D9")
+					(reference "V7")
 					(unit 1)
 				)
 			)
@@ -31210,7 +31207,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "e785d1ad-3191-42b6-ae1a-842f0a7163a2")
-		(property "Reference" "C13"
+		(property "Reference" "C8"
 			(at 400.685 71.12 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -31274,7 +31271,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "C13")
+					(reference "C8")
 					(unit 1)
 				)
 			)
@@ -31373,7 +31370,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e951c367-c605-4b73-9464-f4ae10dbad69")
-		(property "Reference" "#PWR016"
+		(property "Reference" "#PWR026"
 			(at 158.75 127 0)
 			(hide yes)
 			(show_name no)
@@ -31433,7 +31430,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR016")
+					(reference "#PWR026")
 					(unit 1)
 				)
 			)
@@ -31451,7 +31448,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ea77387d-c154-4bb2-b07e-12f5c14fbbee")
-		(property "Reference" "#PWR018"
+		(property "Reference" "#PWR044"
 			(at 167.005 254 0)
 			(hide yes)
 			(show_name no)
@@ -31511,7 +31508,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR018")
+					(reference "#PWR044")
 					(unit 1)
 				)
 			)
@@ -31529,7 +31526,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "eb2d77a7-d7a8-40b3-939c-d56155bdbe08")
-		(property "Reference" "H9"
+		(property "Reference" "H8"
 			(at 53.34 151.1299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -31587,7 +31584,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "H9")
+					(reference "H8")
 					(unit 1)
 				)
 			)
@@ -31685,7 +31682,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "ebf62500-c348-4cfe-9b59-22ff83e8c46f")
-		(property "Reference" "C15"
+		(property "Reference" "C16"
 			(at 405.765 193.04 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -31747,7 +31744,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "C15")
+					(reference "C16")
 					(unit 1)
 				)
 			)
@@ -31765,7 +31762,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ef7dd15a-c885-4075-b540-8e1e69d8b1fc")
-		(property "Reference" "#PWR049"
+		(property "Reference" "#PWR039"
 			(at 504.825 196.85 0)
 			(hide yes)
 			(show_name no)
@@ -31826,7 +31823,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR049")
+					(reference "#PWR039")
 					(unit 1)
 				)
 			)
@@ -31844,7 +31841,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f16169aa-9ed8-4ac1-bfae-534706c9dcf2")
-		(property "Reference" "#PWR015"
+		(property "Reference" "#PWR025"
 			(at 146.05 127 0)
 			(hide yes)
 			(show_name no)
@@ -31904,7 +31901,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR015")
+					(reference "#PWR025")
 					(unit 1)
 				)
 			)
@@ -31922,7 +31919,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f5deebd5-261c-4e4d-9b52-785a9f662e21")
-		(property "Reference" "#PWR047"
+		(property "Reference" "#PWR048"
 			(at 508 297.18 0)
 			(hide yes)
 			(show_name no)
@@ -31982,7 +31979,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR047")
+					(reference "#PWR048")
 					(unit 1)
 				)
 			)
@@ -32000,7 +31997,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f6a7d00c-8325-440b-96ee-3e0482a5d243")
-		(property "Reference" "J5"
+		(property "Reference" "X8"
 			(at 191.135 209.55 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -32083,7 +32080,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "J5")
+					(reference "X8")
 					(unit 1)
 				)
 			)
@@ -32101,7 +32098,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f9a30089-b61a-4638-b529-aa48ddaa2122")
-		(property "Reference" "#PWR054"
+		(property "Reference" "#PWR046"
 			(at 546.1 252.73 0)
 			(hide yes)
 			(show_name no)
@@ -32161,7 +32158,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR054")
+					(reference "#PWR046")
 					(unit 1)
 				)
 			)
@@ -32178,7 +32175,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f9efaec1-18e2-4ae2-ae4f-bf9653931698")
-		(property "Reference" "C23"
+		(property "Reference" "C19"
 			(at 488.315 193.04 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -32240,7 +32237,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "C23")
+					(reference "C19")
 					(unit 1)
 				)
 			)
@@ -32258,8 +32255,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "fad5bb18-0db6-454a-b0af-54409f7e2d04")
-		(property "Reference" "R12"
-			(at 86.36 110.49 90)
+		(property "Reference" "R15"
+			(at 86.36 110.236 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -32270,7 +32267,7 @@
 			)
 		)
 		(property "Value" "100R"
-			(at 86.36 113.03 90)
+			(at 86.36 112.776 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -32322,7 +32319,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "R12")
+					(reference "R15")
 					(unit 1)
 				)
 			)
@@ -32340,7 +32337,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "fb3f0a55-d352-4202-9092-abefc625e32e")
-		(property "Reference" "R4"
+		(property "Reference" "R1"
 			(at 68.58 47.6249 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -32404,7 +32401,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "R4")
+					(reference "R1")
 					(unit 1)
 				)
 			)
@@ -32421,7 +32418,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "fbf241bf-8cf1-438a-8ad2-1849c819edde")
-		(property "Reference" "U5"
+		(property "Reference" "V3"
 			(at 286.385 72.39 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -32500,7 +32497,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "U5")
+					(reference "V3")
 					(unit 1)
 				)
 			)
@@ -32518,7 +32515,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "fc76a5fe-a37f-4209-bbf2-9bbab5a68f4c")
-		(property "Reference" "#PWR052"
+		(property "Reference" "#PWR033"
 			(at 532.13 161.29 0)
 			(hide yes)
 			(show_name no)
@@ -32578,7 +32575,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR052")
+					(reference "#PWR033")
 					(unit 1)
 				)
 			)
@@ -32596,7 +32593,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "fca54521-ea40-4f59-89f2-4b896afd1bf2")
-		(property "Reference" "#PWR053"
+		(property "Reference" "#PWR040"
 			(at 530.225 196.85 0)
 			(hide yes)
 			(show_name no)
@@ -32657,7 +32654,7 @@
 		(instances
 			(project "Venturi_MainPCB"
 				(path "/541edf84-ce03-4785-9c85-09d790cdcb4c"
-					(reference "#PWR053")
+					(reference "#PWR040")
 					(unit 1)
 				)
 			)
